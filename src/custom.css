@@ -1,0 +1,38 @@
+.header li > a{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--mono);
+    color: var(--text-brown);
+    text-decoration: none;
+    list-style: none;
+    transition: .4s ease all;
+}
+.header ul{
+    list-style: none;
+}
+.header.desktop .right ul{
+    display: flex;
+    gap: 27px;
+}
+.header.desktop .right{
+    display: flex;
+    align-items: center;
+}
+.header.desktop .left{
+    padding-top: 26px;
+}
+.header.desktop .header-in{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.header.desktop .right ul li:hover a{
+    color: var(--pink);
+}
+.header.desktop .header-logo{
+    max-width: 400px;
+}
+.header.desktop .header-logo.big-logo{
+    max-width: 580px;
+}
