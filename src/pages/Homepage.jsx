@@ -10,7 +10,7 @@ const Homepage = () => {
               <div className="left">
                 <div className="header-logo">
                   <img
-                    src="../src/assets/images/header-logo.svg"
+                    src="src/assets/images/header-logo.svg"
                     alt="Logo"
                     className="icon"
                   />
