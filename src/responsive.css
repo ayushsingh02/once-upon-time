@@ -1,0 +1,23 @@
+@media screen and (max-width: 1200px) {
+    
+}
+@media screen and (max-width: 991px) {
+    .header.desktop{
+        display: none;
+    }
+    .header.mobile{
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    
+}
+@media screen and (max-width: 400px) {
+    .header.mobile .header-mob-logo {
+    max-width: 130px;
+    }
+    .header.mobile .primary-btn{
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+}

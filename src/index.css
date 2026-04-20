@@ -78,6 +78,9 @@ p {
   letter-spacing: -0.17em;
   color: var(--text-brown);
 }
+img{
+  display: flex;
+}
 p span.big-pink {
   font-size: 52px;
   line-height: 119%;
@@ -89,6 +92,7 @@ a {
   cursor: pointer;
   font-family: inherit;
   color: inherit;
+  display: inline-block;
 }
 p.eyebrow-head {
   font-family: var(--mono);
@@ -103,17 +107,22 @@ p.eyebrow-head {
   font-weight: 500;
   font-family: var(--inter-tight);
   color: var(--head-black);
+  line-height: 100%;
   background-color: var(--skyblue);
   border: 1px solid var(--skyblue);
   transition: 0.4s ease all;
   cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 12px 27px;
 }
 .primary-btn:hover {
   background: none;
+  color: var(--skyblue);
 }
 .container {
   padding: 0px 60px;
-  max-width: 1600px;
 }
 .spacer {
   height: 150px;
@@ -142,7 +151,17 @@ html.lenis {
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
+
 /* --- Lenis---  */
+@media screen and (max-width: 991px) {
+  .container{
+    padding: 0px 30px;
+  }
+  .primary-btn{
+    padding: 10px 15px;
+    font-size: 10px;
+  }
+}
 @media screen and (max-width: 767px) {
   p {
     font-size: 14px;
@@ -155,6 +174,9 @@ html.lenis {
   }
   .spacer {
     height: 90px;
+  }
+  .container{
+    padding: 0px 20px;
   }
   .spacer-mid {
     height: 90px;

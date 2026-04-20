@@ -1,50 +1,17 @@
 import React from "react";
+import Lenis from "lenis";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import ReactLenis from "lenis/react";
 
 const Homepage = () => {
   return (
-    <div>
-      <header>
-        <div className="header desktop">
-          <div className="container">
-            <div className="header-in">
-              <div className="left">
-                <div className="header-logo">
-                  <img
-                    src="src/assets/images/header-logo.svg"
-                    alt="Logo"
-                    className="icon"
-                  />
-                </div>
-              </div>
-              <div className="right">
-                <nav>
-                  <ul>
-                    <li>
-                      <a href="#!">Therapy</a>
-                    </li>
-                    <li>
-                      <a href="#!">Collaborate</a>
-                    </li>
-                    <li>
-                      <a href="#!">Therapy</a>
-                    </li>
-                    <li>
-                      <a href="#!">About</a>
-                    </li>
-                    <li>
-                      <a href="#!">Stories</a>
-                    </li>
-                    <li>
-                      <a href="#!">Book A Call</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
+    <ReactLenis root>
+    <>
+      <Header />
+      <Footer />
+    </>
+    </ReactLenis>
   );
 };
 
