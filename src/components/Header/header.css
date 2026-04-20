@@ -1,3 +1,10 @@
+header{
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: #F7F0E8;
+    width: 100vw;
+}
 .header li > a {
     text-transform: uppercase;
     font-weight: 500;
@@ -63,6 +70,7 @@
     justify-content: space-between;
     clip-path: inset(0 100% 0 0);
     transition: .6s ease all;
+    z-index: 999;
   }
   .header-menu.open-menu{
       clip-path: inset(0 0 0 0);
@@ -95,4 +103,28 @@
   .ham-menu {
     width: 18px;
   }
+  .header.desktop .header-logo {
+    max-width: 400px;
+    transition: max-width 1s ease;
+  }
   
+  .header.desktop .header-logo.big-logo {
+    max-width: 580px;
+  }
+  @media screen and (max-width: 991px) {
+    .header.desktop{
+        display: none;
+    }
+    .header.mobile{
+        display: block;
+    }
+}
+@media screen and (max-width: 400px) {
+    .header.mobile .header-mob-logo {
+    max-width: 130px;
+    }
+    .header.mobile .primary-btn{
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+}

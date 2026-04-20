@@ -23,7 +23,7 @@
 }
 .pink-card p{
     font-family: var(--mono);
-    font-weight: 200;
+    font-weight: 400;
     line-height: 119%;
     letter-spacing: -0.03em;
     text-transform: uppercase;
@@ -31,3 +31,11 @@
     color: #3e2c25;
 }
 /* Pink Card End  */
+@media screen and (max-width: 767px) {
+    .pink-card h3{
+        font-size: 14px;
+    }
+    .pink-card p{
+        font-size: 12px;
+    }
+}

@@ -75,7 +75,7 @@ p {
   font-family: var(--times);
   font-size: 18px;
   line-height: 119%;
-  letter-spacing: -0.17em;
+  letter-spacing: -0.17%;
   color: var(--text-brown);
 }
 img{
@@ -87,6 +87,7 @@ p span.big-pink {
   letter-spacing: -0.17em;
   font-weight: 400;
   color: var(--pink);
+  padding-right: 8px;
 }
 a {
   cursor: pointer;
@@ -115,7 +116,9 @@ p.eyebrow-head {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  padding: 12px 27px;
+  padding: 12px 28px;
+  text-align: center;
+  display: inline-block;
 }
 .primary-btn:hover {
   background: none;
@@ -161,11 +164,12 @@ html.lenis {
     padding: 10px 15px;
     font-size: 10px;
   }
-}
-@media screen and (max-width: 767px) {
-  p {
+  p,li, a {
     font-size: 14px;
   }
+}
+@media screen and (max-width: 767px) {
+
   p span.big-pink {
     font-size: 26px;
   }
