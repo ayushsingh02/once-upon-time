@@ -135,17 +135,29 @@ padding: 8px 10px;
     flex-direction: column;
     gap: 10px;
 }
-.footer-nav-block ul a{
+.footer-nav-block li a{
     font-weight: 400;
     font-size: 18px;
     letter-spacing: 0.03em;
     line-height: 140%;
     font-family: var(---tight-inter);
+    transition: .4s ease all;
 }
 .footer .pink-card{
     position: absolute;
     right: 30px;
     top: 30px;
+}
+.footer-nav-block li a:hover{
+color: var(--pink);
+}
+@media screen and (max-width: 1200px) {
+    .footer-top-left {
+    width: 70%;
+    }
+    .footer-top-right {
+    width: 30%;
+    }
 }
 @media screen and (max-width: 991px) {
     .footer-nav-block a{
@@ -157,11 +169,30 @@ padding: 8px 10px;
     .footer-bottom .primary-btn {
         padding-left: 15px;
     }
+    .footer-top-left{
+        width: 60%;
+    }
+    .footer-top-right{
+        width: 40%;
+    }
+    .footer-nav-block p.head{
+        font-size: 14px;
+    }
+    .footer-nav-block li a{
+        font-size: 12px !important;
+    }
+    .footer{
+        padding-top: 60px;
+    }
+    .footer-bottom{
+        margin-top: 60px;
+    }
 }
 @media screen and (max-width: 767px) {
     .footer-nav{
         grid-template-columns: 1fr 1fr;
         gap: 40px;
+        margin-top: 40px;
     }
     .footer-top{
         flex-direction: column;
@@ -186,5 +217,19 @@ padding: 8px 10px;
     }
     .footer{
         padding-top: 32px;
+    }
+    .footer-nav-block li a{
+        font-size: 14px !important;
+    }
+    .footer-bottom{
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .footer .pink-card{
+        right: -50px;
+        bottom: -120px;
+        width: 190px;
+        height: 190px;
     }
 }

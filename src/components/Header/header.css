@@ -26,7 +26,7 @@ header{
     align-items: center;
   }
   .header.desktop .left {
-    padding-top: 26px;
+   padding: 20px 0px;
   }
   .header.desktop .header-in {
     display: flex;
@@ -105,7 +105,7 @@ header{
   }
   .header.desktop .header-logo {
     max-width: 400px;
-    transition: max-width 1s ease;
+    transition: max-width .5s ease;
   }
   
   .header.desktop .header-logo.big-logo {

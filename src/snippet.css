@@ -1,41 +1,64 @@
 /* Pink Card Starts */
-.pink-card{
-    background-color: var(--pink);
-    padding: 24px 15px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    width: 200px;
-    height: 200px;
-    transform: rotate(25deg);
+.pink-card {
+  background-color: var(--pink);
+  padding: 24px 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 200px;
+  height: 200px;
+  transform: rotate(25deg);
 }
-.pink-card h3{
-    font-family: var(--playwrite);
-    font-weight: 200;
-    line-height: 119%;
-    letter-spacing: -0.03em;
-    font-size: 20.92px;
-    color: #3e2c25;
-
+.pink-card h3 {
+  font-family: var(--playwrite);
+  font-weight: 200;
+  line-height: 119%;
+  letter-spacing: -0.03em;
+  font-size: 20.92px;
+  color: #3e2c25;
 }
-.pink-card p{
-    font-family: var(--mono);
-    font-weight: 400;
-    line-height: 119%;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #3e2c25;
+.pink-card p {
+  font-family: var(--mono);
+  font-weight: 400;
+  line-height: 119%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #3e2c25;
 }
 /* Pink Card End  */
+/* We Work Card  */
+.way-work-card {
+  aspect-ratio: 4.2/6.7;
+  max-width: 429px;
+  width: 100%;
+  position: relative;
+}
+.way-work-card .white-strip {
+  background-color: #fff;
+  position: absolute;
+  bottom: 110px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.way-work-card .white-strip h3 {
+  font-size: 32px;
+  line-height: 103%;
+  letter-spacing: -0.01em;
+  color: #1a1a1a;
+}
+/* We Work Card  */
+
 @media screen and (max-width: 767px) {
-    .pink-card h3{
-        font-size: 14px;
-    }
-    .pink-card p{
-        font-size: 12px;
-    }
+  .pink-card h3 {
+    font-size: 14px;
+  }
+  .pink-card p {
+    font-size: 12px;
+  }
 }

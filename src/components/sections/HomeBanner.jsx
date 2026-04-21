@@ -10,7 +10,7 @@ const HomeBanner = () => {
         </div>
         <div className="center">
             <div className="home-banner-img">
-                <img src="" alt="Image" className="img" />
+                <img src="../src/assets/images/home-banner.png" alt="Image" className="img" />
             </div>
             <PinkCard></PinkCard>
         </div>

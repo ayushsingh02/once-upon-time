@@ -64,6 +64,7 @@ h5,
 h6 {
   font-family: var(--times);
   color: var(--head-black);
+  line-height: 90%;
 }
 h2 {
   font-size: clamp(32px, 5vw, 62px);
@@ -101,6 +102,7 @@ p.eyebrow-head {
   line-height: 117%;
   font-size: 20px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 .primary-btn {
   font-size: 12px;
@@ -122,7 +124,8 @@ p.eyebrow-head {
 }
 .primary-btn:hover {
   background: none;
-  color: var(--skyblue);
+  border-color: var(--pink);
+  color: var(--pink);
 }
 .container {
   padding: 0px 60px;
@@ -141,6 +144,9 @@ p.eyebrow-head {
 .icon{
   width: 100%;
   height: auto;
+}
+.top-spacing{
+  padding-top: 200px;
 }
 /* Lenis */
 html.lenis {
