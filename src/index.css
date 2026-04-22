@@ -8,6 +8,34 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Times New Roman";
+  src:
+    url("../public/fonts/TimesNewRomanPS-ItalicMT.woff2") format("woff2"),
+    url("../public/fonts/TimesNewRomanPS-ItalicMT.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src:
+    url("../public/fonts/TimesNewRomanPS-BoldMT.woff2") format("woff2"),
+    url("../public/fonts/TimesNewRomanPS-BoldMT.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src:
+    url("../public/fonts/TimesNewRomanPS-BoldItalicMT.woff2") format("woff2"),
+    url("../public/fonts/TimesNewRomanPS-BoldItalicMT.woff2") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Cambon";
   src:
     url("../public/fonts/Cambon-Medium.woff2") format("woff2"),

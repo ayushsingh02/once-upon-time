@@ -53,6 +53,21 @@
   height: 100%;
   background-color: #f7f0e8;
   padding: 32px 26px;
+  position: relative;
+}
+.home-chapter-1 .inner-card::before{
+    content: '';
+    background-image: url('../src/assets/images/home-chapter-1-bg.png');
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+.home-chapter-1 .inner-card >  *{
+    position: relative;
+    z-index: 3;
 }
 .scroll-down p {
   font-size: 18px;
@@ -65,9 +80,12 @@
 .home-chapter-1-in .inner-card h3{
   font-size: clamp(32px, 5vw, 62px );
   font-style: italic;
+  font-weight: 400;
   }
+
 /* Home Chapter 1 */
 /* Home Chapter 2 */
+
 .home-chapter-2 p span.big-pink {
 padding-right: 0px;
 }
