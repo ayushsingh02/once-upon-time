@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
-const images = import.meta.glob("../src/assets/icons/*.svg", { eager: true });
-const getImg = (name) => images[`../src/assets/icons/${name}`]?.default;
+const images = import.meta.glob("../../assets/icons/*.svg", { eager: true });
+const getImg = (name) => images[`../../assets/icons/${name}`]?.default;
 
 const Certification = () => {
   useEffect(() => {
