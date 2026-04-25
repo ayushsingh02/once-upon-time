@@ -1,16 +1,9 @@
 import React, { useEffect } from "react";
 
-const data = {
-  image1: {
-    src: "../src/assets/icons/Medicine.svg"
-  },
-  image2: {
-    src: "../src/assets/icons/therapyappointment_logo.svg"
-  },
-  image3: {
-    src: "../src/assets/icons/us_physical_therapy_logo.svg"
-  },
-};
+const images = import.meta.glob("../assets/icons/*.svg", { eager: true });
+
+const getImg = (name) => images[`../assets/icons/${name}`]?.default;
+
 const Certification = () => {
   useEffect(() => {
     if (window.$ && window.$(".certification-ticker-wrap").length) {
@@ -23,16 +16,17 @@ const Certification = () => {
       });
     }
   }, []);
+
   return (
     <div className="certification-ticker">
       <p className="eyebrow-head">Certification</p>
       <ul className="certification-ticker-wrap">
-        <li><img src={data.image1.src} alt="Logo" className="icon" /></li>
-        <li><img src={data.image2.src} alt="Logo" className="icon" /></li>
-        <li><img src={data.image3.src} alt="Logo" className="icon" /></li>
-        <li><img src={data.image1.src} alt="Logo" className="icon" /></li>
-        <li><img src={data.image2.src} alt="Logo" className="icon" /></li>
-        <li><img src={data.image3.src} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("Medicine.svg")} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("therapyappointment_logo.svg")} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("us_physical_therapy_logo.svg")} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("Medicine.svg")} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("therapyappointment_logo.svg")} alt="Logo" className="icon" /></li>
+        <li><img src={getImg("us_physical_therapy_logo.svg")} alt="Logo" className="icon" /></li>
       </ul>
     </div>
   );
