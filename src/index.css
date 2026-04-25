@@ -48,7 +48,7 @@
 :root {
   --mono: "DM Mono", monospace;
   --playwrite: "Playwrite CA", cursive;
-  --inter-tight: "Inter Tight", sans-serif;
+  --inter: "Inter Tight", sans-serif;
   --times: "Times New Roman";
   --cambon: "Cambon";
   --body-color: #f7f0e8;
@@ -74,7 +74,7 @@ body {
   font-weight: 200;
   line-height: 150%;
   letter-spacing: 0.02em;
-  font-family: var(--inter-tight);
+  font-family: var(--inter);
   background-color: var(--body-color);
   color: var(--text-brown);
   -webkit-text-size-adjust: none;
@@ -112,7 +112,6 @@ img{
 }
 p span.big-pink {
   font-size: 52px;
-  line-height: 119%;
   letter-spacing: -0.17em;
   font-weight: 400;
   color: var(--pink);
@@ -136,7 +135,7 @@ p.eyebrow-head {
   font-size: 12px;
   letter-spacing: 2px;
   font-weight: 500;
-  font-family: var(--inter-tight);
+  font-family: var(--inter);
   color: var(--head-black);
   line-height: 100%;
   background-color: var(--skyblue);
@@ -149,6 +148,7 @@ p.eyebrow-head {
   padding: 12px 28px;
   text-align: center;
   display: inline-block;
+  width: fit-content;
 }
 .primary-btn:hover {
   background: none;
@@ -190,6 +190,126 @@ html.lenis {
 }
 
 /* --- Lenis---  */
+.contact-form{
+  margin-top: 30px;
+}
+form.contact-form label,
+form.contact-form input::placeholder,
+form.contact-form textarea::placeholder {
+  font-family: var(--inter);
+  font-size: 10.8px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #3e2c25;
+  font-weight: 400;
+}
+form.contact-form input::placeholder,
+form.contact-form textarea::placeholder {
+  opacity: 70%;
+}
+form.contact-form input[type="text"],
+form.contact-form input[type="email"],
+form.contact-form textarea {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  border: 0.9px solid #3e2c25;
+  padding: 5px 8px;
+  font-size: 10.8px;
+  line-height: 150%;
+  font-family: var(--inter);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #3e2c25;
+  max-width: 100%;
+}
+form.contact-form textarea {
+  height: 100px;
+}
+form.contact-form .input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 15px;
+}
+form.contact-form select#selectCountry {
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.7' d='M7.2937 0.450195L3.87198 3.50939L0.450259 0.450195' stroke='%233E2C25' stroke-width='0.900296' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: transparent;
+  outline: none;
+  font-size: 10.8px;
+  font-family: var(--inter);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #3e2c25;
+  max-width: 35px;
+  width: 100%;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 14px; 
+}
+form.contact-form input[type="tel"] {
+  background: none;
+  line-height: 150%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 10.8px;
+  color:#3e2c25;
+}
+form.contact-form input[type="submit"] {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: var(--inter);
+  font-size: 10.8px;
+  line-height: 100%;
+  letter-spacing: 0.26em;
+  font-weight: 500;
+  background-color: var(--pink);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 36px;
+  transition: .4s ease all;
+  width: 100%;
+}
+form.contact-form input[type="submit"]:hover{
+    background: var(--skyblue);
+}
+form.contact-form .contact-number-wrap {
+  display: flex;
+  width: 100%;
+  border: 0.9px solid #3e2c25;
+  padding: 5px 8px;
+}
+.contact-form-2col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+}
+.bx-wrapper{
+  max-width: 100% !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+.bx-viewport{
+  height: auto !important;
+}
 @media screen and (max-width: 991px) {
   .container{
     padding: 0px 30px;
@@ -200,6 +320,9 @@ html.lenis {
   }
   p,li, a {
     font-size: 14px;
+  }
+  .top-spacing{
+    padding-top: 120px;
   }
 }
 @media screen and (max-width: 767px) {

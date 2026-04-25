@@ -1,23 +1,120 @@
 @media screen and (max-width: 1200px) {
-    
 }
 @media screen and (max-width: 991px) {
-    .header.desktop{
-        display: none;
-    }
-    .header.mobile{
-        display: block;
-    }
+  .header.desktop {
+    display: none;
+  }
+  .header.mobile {
+    display: block;
+  }
+  .home-banner-in {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .home-banner-in > div {
+    width: 100% !important;
+  }
+  .home-banner-in .left {
+    justify-content: center;
+    text-align: center;
+  }
+  .home-banner-in .center {
+    padding: 0px 60px;
+  }
+  .home-banner-in .right {
+    align-items: center;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .home-banner-in .right p {
+    max-width: 85%;
+  }
 }
 @media screen and (max-width: 767px) {
-    
+  .home-banner-in {
+    gap: 20px;
+  }
+  .home-banner-img {
+    aspect-ratio: 2.8/3.3;
+  }
+  .home-banner-in .center .pink-card {
+    right: 20px;
+  }
+  .home-banner-in .center {
+    padding: 0px 50px;
+  }
+  .home-banner-in .center .pink-card {
+    width: 132px;
+    height: 140px;
+    bottom: -10px;
+  }
+  .home-banner-in .left h1 {
+    font-size: 26px;
+    max-width: 18ch;
+  }
+  .home-banner-in .right p {
+    max-width: 87%;
+  }
+  .home-banner-in .right {
+    padding-top: 20px;
+  }
+
+  .contact-form-outer {
+    max-width: 427px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contact-section-in {
+    display: flex;
+  }
+  .contact-section-in .left {
+    width: 100%;
+  }
+  .contact-form-2col {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+  .contact-section-in .right {
+    display: none;
+  }
+  .contact-form-main {
+    padding: 27px 32px;
+  }
+  .contact-form {
+    margin-top: 10px;
+  }
+  form.contact-form .input-wrap {
+    margin-top: 10px;
+  }
+  form.contact-form input[type="submit"] {
+    margin-top: 15px;
+  }
+  .contact-form-top {
+    padding: 40px 20px;
+  }
+  .contact-form-top p:not(.eyebrow-head) {
+    font-size: 12px;
+  }
+  .certification-ticker img {
+    width: 135px;
+    height: 35px;
+  }
+  .certification-ticker-wrap {
+    gap: 40px;
+  }
+  .certification-ticker {
+    gap: 30px;
+  }
+  .certification-ticker p{
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 400px) {
-    .header.mobile .header-mob-logo {
+  .header.mobile .header-mob-logo {
     max-width: 130px;
-    }
-    .header.mobile .primary-btn{
-        padding: 8px 10px;
-        font-size: 9px;
-    }
+  }
+  .header.mobile .primary-btn {
+    padding: 8px 10px;
+    font-size: 9px;
+  }
 }

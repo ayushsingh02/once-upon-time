@@ -7,10 +7,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
   gap: 20px;
   width: 200px;
   height: 200px;
   transform: rotate(25deg);
+}
+.pink-card.blue{
+  background-color: var(--skyblue);
 }
 .pink-card h3 {
   font-family: var(--playwrite);
@@ -51,10 +55,15 @@
   line-height: 103%;
   letter-spacing: -0.01em;
   color: #1a1a1a;
+  font-weight: 400
 }
 /* We Work Card  */
 
 @media screen and (max-width: 767px) {
+  .pink-card{
+    width: 132px;
+    height: 140px;
+  }
   .pink-card h3 {
     font-size: 14px;
   }

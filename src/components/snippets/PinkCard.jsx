@@ -1,10 +1,10 @@
 import React from 'react'
 
-const PinkCard = () => {
+const PinkCard = ({ title, description }) => {
   return (
     <div className='pink-card'>
-        <h3>Where Empathy Leads</h3>
-        <p>Guided by empathy. Rooted in connection.</p>
+      {title && <h3>{title}</h3>}
+      {description && <p>{description}</p>}
     </div>
   )
 }

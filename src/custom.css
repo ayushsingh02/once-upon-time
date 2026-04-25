@@ -1,27 +1,50 @@
 /* Home Banner */
-.home-banner {
-  padding-top: 24px;
-}
 
 .home-banner-in {
   display: flex;
-  gap: 20px;
 }
 .home-banner-in .left {
-  width: 24%;
+  width: 26%;
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+}
+.home-banner-in .left h1 {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #3e2c25;
 }
 .home-banner-in .center {
-  width: 46%;
+  width: 45%;
   position: relative;
 }
 .home-banner-in .right {
   width: 30%;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.home-banner-in .right p {
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  max-width: 36ch;
+}
+.home-banner-in .right p .big-pink {
+  font-size: 32px;
+  padding-right: 5px;
 }
 .home-banner-in .center .pink-card {
   position: absolute;
   right: -40px;
   bottom: 32px;
+  width: 160px;
+  height: 160px;
 }
+
 .home-banner-img {
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -55,19 +78,19 @@
   padding: 32px 26px;
   position: relative;
 }
-.home-chapter-1 .inner-card::before{
-    content: '';
-    background-image: url('../src/assets/images/home-chapter-1-bg.png');
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-} 
-.home-chapter-1 .inner-card >  *{
-    position: relative;
-    z-index: 3;
+.home-chapter-1 .inner-card::before {
+  content: "";
+  background-image: url("../src/assets/images/home-chapter-1-bg.png");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home-chapter-1 .inner-card > * {
+  position: relative;
+  z-index: 3;
 }
 .scroll-down p {
   font-size: 18px;
@@ -77,16 +100,135 @@
   letter-spacing: 2px;
   color: var(--text-brown);
 }
-.home-chapter-1-in .inner-card h3{
-  font-size: clamp(32px, 5vw, 62px );
+.home-chapter-1-in .inner-card h3 {
+  font-size: clamp(32px, 5vw, 62px);
   font-style: italic;
   font-weight: 400;
-  }
+}
 
 /* Home Chapter 1 */
 /* Home Chapter 2 */
 
 .home-chapter-2 p span.big-pink {
-padding-right: 0px;
+  padding-right: 0px;
 }
 /* Home Chapter 2 */
+
+/* Contact Form Section */
+.contact-section {
+  position: relative;
+}
+.contact-section .contact-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.contact-section-in {
+  position: relative;
+  z-index: 2;
+  padding: 45px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-section-in .right {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-bottom: 30px;
+}
+.contact-form-top {
+  padding: 40px 46px;
+  background-color: #f7f0e8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.contact-form-top::before {
+  content: "";
+  background-image: url("../src/assets/images/home-chapter-1-bg.png");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact-form-top > * {
+  position: relative;
+  z-index: 2;
+}
+.contact-form-top h2 {
+  font-size: clamp(26px, 5vw, 42px);
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  color: #3b2922;
+  max-width: 16ch;
+}
+.contact-form-top .eyebrow-head {
+  font-size: 12px;
+}
+.contact-form-top p:not(.eyebrow-head) {
+  font-size: 14px;
+  font-family: var(--inter);
+  letter-spacing: 0.03em;
+  line-height: 138%;
+  font-weight: 400;
+  color: #3b2922;
+  max-width: 46ch;
+}
+
+.contact-form-main {
+  background-color: #c1cbd5;
+  padding: 36px 46px;
+}
+.contact-form-main h3 {
+  font-family: var(--playwrite);
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  line-height: 108%;
+  color: #3e2c25;
+  font-size: clamp(32px, 5vw, 46px);
+  text-align: center;
+}
+
+.contact-form-outer {
+  max-width: 538px;
+  width: 100%;
+}
+.contact-section .pink-card.blue h3 {
+  line-height: 155%;
+  font-size: 16px;
+  letter-spacing: 0em;
+}
+.contact-section .pink-card.blue {
+  padding: 24px 10px;
+}
+/* Contact Form Section */
+.certification-ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.certification-ticker p {
+  text-align: center;
+}
+.certification-ticker img {
+  max-width: 230px;
+  max-height: 50px;
+  height: auto;
+  width: auto;
+}
+.certification-ticker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.certification-ticker li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto !important;
+}
