@@ -206,7 +206,8 @@
 .contact-section .pink-card.blue {
   padding: 24px 10px;
 }
-/* Contact Form Section */
+/* Contact Form Section Ends*/
+/* Certification */
 .certification-ticker {
   display: flex;
   flex-direction: column;
@@ -232,3 +233,102 @@
   align-items: center;
   width: auto !important;
 }
+/* Certification Ends */
+/* Pre-Footer Form */
+.pre-footer {
+  background-color: var(--skyblue);
+  padding: 38px 0px;
+}
+
+.pre-footer-in {
+  display: flex;
+}
+.pre-footer-in .top {
+  padding: 70px 50px;
+}
+.pre-footer-in h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  max-width: 14ch;
+  line-height: 100%;
+}
+.pre-footer-in .left {
+  width: 57%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 30px;
+}
+.pre-footer-in .right {
+  width: 43%;
+}
+.pre-footer-img {
+  aspect-ratio: 1.1/1;
+}
+.pre-footer-form {
+  background-color: #f7f0e8;
+}
+form#news-update {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+form#news-update input {
+  border: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 117%;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--mono);
+  padding: 18px 15px;
+  width: 100%;
+}
+form#news-update input[type="text"],
+form#news-update input[type="email"] {
+  background-color: #fff;
+  border-right: 0.42px solid #d4d4d4;
+  color: #3e2c25;
+}
+form#news-update input[type="text"]::placeholder,
+form#news-update input[type="email"]::placeholder {
+  color: #3e2c25;
+  text-align: center;
+}
+form#news-update input[type="submit"] {
+  background-color: #3b2922;
+  font-size: 12px;
+  color: #f7f0e8;
+  cursor: pointer;
+  transition: 0.4s ease all;
+  letter-spacing: 4px;
+}
+form#news-update input[type="submit"]:hover {
+  background-color: var(--pink);
+}
+form#news-update label{
+    display: none;
+}
+.pre-footer-in .bottom {
+  padding: 30px 50px;
+}
+.pre-footer-in .bottom p {
+  font-family: var(--inter);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 125%;
+  color: #2c1d17;
+  font-weight: 400;
+  max-width: 71ch;
+}
+.pre-footer-in .right .eyebrow-head{
+display: none;
+}
+/* Pre-Footer Form Ends */
+/* Insta Section */
+.insta-frame-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* Insta Section Ends */

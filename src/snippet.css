@@ -58,7 +58,23 @@
   font-weight: 400
 }
 /* We Work Card  */
-
+/* Insta Frame */
+.insta-frame{
+  position: relative;
+  padding: 58px 62px;
+  background-color: #EFE6DC;
+}
+.insta-frame .insta-icon{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.insta-frame .insta-image{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+/* Insta Frame */
 @media screen and (max-width: 767px) {
   .pink-card{
     width: 132px;

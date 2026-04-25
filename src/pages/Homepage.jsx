@@ -8,6 +8,8 @@ import HomeChapter2 from "../components/sections/HomeChapter2";
 import Chapter3Meet from "../components/sections/Chapter3Meet";
 import Certification from "../components/sections/Certification";
 import ContactSection from "../components/sections/ContactSection";
+import InstaSection from "../components/sections/InstaSection";
+import PreFooterForm from "../components/sections/PreFooterForm";
 import ReactLenis from "lenis/react";
 
 const Homepage = () => {
@@ -24,7 +26,11 @@ const Homepage = () => {
     <div className="spacer"></div>
     <Certification></Certification>
     <div className="spacer"></div>
+    <InstaSection></InstaSection>
+    <div className="spacer"></div>
     <ContactSection></ContactSection>
+    <div className="spacer"></div>
+    <PreFooterForm></PreFooterForm>
     </main>
       <Footer />
     </ReactLenis>

@@ -1,4 +1,17 @@
+@media screen and (max-width: 1300px) {
+  .pre-footer-in .top{
+    padding: 30px 50px;
+  }
+}
 @media screen and (max-width: 1200px) {
+  .pre-footer-in .top{
+    padding: 30px 30px;
+  }
+  .pre-footer-in .bottom {
+    padding: 30px 30px;
+  }
+}
+@media screen and (max-width: 1100px) {
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -29,7 +42,58 @@
   .home-banner-in .right p {
     max-width: 85%;
   }
+  .pre-footer-in{
+    flex-direction: column-reverse;
+  }
+  .pre-footer-in > * {
+    width: 100% !important;
+  }
+  .pre-footer-in .left p.eyebrow-head{
+    display: none;
+  }
+  .pre-footer-img{
+    aspect-ratio: 5/3;
+  }
+  form#news-update{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0px 30px;
+  }
+  form#news-update input[type="text"]::placeholder,   form#news-update input[type="email"]::placeholder{
+  text-align: start;
+  opacity: 70%;
+  }
+  form#news-update input[type="text"],   form#news-update input[type="email"]{
+    padding: 12px 14px;
+    font-family: var(--inter);
+    text-transform: unset;
+    letter-spacing: 0.02em;
+  }
+  form#news-update input[type="submit"]{
+    width: fit-content;
+    padding: 11px 30px;
+    font-family: var(--inter);
+    letter-spacing: 26%;
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  form#news-update label{
+    display: block;
+    font-family: var(--inter);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-size: 10.8px;
+  }
+  .pre-footer-in h2{
+    max-width: 100%;
+  }
+  .pre-footer-in .right .eyebrow-head{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
 }
+
 @media screen and (max-width: 767px) {
   .home-banner-in {
     gap: 20px;
@@ -107,6 +171,9 @@
   }
   .certification-ticker p{
     font-size: 16px;
+  }
+  .pre-footer-in .right .eyebrow-head{
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 400px) {
