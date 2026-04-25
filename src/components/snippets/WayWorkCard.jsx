@@ -5,7 +5,7 @@ const WayWorkCard = () => {
     <div className="way-work-card">
       <div className="way-work-card-img">
         <img
-          src="src/assets/images/way-we-work.png"
+          src="images/way-we-work.png"
           alt="Image"
           className="img"
         />

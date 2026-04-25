@@ -30,7 +30,7 @@ const Header = () => {
               <div className="left">
                 <div className={`header-logo ${isScrolled ? "" : "big-logo"}`}>
                   <img
-                    src="src/assets/images/header-logo.svg"
+                    src="images/header-logo.svg"
                     alt="Logo"
                     className="icon"
                   />
@@ -61,7 +61,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="header-mob-logo">
-                  <img src="src/assets/images/header-logo.svg" alt="Logo" className="icon" />
+                  <img src="images/header-logo.svg" alt="Logo" className="icon" />
                 </div>
                 <div className="bac-cta">
                   <a href="#!" className="primary-btn">Book A Call</a>
@@ -86,7 +86,7 @@ const Header = () => {
               </div>
             </nav>
             <div className="header-menu-logo">
-              <img src="src/assets/images/header-menu-logo.svg" alt="Logo" className="icon" />
+              <img src="images/header-menu-logo.svg" alt="Logo" className="icon" />
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ function Footer() {
                 <div className="footer-top-left">
                   <div className="footer-logo">
                     <img
-                      src="src/assets/images/footer-logo.svg"
+                      src="images/footer-logo.svg"
                       alt="Footer Logo"
                       className="icon"
                     />
@@ -70,7 +70,7 @@ function Footer() {
                     <a href="#!">
                       <div>
                         <img
-                          src="src/assets/icons/linkedin.svg"
+                          src="icons/linkedin.svg"
                           alt="Linkedin"
                         />
                       </div>
@@ -78,7 +78,7 @@ function Footer() {
                     <a href="#!">
                       <div>
                         <img
-                          src="src/assets/icons/instagram.svg"
+                          src="icons/instagram.svg"
                           alt="Instagram"
                         />
                       </div>
@@ -86,7 +86,7 @@ function Footer() {
                     <a href="#!">
                       <div>
                         <img
-                          src="src/assets/icons/facebook.svg"
+                          src="icons/facebook.svg"
                           alt="Facebook"
                         />
                       </div>

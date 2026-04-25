@@ -4,7 +4,7 @@ const HomeChapter1 = () => {
     return (
         <div className="home-chapter-1">
             <div className="home-chapter-img">
-                <img src="src/assets/images/chapter-1-home.png" alt="" className="img" />
+                <img src="images/chapter-1-home.png" alt="" className="img" />
             </div>
             <div className="home-chapter-1-in">
                 <div className="container">
@@ -13,7 +13,7 @@ const HomeChapter1 = () => {
                             Chapter I
                         </p>
                         <div className="brand-logo">
-                            <img src="src/assets/images/header-logo.svg" alt="Brand Logo" className="icon" />
+                            <img src="images/header-logo.svg" alt="Brand Logo" className="icon" />
                         </div>
                         <h3>Mission <br />
                             Statement</h3>

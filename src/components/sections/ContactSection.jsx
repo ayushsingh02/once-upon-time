@@ -7,7 +7,7 @@ const allCountries = countryCodesList.customList(
 );
 const data = {
   image: {
-    src: "../src/assets/images/chapter-1-home.png",
+    src: "images/chapter-1-home.png",
     alt: "Image",
   },
  

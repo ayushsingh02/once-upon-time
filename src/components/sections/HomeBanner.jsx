@@ -4,7 +4,7 @@ import PinkCard from '../snippets/PinkCard'
 const data = {
   title: "Therapy That Feels Like Coming Home",
   image: {
-    src: "../src/assets/images/home-banner.png",
+    src: "images/home-banner.png",
     alt: "Image",
   },
   pinkCard: {
