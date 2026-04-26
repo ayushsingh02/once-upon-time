@@ -1,5 +1,5 @@
 import React from "react";
-import InstaIcon from "./instaIcon";
+import InstaIcon from "../snippets/InstaIcon";
 
 const InstaFrame = ({ instaImage }) => {
   return (

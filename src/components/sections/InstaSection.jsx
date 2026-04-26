@@ -16,7 +16,7 @@ const InstaSection = () => {
     <div className="insta-section">
       <div className="container">
         <div className="heading">
-          {data.eyebrowText && <p className="eyebrow-header">{data.eyebrowText}</p>}
+          {data.eyebrowText && <p className="eyebrow-head">{data.eyebrowText}</p>}
           {data.title && <h2>{data.title}</h2>}
         </div>
         <div className="insta-frame-in">
