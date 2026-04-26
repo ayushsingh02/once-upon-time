@@ -1,24 +1,43 @@
 import React from "react";
 import PinkCard from "../snippets/PinkCard";
-
+const data = {
+  eyehead: "Chapter III",
+  title: "Meet Aatika",
+  meetImage: "images/meet-img2.png",
+  bigPinkText: "A",
+  meetDesc:
+    "atika believes therapy should feel human a safe space to pause, reflect, and be truly heard. Her work focuses on emotional storytelling and gentle growth, helping people rediscover themselves, one conversation at a time.",
+  ctaText: "Learn More",
+  ctaURL: "#!",
+  pinkCard: {
+    title: "Guided by empathy. Rooted in connection.",
+  },
+};
 const Chapter3Meet = () => {
   return (
     <div className="chapter3-meet">
       <div className="container">
         <div className="chapter3-meet-in">
-          <div className="top">
-            <p className="eyebrow-head">Chapter III</p>
-            <h2>Meet Aatika</h2>
-          </div>
           <div className="left">
+            <div className="top">
+              <p className="eyebrow-head">{data.eyehead}</p>
+              <h2>{data.title}</h2>
+            </div>
             <div className="meet-img">
-                <img src="" alt="Image" className="img" />
+              <img src={data.meetImage} alt="Image" className="img" />
             </div>
           </div>
           <div className="right">
-            <p><span className="big-pink">A</span>atika believes therapy should feel human a safe space to pause, reflect, and be truly heard. Her work focuses on emotional storytelling and gentle growth, helping people rediscover themselves, one conversation at a time.</p>
-            <a href="#!" className="primary-btn">Learn More</a>
-            <PinkCard></PinkCard>
+            <div className="meet-content">
+              <p>
+                <span className="big-pink">{data.bigPinkText}</span>{" "}
+                {data.meetDesc}
+              </p>
+              <a href={data.ctaURL} className="primary-btn">
+                {data.ctaText}
+              </a>
+            </div>
+            <PinkCard title={data.pinkCard.title}></PinkCard>
           </div>
         </div>
       </div>

@@ -80,7 +80,7 @@
 }
 .home-chapter-1 .inner-card::before {
   content: "";
-  background-image: url("../src/assets/images/home-chapter-1-bg.png");
+  background-image: url("../images/home-chapter-1-bg.png");
   position: absolute;
   inset: 0;
   width: 100%;
@@ -111,6 +111,25 @@
 
 .home-chapter-2 p span.big-pink {
   padding-right: 0px;
+}
+.home-chapter-2 .top{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+}
+.home-chapter-2 .top-left{
+    max-width: 500px;
+    width: 100%;
+}
+.home-chapter-2 .top-right{
+   width: calc(100%- 500px);
+}
+.home-chapter-2-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
 }
 /* Home Chapter 2 */
 
@@ -147,7 +166,7 @@
 }
 .contact-form-top::before {
   content: "";
-  background-image: url("../src/assets/images/home-chapter-1-bg.png");
+  background-image: url("../images/home-chapter-1-bg.png");
   position: absolute;
   inset: 0;
   width: 100%;
@@ -307,8 +326,8 @@ form#news-update input[type="submit"] {
 form#news-update input[type="submit"]:hover {
   background-color: var(--pink);
 }
-form#news-update label{
-    display: none;
+form#news-update label {
+  display: none;
 }
 .pre-footer-in .bottom {
   padding: 30px 50px;
@@ -322,39 +341,115 @@ form#news-update label{
   font-weight: 400;
   max-width: 71ch;
 }
-.pre-footer-in .right .eyebrow-head{
-display: none;
+.pre-footer-in .right .eyebrow-head {
+  display: none;
 }
 /* Pre-Footer Form Ends */
 /* Insta Section */
-.insta-frame-in{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
+.insta-frame-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
 }
-.insta-frame-in .insta-image{
-    width: 100%;
-    height: 100%;
+.insta-frame-in .insta-image {
+  width: 100%;
+  height: 100%;
 }
-.insta-section .heading{
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.insta-section .heading {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 /* Insta Section Ends */
 
 /* Explore Way  */
-.explore-ways-in{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    row-gap: 30px;
+.explore-ways-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  row-gap: 30px;
 }
 .explore-ways .heading {
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 /* Explore Way Ends */
+/* Chapter 3 Meet */
+.chapter3-meet {
+  background-color: #3e2c25;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+.chapter3-meet::before {
+  content: "";
+  background-image: url("../images/meetBG.png");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: color-burn;
+}
+.chapter3-meet > * {
+  position: relative;
+  z-index: 2;
+}
+.chapter3-meet-in {
+  display: flex;
+  gap: 72px;
+}
+.chapter3-meet-in .left {
+  width: 60%;
+}
+.chapter3-meet-in .right {
+  width: 40%;
+  position: relative;
+}
+.chapter3-meet-in .top {
+  margin-bottom: 20px;
+}
+.chapter3-meet-in .top .eyebrow-head {
+  color: #f7f0e7;
+  margin-bottom: 10px;
+}
+.chapter3-meet-in .top h2 {
+  color: #f7f0e7;
+  text-transform: uppercase;
+  font-size: clamp(50px, 6vw, 120px);
+}
+.chapter3-meet-in .right p {
+  color: #f7f0e7;
+}
+.meet-img {
+  max-height: 485px;
+  overflow: hidden;
+}
+.chapter3-meet-in .right p {
+  line-height: 138%;
+  letter-spacing: -0.03em;
+  font-size: 24px;
+}
+.chapter3-meet-in .right .big-pink {
+  padding-right: 5px;
+  font-size: 42px;
+}
+.chapter3-meet-in .right .pink-card {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.meet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 220px;
+}
+.chapter3-meet-in .pink-card{
+    padding: 24px 12px;
+}
+/* Chapter 3 Meet */

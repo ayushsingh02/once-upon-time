@@ -1,17 +1,64 @@
+@media screen and (max-width: 1400px) {
+
+  .meet-content{
+    padding-top: 150px;
+  }
+}
 @media screen and (max-width: 1300px) {
-  .pre-footer-in .top{
+  .pre-footer-in .top {
     padding: 30px 50px;
+  }
+  .chapter3-meet-in .right p{
+    font-size: 20px;
+  }
+  .chapter3-meet-in .right .big-pink{
+    font-size: 36px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .pre-footer-in .top{
+  .pre-footer-in .top {
     padding: 30px 30px;
   }
   .pre-footer-in .bottom {
     padding: 30px 30px;
   }
+  .chapter3-meet-in{
+    gap: 30px;
+  }
+  .chapter3-meet-in .left{
+    width: 50%;
+  }
+  .chapter3-meet-in .right{
+    width: 50%;
+  }
+  .meet-content{
+    padding-top: 120px;
+  }
+  .chapter3-meet-in .right .pink-card{
+    width: 160px;
+    height: 170px;
+    bottom: -20px;
+  }
+  .chapter3-meet-in .right .pink-card h3{
+    font-size: 18px;
+  }
+  .chapter3-meet{
+    padding-bottom: 100px;
+  }
+  
 }
 @media screen and (max-width: 1100px) {
+  .chapter3-meet-in .right .pink-card{
+    width: 150px;
+    height: 160px;
+    bottom: -50px;
+  }
+  .chapter3-meet-in .right .pink-card h3{
+    font-size: 16px;
+  }
+  .meet-content{
+    padding-top: 120px;
+  }
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -42,34 +89,36 @@
   .home-banner-in .right p {
     max-width: 85%;
   }
-  .pre-footer-in{
+  .pre-footer-in {
     flex-direction: column-reverse;
   }
   .pre-footer-in > * {
     width: 100% !important;
   }
-  .pre-footer-in .left p.eyebrow-head{
+  .pre-footer-in .left p.eyebrow-head {
     display: none;
   }
-  .pre-footer-img{
+  .pre-footer-img {
     aspect-ratio: 5/3;
   }
-  form#news-update{
+  form#news-update {
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 0px 30px;
   }
-  form#news-update input[type="text"]::placeholder,   form#news-update input[type="email"]::placeholder{
-  text-align: start;
-  opacity: 70%;
+  form#news-update input[type="text"]::placeholder,
+  form#news-update input[type="email"]::placeholder {
+    text-align: start;
+    opacity: 70%;
   }
-  form#news-update input[type="text"],   form#news-update input[type="email"]{
+  form#news-update input[type="text"],
+  form#news-update input[type="email"] {
     padding: 12px 14px;
     font-family: var(--inter);
     text-transform: unset;
     letter-spacing: 0.02em;
   }
-  form#news-update input[type="submit"]{
+  form#news-update input[type="submit"] {
     width: fit-content;
     padding: 11px 30px;
     font-family: var(--inter);
@@ -77,29 +126,64 @@
     font-size: 10px;
     margin-top: 5px;
   }
-  form#news-update label{
+  form#news-update label {
     display: block;
     font-family: var(--inter);
     font-weight: 400;
     letter-spacing: 0.02em;
     font-size: 10.8px;
   }
-  .pre-footer-in h2{
+  .pre-footer-in h2 {
     max-width: 100%;
   }
-  .pre-footer-in .right .eyebrow-head{
+  .pre-footer-in .right .eyebrow-head {
     display: block;
     margin-bottom: 20px;
     font-size: 16px;
   }
-  .explore-ways-in{
+  .explore-ways-in {
     grid-template-columns: 1fr 1fr;
   }
-  .explore-ways-in .hanging-card:nth-child(3){
+  .explore-ways-in .hanging-card:nth-child(3) {
     grid-column: 1 / -1;
     width: 50%;
     margin: 0 auto;
   }
+  .chapter3-meet-in {
+    flex-direction: column;
+    gap: 80px;
+    padding: 0px 100px;
+  }
+  .chapter3-meet-in > * {
+    width: 100% !important;
+  }
+  .chapter3-meet-in .right .meet-content {
+    padding-top: 0px;
+  }
+  .chapter3-meet-in .right .pink-card {
+    bottom: unset;
+    top: -250px;
+    right: -60px;
+  }
+  .chapter3-meet-in .primary-btn {
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+  .chapter3-meet-in .right p {
+    font-size: 24px;
+}
+.chapter3-meet-in .right .big-pink{
+  font-size: 42px;
+}
+.home-chapter-2 .container{
+  padding-right: 0px;
+}
+.home-chapter-2 .top{
+  flex-direction: column;
+}
+.home-chapter-2 .top > *{
+  width: 100%;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -177,21 +261,41 @@
   .certification-ticker {
     gap: 30px;
   }
-  .certification-ticker p{
+  .certification-ticker p {
     font-size: 16px;
   }
-  .pre-footer-in .right .eyebrow-head{
+  .pre-footer-in .right .eyebrow-head {
     font-size: 12px;
   }
   .insta-section .owl-dots {
     margin-top: 16px;
     text-align: center;
   }
-  .explore-ways-in{
+  .explore-ways-in {
     grid-template-columns: 1fr;
   }
-  .explore-ways-in .hanging-card:nth-child(3){
+  .explore-ways-in .hanging-card:nth-child(3) {
     width: 100%;
+  }
+  .chapter3-meet-in {
+    padding: 0px 30px;
+  }
+  .meet-img {
+    aspect-ratio: 3.1/2.5;
+  }
+  .chapter3-meet-in .right .pink-card {
+    top: -180px;
+    right: -20px;
+  }
+  .chapter3-meet-in .right p{
+    font-size: 14px;
+  }
+  .chapter3-meet-in .primary-btn{
+    font-size: 10px;
+    padding: 10px 15px;
+  }
+  .chapter3-meet-in .right .pink-card h3{
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 400px) {
