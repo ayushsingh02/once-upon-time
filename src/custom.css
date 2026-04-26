@@ -336,4 +336,25 @@ display: none;
     width: 100%;
     height: 100%;
 }
+.insta-section .heading{
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 /* Insta Section Ends */
+
+/* Explore Way  */
+.explore-ways-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    row-gap: 30px;
+}
+.explore-ways .heading {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Explore Way Ends */

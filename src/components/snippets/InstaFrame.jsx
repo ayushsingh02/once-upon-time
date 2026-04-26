@@ -1,14 +1,16 @@
 import React from "react";
 import InstaIcon from "../snippets/InstaIcon";
 
-const InstaFrame = ({ instaImage }) => {
+const InstaFrame = ({ instaImage, instaURL }) => {
   return (
-    <div className="insta-frame">
+   <a href={instaURL || "#!"} target="_blank" rel="noreferrer">
+     <div className="insta-frame">
         <InstaIcon />
       <div className="insta-image">
         {instaImage && <img src={instaImage} alt="Image" className="img" />}
       </div>
     </div>
+   </a>
   );
 };
 

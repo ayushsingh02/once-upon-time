@@ -13,7 +13,7 @@
   height: 200px;
   transform: rotate(25deg);
 }
-.pink-card.blue{
+.pink-card.blue {
   background-color: var(--skyblue);
 }
 .pink-card h3 {
@@ -55,30 +55,107 @@
   line-height: 103%;
   letter-spacing: -0.01em;
   color: #1a1a1a;
-  font-weight: 400
+  font-weight: 400;
 }
 /* We Work Card  */
 /* Insta Frame */
-.insta-frame{
+.insta-frame {
   position: relative;
   padding: 58px 62px;
-  background-color: #EFE6DC;
+  background-color: #efe6dc;
   height: 100%;
   width: 100%;
+  aspect-ratio: 4.3/5;
 }
-.insta-frame .insta-icon{
+.insta-frame .insta-icon {
   position: absolute;
-  top: 15px;
+  top: 17px;
   right: 15px;
+  width: 29px;
+  height: 29px;
 }
-.insta-frame .insta-icon{
-  position: absolute;
-  top: 15px;
-  right: 15px;
+.insta-frame .insta-image {
+  overflow: hidden;
+}
+.insta-frame .insta-image img {
+  object-position: top;
+  transition: 0.4s ease all;
+}
+.insta-frame-card > a .insta-icon svg path {
+  transition: 0.4s ease all;
+}
+.insta-frame-card > a:hover .insta-icon svg path {
+  fill: var(--pink);
+}
+.insta-frame-card > a:hover .insta-image img{
+  transform: scale(1.05);
 }
 /* Insta Frame */
+/* Hanging Card */
+
+.hanging-card .eye-head {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 117%;
+  font-weight: 500;
+}
+.hanging-card h3 {
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 0em;
+  font-weight: 400;
+  color: #3e2c25;
+}
+.hanging-card p:not(.eye-head) {
+  font-family: var(--inter);
+  font-size: 16px;
+  line-height: 117%;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #2c1d17;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  max-width: 38ch;
+}
+.hanging-card-content {
+  padding-top: 20px;
+}
+.hanging-card-img {
+  aspect-ratio: 4.2/ 5.6;
+}
+.hanging-card {
+  transition: 1s ease all;
+}
+.hanging-card:nth-child(2).hanged {
+  padding-top: 30px;
+}
+.hanging-card:nth-child(3).hanged {
+  padding-top: 80px;
+}
+/* Hanging Card */
+@media screen and (max-width: 1200px) {
+  .insta-frame {
+    padding: 45px 40px;
+  }
+  .insta-frame .insta-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .hanging-card p:not(.eye-head) {
+    font-size: 14px;
+  }
+  .hanging-card h3 {
+    font-size: 28px;
+  }
+  .primary-btn {
+    font-size: 10px;
+    padding: 10px 18px;
+  }
+}
 @media screen and (max-width: 767px) {
-  .pink-card{
+  .pink-card {
     width: 132px;
     height: 140px;
   }
@@ -87,5 +164,18 @@
   }
   .pink-card p {
     font-size: 12px;
+  }
+  .insta-frame {
+    padding: 40px 30px;
+    aspect-ratio: 4/5.3;
+  }
+  .insta-frame .insta-icon {
+    width: 18px;
+    height: 18px;
+    top: 10px;
+    right: 10px;
+  }
+  .hanging-card h3 {
+    font-size: 26px;
   }
 }
