@@ -198,7 +198,16 @@
     display: flex;
     margin-bottom: 30px;
   }
-  
+  .home-banner-in .primary-btn{
+    display: none;
+  }
+  .home-banner{
+    padding-bottom: 40px;
+  }
+  .home-banner-in .center .pink-card{
+    right: 20px;
+    bottom: 0;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -210,6 +219,10 @@
   }
   .home-banner-in .center .pink-card {
     right: 20px;
+    padding: 10px;
+  }
+  .home-banner-in .center .pink-card h3{
+    font-size: 14px;
   }
   .home-banner-in .center {
     padding: 0px 50px;
@@ -320,5 +333,28 @@
   .header.mobile .primary-btn {
     padding: 8px 10px;
     font-size: 9px;
+  }
+}
+@media (min-width:992px) and (max-width: 1200px) {
+  .home-banner-in .left h1{
+    font-size: 32px;
+  }
+  .home-banner-in .right p{
+    font-size: 16px;
+  }
+  .home-banner-in .right{
+    padding-bottom: 50px;
+  }
+  .card-default-strip h3{
+    font-size: 24px;
+  }
+  .home-chapter-2 .top-right p{
+    font-size: 14px;
+  }
+  .home-chapter-2 p span.big-pink{
+    font-size: 32px;
+  }
+  .home-chapter-2 p.eyebrow-head{
+    font-size: 18px;
   }
 }

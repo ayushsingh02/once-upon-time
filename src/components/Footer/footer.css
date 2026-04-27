@@ -78,6 +78,7 @@ padding: 8px 10px;
     font-size: clamp(24px, 5vw, 42px);
     text-transform: capitalize;
     line-height: 120%;
+    font-weight: 400;
 }
 .footer-bottom{
     display: flex;
@@ -151,6 +152,9 @@ padding: 8px 10px;
 .footer-nav-block li a:hover{
 color: var(--pink);
 }
+.footer .pink-card{
+    justify-content: space-between;
+}
 @media screen and (max-width: 1200px) {
     .footer-top-left {
     width: 70%;
@@ -214,6 +218,8 @@ color: var(--pink);
         top: unset;
         right: -30px;
         bottom: -140px;
+        width: 200px;
+        height: 200px;
     }
     .footer{
         padding-top: 32px;

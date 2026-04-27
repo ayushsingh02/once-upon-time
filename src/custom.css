@@ -41,42 +41,38 @@
   position: absolute;
   right: -40px;
   bottom: 32px;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 185px;
 }
-
+.home-banner-in .center .pink-card h3{
+  font-size: 18px;
+  line-height: 138%;
+}
 .home-banner-img {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1.07;
   overflow: hidden;
 }
 /* Home Banner */
 
 /* Home Chapter 1 */
 .home-chapter-1 {
-  position: relative;
-}
-.home-chapter-img {
-  width: 100%;
-  max-height: 842px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-chapter-1-in {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  padding: 82px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 .home-chapter-1-in .inner-card {
   max-width: 538px;
   width: 100%;
-  max-height: 674px;
   height: 100%;
   background-color: #f7f0e8;
-  padding: 32px 26px;
+  padding: 58px 26px 32px 26px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
 }
 .home-chapter-1 .inner-card::before {
   content: "";
@@ -92,18 +88,31 @@
   position: relative;
   z-index: 3;
 }
-.scroll-down p {
+.home-chapter-1-in .inner-card .brand-logo {
+  max-width: 292px;
+}
+.home-chapter-1-in .inner-card h3 {
+  font-size: clamp(32px, 5vw, 62px);
+  font-style: italic;
+  font-weight: 400;
+  color: #3e2c25;
+}
+.home-chapter-1-in .inner-card .scroll-down {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.home-chapter-1-in .inner-card .icon-o {
+  width: 75px;
+  height: 79px;
+}
+.home-chapter-1-in .inner-card .scroll-down p {
   font-size: 18px;
   font-weight: 400;
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--text-brown);
-}
-.home-chapter-1-in .inner-card h3 {
-  font-size: clamp(32px, 5vw, 62px);
-  font-style: italic;
-  font-weight: 400;
 }
 
 /* Home Chapter 1 */
@@ -112,38 +121,38 @@
 .home-chapter-2 p span.big-pink {
   padding-right: 0px;
 }
-.home-chapter-2 .top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
+.home-chapter-2 .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
 }
-.home-chapter-2 .top-left{
-    max-width: 500px;
-    width: 100%;
+.home-chapter-2 .top-left {
+  max-width: 500px;
+  width: 100%;
 }
-.home-chapter-2 .top-right{
-   width: calc(100% - 500px);
+.home-chapter-2 .top-right {
+  width: calc(100% - 500px);
 }
-.home-chapter-2 .top-right p{
-max-width: 62ch;
-margin-left: auto;
+.home-chapter-2 .top-right p {
+  max-width: 62ch;
+  margin-left: auto;
 }
-.home-chapter-2-in{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
+.home-chapter-2-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
 }
-.home-chapter-2 .learn-more-cta.desktop{
+.home-chapter-2 .learn-more-cta.desktop {
   display: flex;
   justify-content: center;
   margin-top: 32px;
 }
-.home-chapter-2 .learn-more-cta.mobile{
+.home-chapter-2 .learn-more-cta.mobile {
   display: none;
 }
-.home-chapter-2 p.eyebrow-head{
+.home-chapter-2 p.eyebrow-head {
   margin-bottom: 10px;
 }
 /* Home Chapter 2 */
@@ -464,7 +473,7 @@ form#news-update label {
   gap: 30px;
   padding-top: 220px;
 }
-.chapter3-meet-in .pink-card{
-    padding: 24px 12px;
+.chapter3-meet-in .pink-card {
+  padding: 24px 12px;
 }
 /* Chapter 3 Meet */

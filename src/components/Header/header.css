@@ -37,11 +37,9 @@ header{
   .header.desktop .right ul li:hover a {
     color: var(--pink);
   }
-  .header.desktop .header-logo {
-    max-width: 400px;
-  }
+
   .header.desktop .header-logo.big-logo {
-    max-width: 580px;
+    max-width: 480px;
   }
   .header.mobile {
     display: none;
@@ -104,12 +102,25 @@ header{
     width: 18px;
   }
   .header.desktop .header-logo {
-    max-width: 400px;
+    max-width: 350px;
     transition: max-width .5s ease;
   }
   
-  .header.desktop .header-logo.big-logo {
-    max-width: 580px;
+  @media screen and (max-width: 1300px) {
+    .header.desktop .header-logo.big-logo{
+      max-width: 350px;
+    }
+    .header.desktop .header-logo{
+      max-width: 250px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .header.desktop .header-logo.big-logo{
+      max-width: 350px;
+    }
+    .header.desktop .header-logo{
+      max-width: 250px;
+    }
   }
   @media screen and (max-width: 991px) {
     .header.desktop{
