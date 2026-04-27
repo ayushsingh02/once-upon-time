@@ -4,6 +4,7 @@ import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import ThankyouPage from "./pages/ThankyouPage";
 import Legal from "./pages/Legal";
+import Referrals from "./pages/Referrals";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/thankyou" element={<ThankyouPage />} />
         <Route path="/legal" element={<Legal />} />
+        <Route path="/referrals" element={<Referrals />} />
       </Routes>
     </>
   );
