@@ -477,3 +477,90 @@ form#news-update label {
   padding: 24px 12px;
 }
 /* Chapter 3 Meet */
+/* Error Page */
+.error-page-main{
+  position: relative;
+  padding: 0px 20px;
+}
+.error-page-main::before{
+  content: '';
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/error.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: darken;
+  opacity: 36%;
+}
+.error-page-main >*{
+position: relative;
+z-index: 2;
+}
+.error-page{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+.error-img{
+ width: 60vw;
+ max-width: 875px;
+}
+.error-content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  align-items: center;
+  margin-top: 70px;
+  padding: 0px 20px;
+}
+.error-content h3{
+  font-size: clamp(28px, 5vw, 36px);
+  font-style: italic;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #3e2c25;
+  font-weight: 400;
+}
+.error-content p{
+  font-size: 16px;
+  font-family: var(--mono);
+  line-height: 119%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #3e2c25;
+  font-weight: 500;
+}
+/* Error Page */
+/* Thankyou Page */
+.thankyou-card{
+  background-color: var(--skyblue);
+  padding: 100px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.thankyou-card .error-content{
+  margin-top: 0px;
+  gap: 40px;
+}
+.thankyou-card h2{
+font-family: var(--playwrite);
+font-weight: 200;
+color: #3e2c25;
+line-height: 138%;
+font-size: clamp(40px, 5vw, 80px);
+}
+.thankyou-card p{
+  font-size: 22px;
+  max-width: 32ch;
+}
+
+/* Thankyou Page */

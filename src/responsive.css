@@ -185,26 +185,26 @@
   .home-chapter-2 .top > * {
     width: 100%;
   }
-  .home-chapter-2 .top-right p{
+  .home-chapter-2 .top-right p {
     max-width: 100%;
   }
-  .home-chapter-2 .top{
+  .home-chapter-2 .top {
     padding-right: 20px;
   }
-  .home-chapter-2 .learn-more-cta.desktop{
+  .home-chapter-2 .learn-more-cta.desktop {
     display: none;
   }
-  .home-chapter-2 .learn-more-cta.mobile{
+  .home-chapter-2 .learn-more-cta.mobile {
     display: flex;
     margin-bottom: 30px;
   }
-  .home-banner-in .primary-btn{
+  .home-banner-in .primary-btn {
     display: none;
   }
-  .home-banner{
+  .home-banner {
     padding-bottom: 40px;
   }
-  .home-banner-in .center .pink-card{
+  .home-banner-in .center .pink-card {
     right: 20px;
     bottom: 0;
   }
@@ -221,7 +221,7 @@
     right: 20px;
     padding: 10px;
   }
-  .home-banner-in .center .pink-card h3{
+  .home-banner-in .center .pink-card h3 {
     font-size: 14px;
   }
   .home-banner-in .center {
@@ -325,6 +325,24 @@
   .chapter3-meet-in .right .pink-card h3 {
     font-size: 14px;
   }
+  .error-content p {
+    font-size: 14px;
+  }
+  .error-content {
+    gap: 20px;
+  }
+  .error-img {
+    width: 75vw;
+  }
+  .thankyou-card{
+    padding: 80px 20px;
+  }
+  .thankyou-card .error-content{
+    gap: 30px;
+  }
+  .error-page{
+    padding-top: 0px;
+  }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
@@ -335,26 +353,26 @@
     font-size: 9px;
   }
 }
-@media (min-width:992px) and (max-width: 1200px) {
-  .home-banner-in .left h1{
+@media (min-width: 992px) and (max-width: 1200px) {
+  .home-banner-in .left h1 {
     font-size: 32px;
   }
-  .home-banner-in .right p{
+  .home-banner-in .right p {
     font-size: 16px;
   }
-  .home-banner-in .right{
+  .home-banner-in .right {
     padding-bottom: 50px;
   }
-  .card-default-strip h3{
+  .card-default-strip h3 {
     font-size: 24px;
   }
-  .home-chapter-2 .top-right p{
+  .home-chapter-2 .top-right p {
     font-size: 14px;
   }
-  .home-chapter-2 p span.big-pink{
+  .home-chapter-2 p span.big-pink {
     font-size: 32px;
   }
-  .home-chapter-2 p.eyebrow-head{
+  .home-chapter-2 p.eyebrow-head {
     font-size: 18px;
   }
 }

@@ -105,7 +105,14 @@ header{
     max-width: 350px;
     transition: max-width .5s ease;
   }
+  header {
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  }
   
+  .transparent-header {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
   @media screen and (max-width: 1300px) {
     .header.desktop .header-logo.big-logo{
       max-width: 350px;

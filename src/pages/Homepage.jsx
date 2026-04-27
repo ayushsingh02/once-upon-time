@@ -1,5 +1,6 @@
 import React from "react";
 import Lenis from "lenis";
+import ReactLenis from "lenis/react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import HomeBanner from "../components/sections/HomeBanner";
@@ -11,7 +12,7 @@ import Certification from "../components/sections/Certification";
 import ContactSection from "../components/sections/ContactSection";
 import InstaSection from "../components/sections/InstaSection";
 import PreFooterForm from "../components/sections/PreFooterForm";
-import ReactLenis from "lenis/react";
+
 
 const Homepage = () => {
   return (
