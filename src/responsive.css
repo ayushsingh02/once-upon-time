@@ -343,6 +343,9 @@
   .error-page{
     padding-top: 0px;
   }
+  .legal-page p, .legal-page li{
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

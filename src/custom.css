@@ -562,5 +562,58 @@ font-size: clamp(40px, 5vw, 80px);
   font-size: 22px;
   max-width: 32ch;
 }
-
 /* Thankyou Page */
+/* Legal Page */
+.legal-page{
+  max-width: 690px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+.legal-page h3{
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  padding-bottom: 20px;
+}
+.legal-page h2{
+  line-height: 130%;
+  padding-bottom: 20px;
+}
+.legal-page h1{
+  font-size: clamp(28px, 5vw, 62px);
+  line-height: 130%;
+}
+.legal-page h4{
+  font-size: 28px;
+  line-height: 130%;
+}
+.legal-page h5{
+  font-size: 24px;
+  line-height: 130%;
+}
+.legal-page h6{
+  font-size: 22px;
+  line-height: 130%;
+}
+.legal-page p, .legal-page li{
+  padding-bottom: 20px;
+  font-family: var(--inter);
+  color: #6B6B6B;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  line-height: 140%;
+  font-weight: 400;
+}
+.legal-page a{
+display: inline-block;
+cursor: pointer;
+transition: .4s ease all;
+text-underline-offset: 2px;
+}
+.legal-page a:hover{
+  color: var(--skyblue);
+}
+.legal-page ul, .legal-page ol{
+  padding-left: 20px;
+}
+/* Legal Page */

@@ -3,6 +3,7 @@ import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import ThankyouPage from "./pages/ThankyouPage";
+import Legal from "./pages/Legal";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/thankyou" element={<ThankyouPage />} />
+        <Route path="/legal" element={<Legal />} />
       </Routes>
     </>
   );
