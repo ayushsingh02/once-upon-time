@@ -115,21 +115,36 @@
 .home-chapter-2 .top{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 40px;
     margin-bottom: 40px;
-    padding-right: 20px;
 }
 .home-chapter-2 .top-left{
     max-width: 500px;
     width: 100%;
 }
 .home-chapter-2 .top-right{
-   width: calc(100%- 500px);
+   width: calc(100% - 500px);
+}
+.home-chapter-2 .top-right p{
+max-width: 62ch;
+margin-left: auto;
 }
 .home-chapter-2-in{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
+}
+.home-chapter-2 .learn-more-cta.desktop{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.home-chapter-2 .learn-more-cta.mobile{
+  display: none;
+}
+.home-chapter-2 p.eyebrow-head{
+  margin-bottom: 10px;
 }
 /* Home Chapter 2 */
 

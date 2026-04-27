@@ -356,7 +356,7 @@ width: 40px;
     font-size: 10px;
   }
   p,li, a {
-    font-size: 14px;
+    font-size: 16px;
   }
   .top-spacing{
     padding-top: 120px;
@@ -364,8 +364,14 @@ width: 40px;
   p.eyebrow-head{
     font-size: 16px;
   }
+  p span.big-pink{
+    font-size: 32px;
+  }
 }
 @media screen and (max-width: 767px) {
+  p,li, a {
+    font-size: 14px;
+  }
 
   p span.big-pink {
     font-size: 26px;
