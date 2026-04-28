@@ -44,7 +44,7 @@
   width: 180px;
   height: 185px;
 }
-.home-banner-in .center .pink-card h3{
+.home-banner-in .center .pink-card h3 {
   font-size: 18px;
   line-height: 138%;
 }
@@ -478,28 +478,28 @@ form#news-update label {
 }
 /* Chapter 3 Meet */
 /* Error Page */
-.error-page-main{
+.error-page-main {
   position: relative;
   padding: 0px 20px;
 }
-.error-page-main::before{
-  content: '';
+.error-page-main::before {
+  content: "";
   inset: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('images/error.png');
+  background-image: url("images/error.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   mix-blend-mode: darken;
   opacity: 36%;
 }
-.error-page-main >*{
-position: relative;
-z-index: 2;
+.error-page-main > * {
+  position: relative;
+  z-index: 2;
 }
-.error-page{
+.error-page {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -507,11 +507,11 @@ z-index: 2;
   align-items: center;
   padding-top: 100px;
 }
-.error-img{
- width: 60vw;
- max-width: 875px;
+.error-img {
+  width: 60vw;
+  max-width: 875px;
 }
-.error-content{
+.error-content {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -520,7 +520,7 @@ z-index: 2;
   margin-top: 70px;
   padding: 0px 20px;
 }
-.error-content h3{
+.error-content h3 {
   font-size: clamp(28px, 5vw, 36px);
   font-style: italic;
   line-height: 100%;
@@ -528,7 +528,7 @@ z-index: 2;
   color: #3e2c25;
   font-weight: 400;
 }
-.error-content p{
+.error-content p {
   font-size: 16px;
   font-family: var(--mono);
   line-height: 119%;
@@ -539,7 +539,7 @@ z-index: 2;
 }
 /* Error Page */
 /* Thankyou Page */
-.thankyou-card{
+.thankyou-card {
   background-color: var(--skyblue);
   padding: 100px 30px;
   display: flex;
@@ -547,90 +547,93 @@ z-index: 2;
   align-items: center;
   position: relative;
 }
-.thankyou-card .error-content{
+.thankyou-card .error-content {
   margin-top: 0px;
   gap: 40px;
 }
-.thankyou-card h2{
-font-family: var(--playwrite);
-font-weight: 200;
-color: #3e2c25;
-line-height: 138%;
-font-size: clamp(40px, 5vw, 80px);
+.thankyou-card h2 {
+  font-family: var(--playwrite);
+  font-weight: 200;
+  color: #3e2c25;
+  line-height: 138%;
+  font-size: clamp(40px, 5vw, 80px);
 }
-.thankyou-card p{
+.thankyou-card p {
   font-size: 22px;
   max-width: 32ch;
 }
 /* Thankyou Page */
 /* Legal Page */
-.legal-page{
+.legal-page {
   max-width: 690px;
   margin: 0 auto;
   padding: 0px 20px;
 }
-.legal-page h3{
+.legal-page h3 {
   font-size: 32px;
   line-height: 130%;
   letter-spacing: 0.01em;
   padding-bottom: 20px;
 }
-.legal-page h2{
+.legal-page h2 {
   line-height: 130%;
   padding-bottom: 20px;
 }
-.legal-page h1{
+.legal-page h1 {
   font-size: clamp(28px, 5vw, 62px);
   line-height: 130%;
 }
-.legal-page h4{
+.legal-page h4 {
   font-size: 28px;
   line-height: 130%;
 }
-.legal-page h5{
+.legal-page h5 {
   font-size: 24px;
   line-height: 130%;
 }
-.legal-page h6{
+.legal-page h6 {
   font-size: 22px;
   line-height: 130%;
 }
-.legal-page p, .legal-page li{
+.legal-page p,
+.legal-page li {
   padding-bottom: 20px;
   font-family: var(--inter);
-  color: #6B6B6B;
+  color: #6b6b6b;
   font-size: 18px;
   letter-spacing: 0.01em;
   line-height: 140%;
   font-weight: 400;
 }
-.legal-page a{
-display: inline-block;
-cursor: pointer;
-transition: .4s ease all;
-text-underline-offset: 2px;
+.legal-page a {
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.4s ease all;
+  text-underline-offset: 2px;
 }
-.legal-page a:hover{
+.legal-page a:hover {
   color: var(--skyblue);
 }
-.legal-page ul, .legal-page ol{
+.legal-page ul,
+.legal-page ol {
   padding-left: 20px;
 }
 /* Legal Page */
 /* Referral Page */
-.referr-card-wrap{
+.referr-card-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   row-gap: 40px;
 }
-.referr-card-wrap .referral-card:nth-child(even){
+.referr-card-wrap .referral-card:nth-child(even) {
   background-color: #322017;
 }
-.referr-card-wrap .referral-card:nth-child(even) p, .referr-card-wrap .referral-card:nth-child(even) h3{
-  color: #F7F0E8;
-} 
-.referrals-page .referr-banner{
+.referr-card-wrap .referral-card:nth-child(even) p,
+.referr-card-wrap .referral-card:nth-child(even) h3 {
+  color: #f7f0e8;
+}
+.referrals-page .referr-banner {
   margin-bottom: 95px;
   height: 600px;
   display: flex;
@@ -638,7 +641,7 @@ text-underline-offset: 2px;
   justify-content: center;
   position: relative;
 }
-.referrals-page .referr-banner::before{
+.referrals-page .referr-banner::before {
   content: "";
   background-image: url("../images/referr-banner-bg.png");
   position: absolute;
@@ -650,11 +653,11 @@ text-underline-offset: 2px;
   mix-blend-mode: darken;
   opacity: 36%;
 }
-.referrals-page .referr-banner >*{
+.referrals-page .referr-banner > * {
   position: relative;
   z-index: 2;
 }
-.referrals-page .referr-banner .referr-pink-bar{
+.referrals-page .referr-banner .referr-pink-bar {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -662,19 +665,19 @@ text-underline-offset: 2px;
   background-color: var(--pink);
   width: 80%;
 }
-.referr-banner .heading{
+.referr-banner .heading {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.referr-banner .heading h1{
-  font-size: clamp(42px, 7vw, 80px );
-  color: #3E2C25;
+.referr-banner .heading h1 {
+  font-size: clamp(42px, 7vw, 80px);
+  color: #3e2c25;
   line-height: 100%;
 }
-.referr-banner .heading p{
+.referr-banner .heading p {
   font-size: 16px;
-  color: #3B2922;
+  color: #3b2922;
   line-height: 138%;
   letter-spacing: 0.02em;
   font-family: var(--inter);
@@ -682,3 +685,18 @@ text-underline-offset: 2px;
   max-width: 68ch;
 }
 /* Referral Page */
+.contact-component-wrap {
+  display: flex;
+}
+.contact-form-main {
+  position: relative;
+}
+.contact-form-top {
+  height: 100%;
+  margin-top: auto;
+}
+.bottom-email-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -211,6 +211,12 @@
   .referr-card-wrap{
     grid-template-columns: 1fr 1fr;
   }
+  .referrals-page .referr-banner {
+  height: 500px;
+  }
+  .referrals-page .referr-banner .referr-pink-bar{
+    height: 30px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -355,6 +361,16 @@
   }
   .referr-card-wrap .referral-card{
     gap: 50px;
+  }
+  .referrals-page .referr-banner{
+    height: 400px;
+    margin-bottom: 50px;
+  }
+  .referrals-page .referr-banner .referr-pink-bar{
+    height: 20px;
+  }
+  .referr-banner .heading p{
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 400px) {

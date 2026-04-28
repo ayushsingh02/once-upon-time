@@ -51,9 +51,7 @@ header{
     justify-content: space-between;
     padding: 15px 0px;
   }
-  .header.mobile .header-mob-logo {
-    max-width: 180px;
-  }
+
   .header-menu {
     background-color: #3e2c25;
     position: absolute;
@@ -98,9 +96,6 @@ header{
   .close-cta {
     width: 19px;
   }
-  .ham-menu {
-    width: 18px;
-  }
   .header.desktop .header-logo {
     max-width: 350px;
     transition: max-width .5s ease;
@@ -136,6 +131,20 @@ header{
     .header.mobile{
         display: block;
     }
+    .header.mobile .header-mob-logo{
+      max-width: 220px;
+    }
+    .ham-menu{
+      width: 22px;
+    }
+}
+@media screen and (max-width: 767px) {
+  .header.mobile .header-mob-logo {
+    max-width: 180px;
+  }
+  .ham-menu {
+    width: 18px;
+  }
 }
 @media screen and (max-width: 400px) {
     .header.mobile .header-mob-logo {
@@ -145,4 +154,5 @@ header{
         padding: 8px 10px;
         font-size: 9px;
     }
+    
 }
