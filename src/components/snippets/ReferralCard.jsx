@@ -1,19 +1,16 @@
 import React from "react";
 
-const ReferralCard = () => {
+const ReferralCard = ({ id, specialisation, description, name, email, phone }) => {
   return (
-    <div className="referral-card">
+    <div className="referral-card" data-id={id}>
       <div className="top">
-        <h3>Specialises in: Attention Concerns/ADD</h3>
-        <p>
-          Not at all. Therapy begins exactly where you are — confused, curious,
-          overwhelmed, or simply unsure. There’s no right way to arrive.
-        </p>
+        <h3>Specialises in: {specialisation}</h3>
+        <p>{description}</p>
       </div>
       <div className="bottom">
-        <p>Mr. Jaideep Mukherjee</p>
-        <p>Email: jaideep@betterhelp.com</p>
-        <p>Phone: +91-9245-654-768</p>
+        <p>{name}</p>
+        <p>Email: {email}</p>
+        <p>Phone: {phone}</p>
       </div>
     </div>
   );

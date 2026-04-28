@@ -208,6 +208,9 @@
     right: 20px;
     bottom: 0;
   }
+  .referr-card-wrap{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -346,6 +349,13 @@
   .legal-page p, .legal-page li{
     font-size: 14px;
   }
+  .referr-card-wrap{
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .referr-card-wrap .referral-card{
+    gap: 50px;
+  }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
@@ -355,6 +365,7 @@
     padding: 8px 10px;
     font-size: 9px;
   }
+  
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .home-banner-in .left h1 {
