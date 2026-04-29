@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
 
 const navItems = [
@@ -12,21 +12,50 @@ const navItems = [
 const HeaderSecondary = ({ transparent = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(transparent);
+  const headerRef = useRef(null);
 
   useEffect(() => {
-    if (!transparent) return; // only run if transparent prop is passed
+    const header = headerRef.current;
+
+    header.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      header.style.transition = "transform 1s cubic-bezier(0.22, 1, 0.36, 1)";
+      header.style.transform = "translateY(0%)";
+    }, 300);
+    setTimeout(() => {
+      header.style.transition = "transform 0.4s ease";
+      header.style.transform = "";
+    }, 1300);
+
+    let prevScroll = 0;
 
     const handleScroll = () => {
-      setIsTransparent(window.scrollY < 10);
+      const currentScroll = window.scrollY;
+
+      if (transparent) {
+        setIsTransparent(currentScroll < 10);
+      }
+
+      if (currentScroll > 80) {
+        if (currentScroll > prevScroll) {
+          header.classList.add("header-hide");
+        } else {
+          header.classList.remove("header-hide");
+        }
+      } else {
+        header.classList.remove("header-hide");
+      }
+
+      prevScroll = currentScroll;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [transparent]);
 
   return (
     <>
-      <header className={isTransparent ? "transparent-header" : ""}>
+     <header ref={headerRef} className={`secondary-header${isTransparent ? " transparent-header" : ""}`}>
         <div className="header desktop">
           <div className="container">
             <div className="header-in">
@@ -80,7 +109,7 @@ const HeaderSecondary = ({ transparent = false }) => {
               </ul>
               <div className="close-cta" onClick={() => setIsMenuOpen(false)}>
                 <svg className="icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524" stroke="#F7F0E8" strokeWidth="1.91008" strokeLinecap="square" strokeLinejoin="round" />
+                  <path d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524" stroke="#F7F0E8" strokeWidth="1.91008" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </nav>

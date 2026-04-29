@@ -1,6 +1,8 @@
 import React from 'react'
-import PinkCard from '../snippets/PinkCard'
-
+import { useEffect, useRef } from 'react';
+import PinkCard from '../snippets/PinkCard';
+import { slideInBottom } from '../../animations';
+ 
 const data = {
   title: "Therapy That Feels Like Coming Home",
   image: {
@@ -18,6 +20,11 @@ const data = {
 }
 
 const HomeBanner = () => {
+  const imageRef = useRef(null)
+
+  useEffect(() => {
+    slideInBottom(imageRef.current, 0.8)  // delay 0.8s → appears after header
+  }, [])
   return (
     <div className='home-banner'>
       <div className="container">
@@ -28,10 +35,10 @@ const HomeBanner = () => {
           <div className="center">
             {data.image && (
               <div className="home-banner-img">
-                <img src={data.image.src} alt={data.image.alt} className="img" />
+                <img ref={imageRef} src={data.image.src} alt={data.image.alt} className="img" />
               </div>
             )}
-            <PinkCard title={data.pinkCard?.title} description={data.pinkCard?.description} />
+            <PinkCard delay={1} title={data.pinkCard?.title} description={data.pinkCard?.description} />
           </div>
           <div className="right">
             {data.description && (
