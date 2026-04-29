@@ -66,3 +66,30 @@ export const slideInBottom = (element, delay = 0) => {
     }
   );
 };
+export const animateText = (container, delay = 0) => {
+    const eyebrow = container.querySelector(".eyebrow-head");
+    const headings = container.querySelectorAll("h1, h2, h3, h4, h5");
+    const body = container.querySelectorAll("p:not(.eyebrow-head), li, a");
+    
+  
+    const baseConfig = {
+      opacity: 0,
+      y: 24,
+    };
+  
+    const animConfig = (extraDelay) => ({
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: container,
+        start: "top 88%",
+      },
+      delay: delay + extraDelay,
+    });
+  
+    if (eyebrow) gsap.fromTo(eyebrow, baseConfig, animConfig(0));
+    if (headings.length) gsap.fromTo(headings, baseConfig, animConfig(0.1));
+    if (body.length) gsap.fromTo(body, baseConfig, animConfig(0.2));
+  };

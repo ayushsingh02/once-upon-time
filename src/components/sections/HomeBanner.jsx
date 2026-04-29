@@ -1,8 +1,7 @@
-import React from 'react'
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PinkCard from '../snippets/PinkCard';
-import { slideInBottom } from '../../animations';
- 
+import { slideInBottom, animateText } from '../../animations';
+
 const data = {
   title: "Therapy That Feels Like Coming Home",
   image: {
@@ -21,14 +20,17 @@ const data = {
 
 const HomeBanner = () => {
   const imageRef = useRef(null)
+  const textRef = useRef(null)
 
   useEffect(() => {
-    slideInBottom(imageRef.current, 0.8)  // delay 0.8s → appears after header
+    slideInBottom(imageRef.current, 0.8)
+    animateText(textRef.current, 0.3)
   }, [])
+
   return (
     <div className='home-banner'>
       <div className="container">
-        <div className="home-banner-in">
+        <div className="home-banner-in" ref={textRef}>
           <div className="left">
             {data.title && <h1>{data.title}</h1>}
           </div>
