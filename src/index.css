@@ -167,6 +167,9 @@ p.eyebrow-head {
 }
 .container {
   padding: 0px 60px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .spacer {
   height: 150px;

@@ -208,14 +208,18 @@
     right: 20px;
     bottom: 0;
   }
-  .referr-card-wrap{
+  .referr-card-wrap {
     grid-template-columns: 1fr 1fr;
   }
   .referrals-page .referr-banner {
-  height: 500px;
+    height: 500px;
   }
-  .referrals-page .referr-banner .referr-pink-bar{
+  .referrals-page .referr-banner .referr-pink-bar {
     height: 30px;
+  }
+  .home-chapter-1-in .inner-card {
+    width: 80% !important;
+    margin: auto;
   }
 }
 
@@ -343,35 +347,56 @@
   .error-img {
     width: 75vw;
   }
-  .thankyou-card{
+  .thankyou-card {
     padding: 80px 20px;
   }
-  .thankyou-card .error-content{
+  .thankyou-card .error-content {
     gap: 30px;
   }
-  .error-page{
+  .error-page {
     padding-top: 0px;
   }
-  .legal-page p, .legal-page li{
+  .legal-page p,
+  .legal-page li {
     font-size: 14px;
   }
-  .referr-card-wrap{
+  .referr-card-wrap {
     grid-template-columns: 1fr;
     row-gap: 20px;
   }
-  .referr-card-wrap .referral-card{
+  .referr-card-wrap .referral-card {
     gap: 50px;
   }
-  .referrals-page .referr-banner{
+  .referrals-page .referr-banner {
     height: 400px;
     margin-bottom: 50px;
   }
-  .referrals-page .referr-banner .referr-pink-bar{
+  .referrals-page .referr-banner .referr-pink-bar {
     height: 20px;
   }
-  .referr-banner .heading p{
+  .referr-banner .heading p {
     font-size: 14px;
   }
+  .home-chapter-1-in .inner-card {
+    width: 100% !important;
+  }
+  .chapter-quote {
+    font-size: 32px;
+  }
+  .home-chapter-1-in .inner-card .brand-logo {
+    max-width: 260px;
+  }
+  .home-chapter-1-in .inner-card h3{
+    font-size: 52px;
+  }
+  .home-chapter-1-in .inner-card .icon-o{
+    max-width: 60px;
+    height: 69px;
+  }
+  .home-chapter-1-in .inner-card .scroll-down p{
+    font-size: 14px;
+  }
+
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
@@ -381,7 +406,6 @@
     padding: 8px 10px;
     font-size: 9px;
   }
-  
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .home-banner-in .left h1 {

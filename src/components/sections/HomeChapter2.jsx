@@ -5,7 +5,7 @@ const data = {
   eybrowHead: "Chapter II",
   heading: "The Way We Work",
   bigPink: "W",
-  learnMore:"Learn More",
+  learnMore: "Learn More",
   learnMoreURL: "#!",
   headText:
     "e believe therapy should feel deeply human—never cold or clinical. Our work is soft, collaborative, and rooted in emotional storytelling,guiding you back to connection with yourself and the people around you.",
@@ -45,17 +45,16 @@ const HomeChapter2 = () => {
     const $carousel = window.$(carouselRef.current);
 
     if (!isDesktop) {
+      const items = window.innerWidth >= 601 ? 2.2 : 1.2;
+
       $carousel.owlCarousel({
         loop: true,
         margin: 16,
-        nav: false, 
+        nav: false,
         dots: false,
         mouseDrag: true,
         touchDrag: true,
-        responsive: {
-          0: { items: 1.2 },
-          600: { items: 2.2 },
-        },
+        items: items,
       });
     } else {
       if ($carousel.data("owl.carousel")) {
@@ -96,8 +95,10 @@ const HomeChapter2 = () => {
           </div>
         </div>
         <div className="learn-more-cta mobile">
-        <a href={data.learnMoreURL} className="primary-btn">{data.learnMore}</a>
-      </div>
+          <a href={data.learnMoreURL} className="primary-btn">
+            {data.learnMore}
+          </a>
+        </div>
         <div
           className={`home-chapter-2-in ${!isDesktop ? "owl-carousel" : ""}`}
           ref={carouselRef}
@@ -111,22 +112,49 @@ const HomeChapter2 = () => {
         {!isDesktop && (
           <div className="owl-custom-nav">
             <button className="owl-custom-prev" onClick={handlePrev}>
-              <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="39.3616" height="39.3633" transform="matrix(-1 0 0 1 39.3616 0)" fill="#3E2C25"/>
-              <path d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z" fill="#F7F0E8"/>
+              <svg
+                className="icon"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="39.3616"
+                  height="39.3633"
+                  transform="matrix(-1 0 0 1 39.3616 0)"
+                  fill="#3E2C25"
+                />
+                <path
+                  d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z"
+                  fill="#F7F0E8"
+                />
               </svg>
             </button>
             <button className="owl-custom-next" onClick={handleNext}>
-                <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="39.3616" height="39.3633" fill="#3E2C25"/>
-                <path d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z" fill="#F7F0E8"/>
-                </svg>
+              <svg
+                className="icon"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="39.3616" height="39.3633" fill="#3E2C25" />
+                <path
+                  d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z"
+                  fill="#F7F0E8"
+                />
+              </svg>
             </button>
           </div>
         )}
       </div>
       <div className="learn-more-cta desktop">
-        <a href={data.learnMoreURL} className="primary-btn">{data.learnMore}</a>
+        <a href={data.learnMoreURL} className="primary-btn">
+          {data.learnMore}
+        </a>
       </div>
     </div>
   );

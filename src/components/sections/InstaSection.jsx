@@ -26,8 +26,10 @@ const InstaSection = () => {
 
     if (!isDesktop) {
       $carousel.owlCarousel({
-        loop: false,
+        loop: true,
         margin: 16,
+        autoplay:true,
+        autoplayTimeout: 1500,
         nav: false,
         dots: true,
         mouseDrag: true,
