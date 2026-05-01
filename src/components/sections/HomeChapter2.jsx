@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import WayWorkCard from "../snippets/WayWorkCard";
+import { animateText } from '../../animations';
 
 const data = {
   eybrowHead: "Chapter II",
@@ -33,10 +34,16 @@ const data = {
 
 const HomeChapter2 = () => {
   const carouselRef = useRef(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 992);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isDesktop = windowWidth >= 992;
+
+  const textRef = useRef(null)
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 992);
+    animateText(textRef.current, 0.3)
+  }, [])
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -45,7 +52,7 @@ const HomeChapter2 = () => {
     const $carousel = window.$(carouselRef.current);
 
     if (!isDesktop) {
-      const items = window.innerWidth >= 601 ? 2.2 : 1.2;
+      const items = windowWidth >= 768 ? 2.2 : 1.2;
 
       $carousel.owlCarousel({
         loop: true,
@@ -69,7 +76,7 @@ const HomeChapter2 = () => {
         $carousel.trigger("destroy.owl.carousel");
       }
     };
-  }, [isDesktop]);
+  }, [isDesktop, windowWidth]);
 
   const handlePrev = () => {
     window.$(carouselRef.current).trigger("prev.owl.carousel");
@@ -82,7 +89,7 @@ const HomeChapter2 = () => {
   return (
     <div className="home-chapter-2">
       <div className="container">
-        <div className="top">
+        <div className="top" ref={textRef}>
           <div className="top-left">
             <p className="eyebrow-head">{data.eybrowHead}</p>
             <h2>{data.heading}</h2>
@@ -108,7 +115,6 @@ const HomeChapter2 = () => {
           ))}
         </div>
 
-        {/* Custom Nav — only visible on mobile */}
         {!isDesktop && (
           <div className="owl-custom-nav">
             <button className="owl-custom-prev" onClick={handlePrev}>

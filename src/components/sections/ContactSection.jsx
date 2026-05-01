@@ -1,6 +1,8 @@
 import React from "react";
 import BlueCard from "../snippets/BlueCard";
 import countryCodesList from "country-codes-list";
+import { slideInBottom } from "../../animations";
+
 const allCountries = countryCodesList.customList(
   "countryCallingCode",
   "+{countryCallingCode}",
@@ -18,7 +20,10 @@ const data = {
     title: "Expect a reply within 72 hours. Thank you for your patience.",
   },
 };
+
+
 const ContactSection = () => {
+  
   return (
     <div className="contact-section">
       <div className="contact-bg-img">
@@ -27,7 +32,7 @@ const ContactSection = () => {
       <div className="container">
         <div className="contact-section-in">
           <div className="left">
-            <div className="contact-form-outer">
+            <div className="contact-form-outer" ref={slideInBottom} >
               <div className="contact-form-top">
                 <p className="eyebrow-head">{data.eyebrowText}</p>
                 <h2>{data.title}</h2>

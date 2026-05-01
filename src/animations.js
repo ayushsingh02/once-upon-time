@@ -105,3 +105,15 @@ export const animateText = (container, delay = 0) => {
       );
     }
   };
+  export const parallaxImage = (element, speed = 0.4) => {
+    gsap.to(element, {
+      yPercent: speed * 100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: element,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  };

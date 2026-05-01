@@ -1,4 +1,5 @@
 import React from "react";
+import { slideInLeft, slideInRight } from "../../animations";
 const data ={
     eyebrowHeader : "Chapter IX",
     heading : "Sign Up For News & Updates",
@@ -7,13 +8,14 @@ const data ={
     desc: "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare a suscipit aenean. Fringilla id egestas condimentum adipiscing mauris arcu enim orci."
 }
 const PreFooterForm = () => {
+  
   return (
     <div className="pre-footer">
       <div className="container">
         <div className="pre-footer-in">
           <div className="left">
             <p className="eyebrow-head">{data.eyebrowHeader}</p>
-            <div className="pre-footer-form">
+            <div className="pre-footer-form" ref={slideInLeft}>
                <div className="top">
                <h2>{data.heading}</h2>
                </div>
@@ -35,8 +37,8 @@ const PreFooterForm = () => {
           </div>
           <div className="right">
           <p className="eyebrow-head">{data.eyebrowHeader}</p>
-            <div className="pre-footer-img">
-                <img src={data.image} alt="Image" className="img" />
+            <div className="pre-footer-img" ref={slideInRight}>
+                <img src={data.image} alt="Image" className="img"/>
             </div>
           </div>
         </div>

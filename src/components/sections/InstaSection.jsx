@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import InstaFrame from "../snippets/InstaFrame";
+import { animateText } from '../../animations';
 
 const data = {
   eyebrowText: "Chapter VI",
@@ -20,7 +21,11 @@ const InstaSection = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const textRef = useRef(null)
 
+  useEffect(() => {
+    animateText(textRef.current, 0.3)
+  }, [])
   useEffect(() => {
     const $carousel = window.$(carouselRef.current);
 
@@ -54,7 +59,7 @@ const InstaSection = () => {
   return (
     <div className="insta-section">
       <div className="container">
-        <div className="heading">
+        <div className="heading" ref={textRef}>
           {data.eyebrowText && <p className="eyebrow-head">{data.eyebrowText}</p>}
           {data.title && <h2>{data.title}</h2>}
         </div>

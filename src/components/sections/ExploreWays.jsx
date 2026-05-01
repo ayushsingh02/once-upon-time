@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import HangingCard from "../snippets/HangingCard";
+import { animateText } from '../../animations';
 
 const data = {
   eyebrowHead: "Chapter IV",
@@ -34,7 +35,7 @@ const data = {
     },
   ],
 };
-
+ 
 const ExploreWays = () => {
   const sectionRef = useRef(null);
   const [hangedCards, setHangedCards] = useState([]);
@@ -58,14 +59,18 @@ const ExploreWays = () => {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
+ 
     return () => observer.disconnect();
   }, []);
+  const textRef = useRef(null)
 
+  useEffect(() => {
+    animateText(textRef.current, 0.3)
+  }, [])
   return (
     <div className="explore-ways" ref={sectionRef}>
       <div className="container">
-        <div className="heading">
+        <div className="heading" ref={textRef}>
           <p className="eyebrow-head">{data.eyebrowHead}</p>
           <h2>{data.headTitle}</h2>
         </div>
