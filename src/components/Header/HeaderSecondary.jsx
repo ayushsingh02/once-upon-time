@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
 
 const navItems = [
-  { label: "Therapy", href: "#!" },
+  { label: "Therapy", href: "therapy" },
   { label: "Collaborate", href: "#!" },
   { label: "About", href: "#!" },
   { label: "Stories", href: "#!" },

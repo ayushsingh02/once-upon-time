@@ -1,26 +1,25 @@
 import React from "react";
 
-const TherapyCard = () => {
+
+const TherapyCard = ({ eyebrow, title, desc, image, lineColor }) => {
   return (
-    <div className="theraphy-card">
-      <div className="left">
-        <p className="eye-head">Headline 01</p>
-        <h3>Small, Thoughtful Groups</h3>
-        <p>
-          Build a strong grounding in therapeutic ethics, presence, and
-          emotional safety — the essentials every practitioner needs.
-        </p>
-      </div>
-      <div className="right">
-        <div className="therapy-card-img">
-          <img
-            src="../images/theraphy-card-img.png"
-            alt="Image"
-            className="img"
-          />
+    <>
+      <div className="theraphy-card-outer">
+      <div className="theraphy-card">
+        <div className="left">
+          {eyebrow && <p className="eyebrow-head">{eyebrow}</p>}
+          {title && <h3>{title}</h3>}
+          {desc && <p>{desc}</p>}
+        </div>
+        <div className="right">
+          <div className="therapy-card-img">
+            {image && <img src={image} alt="Image" className="img" />}
+          </div>
         </div>
       </div>
-    </div>
+      <div className={`bottom-line ${lineColor}`}></div>
+      </div>
+    </>
   );
 };
 

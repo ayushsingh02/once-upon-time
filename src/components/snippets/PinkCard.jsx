@@ -20,7 +20,7 @@ const PinkCard = ({ title, description, delay = 0 }) => {
       {
         opacity: 1,
         scale: 1,
-        rotation: -8,
+        rotation: 25,
         y: 0,
         duration: 2,
         delay: delay,

@@ -6,7 +6,7 @@ import ThankyouPage from "./pages/ThankyouPage";
 import Legal from "./pages/Legal";
 import Referrals from "./pages/Referrals";
 import BookCall from "./pages/BookCall";
-import Therapy from "./pages/therapy";
+import Therapy from "./pages/Therapy";
 
 const App = () => {
   return (

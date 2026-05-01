@@ -18,8 +18,7 @@ const data = {
   emailid: "hello@onceuponatime.com",
   ctaURL :"#!",
   blueCard: {
-    title: "Expect a reply within 72 hours. Thank you for your patience.",
-    description: "We will get back to you shortly.",
+    title: "Expect a reply within 72 hours. Thank you for your patience."
   },
 };
 
@@ -27,7 +26,7 @@ const BookCall = () => {
   return (
     <ReactLenis root>
       <HeaderSecondary />
-      <main className="top-spacing">
+      <main className="top-spacing-all">
         <ContactSectionMain
           image={data.image}
           eyebrowText={data.eyebrowText}

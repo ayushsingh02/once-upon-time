@@ -4,6 +4,7 @@ import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import PreFooterForm from "../components/sections/PreFooterForm";
 import ReferralCard from "../components/snippets/ReferralCard";
+import { animateText, slideInRight } from "../animations";
 const data = {
   title: "Our Referrals",
   desc: "Share a brief note about therapy, workshops, training, or booking. Messages are read with care and a team member will reply within 72 hours.",
@@ -128,12 +129,12 @@ const Referrals = () => {
         <div className="referrals-page">
           <div className="referr-banner">
             <div className="container">
-              <div className="heading">
+              <div className="heading" ref={animateText}>
                 <h1>{data.title}</h1>
                 <p>{data.desc}</p>
               </div>
             </div>
-            <div className="referr-pink-bar"></div>
+            <div className="referr-pink-bar" ref={slideInRight}></div>
           </div>
           <div className="referrals-page-in">
             <div className="container">

@@ -7,24 +7,41 @@ const allCountries = countryCodesList.customList(
   "+{countryCallingCode}",
 );
 
-const ContactSectionMain = ({ image, eyebrowText, title, desc, blueCard, ctaText, ctaURL, emailid }) => {
+const ContactSectionMain = ({
+  image,
+  eyebrowText,
+  title,
+  desc,
+  blueCard,
+  ctaText,
+  ctaURL,
+  emailid,
+  capText,
+}) => {
   return (
-    <div className="contact-section">
+    <div className="contact-section main-component">
       <div className="contact-bg-img">
         <img src={image.src} alt={image.alt} className="img" />
       </div>
       <div className="container">
         <div className="contact-component-wrap">
           <div className="contact-form-top">
-            <p className="eyebrow-head">{eyebrowText}</p>
-            <h2>{title}</h2>
-            <p>{desc}</p>
-            <div className="book-slot">
-                <a href={ctaURL} className="primary-btn">{ctaText}</a>
+            <div>
+              <p className="eyebrow-head">{eyebrowText}</p>
+              <div className="heading-block">
+                <h2>{title}</h2>
+                <p>{desc}</p>
+                <div className="book-slot">
+                  <p>{capText}</p>
+                  <a href={ctaURL} className="primary-btn">
+                    {ctaText}
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="bottom-email-block">
-                <p>Email</p>
-                <a href={`mailto:${emailid}`}>{emailid}</a>
+              <p>Email</p>
+              <a href={`mailto:${emailid}`}>{emailid}</a>
             </div>
           </div>
           <div className="contact-form-main">
@@ -90,7 +107,11 @@ const ContactSectionMain = ({ image, eyebrowText, title, desc, blueCard, ctaText
             </form>
           </div>
         </div>
-        <BlueCard title={blueCard?.title} description={blueCard?.description} />
+        <BlueCard
+          rotate={25}
+          title={blueCard?.title}
+          description={blueCard?.description}
+        />
       </div>
     </div>
   );

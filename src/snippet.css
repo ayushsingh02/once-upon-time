@@ -221,8 +221,9 @@
   padding-top: 80px;
 }
 /* Hanging Card */
+
 /* Referral Card */
-.referral-card{
+.referral-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -231,31 +232,31 @@
   background-color: #fff;
   max-width: 450px;
 }
-.referral-card .top{
+.referral-card .top {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.referral-card .top h3{
+.referral-card .top h3 {
   font-size: 25.65px;
   line-height: 110%;
   letter-spacing: -0.01em;
   color: #1a1a1a;
 }
-.referral-card .top p{
-font-size: 14.8px;
-font-family: var(--inter);
-letter-spacing: 0.02em;
-line-height: 117%;
-font-weight: 400;
-color: #5D5D5D;
+.referral-card .top p {
+  font-size: 14.8px;
+  font-family: var(--inter);
+  letter-spacing: 0.02em;
+  line-height: 117%;
+  font-weight: 400;
+  color: #5d5d5d;
 }
-.referral-card .bottom{
+.referral-card .bottom {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.referral-card .bottom p{
+.referral-card .bottom p {
   letter-spacing: 1.6px;
   text-transform: uppercase;
   font-size: 9.6px;
@@ -265,7 +266,77 @@ color: #5D5D5D;
   font-family: var(--inter);
 }
 /* Referral Card */
-
+/* Therapy Card */
+.theraphy-card h3 {
+  font-size: clamp(24px, 4vw, 42px);
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+}
+.theraphy-card p {
+  font-size: 16px;
+  font-family: var(--instrument);
+  line-height: 141%;
+  letter-spacing: 0.03em;
+  color: #5d5d5d;
+  max-width: 38ch;
+  padding-top: 10px;
+}
+.theraphy-card p.eyebrow-head {
+  font-family: var(--mono);
+  letter-spacing: 2px;
+  line-height: 117%;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #322017;
+}
+.theraphy-card {
+  display: flex;
+  background-color: #eee5db;
+  padding: 48px 42px 0px 112px;
+}
+.theraphy-card .right {
+  width: 100%;
+  max-width: 508px;
+}
+.theraphy-card .left {
+  width: calc(100% - 508px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 48px;
+  padding-right: 20px;
+}
+.theraphy-card .right .therapy-card-img {
+  height: 436px;
+  margin-bottom: -20px;
+}
+.bottom-line {
+  height: 20px;
+  width: calc(100% - 508px);
+}
+.bottom-line.pink {
+  background-color: var(--pink);
+}
+.bottom-line.blue {
+  background-color: var(--skyblue);
+}
+.bottom-line.brown {
+  background-color: #BA9587;
+}
+.theraphy-card-outer:nth-child(even) .theraphy-card {
+  flex-direction: row-reverse;
+  padding-left: 42px;
+}
+.theraphy-card-outer:nth-child(even) .theraphy-card .left {
+  padding-left: 112px;
+}
+.theraphy-card-outer:nth-child(even) .bottom-line {
+  margin-left: auto;
+}
+/* Therapy Card */
 
 @media screen and (max-width: 1200px) {
   .insta-frame {
@@ -285,17 +356,64 @@ color: #5D5D5D;
     font-size: 10px;
     padding: 10px 18px;
   }
-  .way-work-card:hover .card-title{
+  .way-work-card:hover .card-title {
     font-size: 26px;
   }
-  .way-work-card:hover .card-desc{
+  .way-work-card:hover .card-desc {
     font-size: 14px;
   }
-  .card-default-strip h3{
+  .card-default-strip h3 {
     font-size: 26px;
   }
-  .referral-card{
+  .referral-card {
     gap: 75px;
+  }
+  .theraphy-card {
+    padding-left: 42px;
+  }
+  .theraphy-card .right .therapy-card-img {
+    height: 350px;
+  }
+  .theraphy-card .right {
+    width: 420px;
+  }
+  .theraphy-card .left {
+    width: calc(100% - 420px);
+  }
+  .bottom-line {
+    width: calc(100% - 420px);
+  }
+  .theraphy-card p.eyebrow-head{
+    font-size: 16px;
+  }
+  .theraphy-card-outer:nth-child(even) .theraphy-card .left{
+    padding-left: 42px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .theraphy-card .right .therapy-card-img {
+    height: 300px;
+  }
+  .theraphy-card .right {
+    width: 350px;
+  }
+  .theraphy-card .left {
+    width: calc(100% - 350px);
+  }
+  .bottom-line {
+    width: calc(100% - 350px);
+  }
+  .theraphy-card {
+    padding: 30px 30px 0px 30px;
+  }
+  .theraphy-card p{
+    font-size: 14px;
+  }
+  .theraphy-card p.eyebrow-head{
+    font-size: 14px;
+  }
+  .theraphy-card-outer:nth-child(even) .theraphy-card{
+    padding-left: 30px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -322,10 +440,40 @@ color: #5D5D5D;
   .hanging-card h3 {
     font-size: 26px;
   }
-  .referral-card{
+  .referral-card {
     padding: 30px 20px;
   }
-  .referral-card .top p{
+  .referral-card .top p {
     font-size: 14px;
+  }
+  .theraphy-card{
+    flex-direction: column;
+  }
+  .theraphy-card> div{
+    width: 100% !important;
+  }
+  .theraphy-card .right{
+    max-width: 100%;
+  }
+  .theraphy-card .right .therapy-card-img{
+    width: 100%;
+    margin-bottom: 0px;
+    height: 300px;
+  }
+  .bottom-line{
+    width: 100%;
+  }
+  .theraphy-card{
+    padding: 0px;
+  }
+  .theraphy-card .left{
+    padding: 30px;
+  }
+  .theraphy-card-outer:nth-child(even) .theraphy-card{
+    flex-direction: column;
+    padding: 0px;
+  }
+  .theraphy-card-outer:nth-child(even) .theraphy-card .left{
+    padding: 30px;
   }
 }

@@ -6,7 +6,7 @@ import "./header.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
-  { label: "Therapy", href: "#!" },
+  { label: "Therapy", href: "therapy" },
   { label: "Collaborate", href: "#!" },
   { label: "About", href: "#!" },
   { label: "Stories", href: "#!" },

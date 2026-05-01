@@ -57,6 +57,21 @@
   .meet-content {
     padding-top: 120px;
   }
+  .contact-component-wrap {
+    flex-direction: column;
+  }
+  .contact-section.main-component{
+    padding-bottom: 20px;
+  }
+  .contact-section.main-component .contact-form-main {
+    max-width: 100%;
+  }
+  .contact-section.main-component .contact-form-top {
+    width: 100%;
+  }
+  .contact-section.main-component .container {
+    max-width: 800px;
+  }
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -220,6 +235,15 @@
   .home-chapter-1-in .inner-card {
     width: 80% !important;
     margin: auto;
+  }
+  .pre-footer{
+    padding-top: 38px;
+  }
+  .learn-therapy-in{
+    gap: 20px;
+  }
+  .book-call-cta{
+    margin-top: 40px;
   }
 }
 
@@ -386,17 +410,25 @@
   .home-chapter-1-in .inner-card .brand-logo {
     max-width: 260px;
   }
-  .home-chapter-1-in .inner-card h3{
+  .home-chapter-1-in .inner-card h3 {
     font-size: 52px;
   }
-  .home-chapter-1-in .inner-card .icon-o{
+  .home-chapter-1-in .inner-card .icon-o {
     max-width: 60px;
     height: 69px;
   }
-  .home-chapter-1-in .inner-card .scroll-down p{
+  .home-chapter-1-in .inner-card .scroll-down p {
     font-size: 14px;
   }
-
+  .contact-section .pink-card.blue h3 {
+    font-size: 14px;
+  }
+  .contact-section.main-component .pink-card.blue {
+    right: 40px;
+    top: 40px;
+    width: 150px;
+    height: 160px;
+  }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

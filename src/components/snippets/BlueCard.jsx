@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const BlueCard = ({ title, description, delay = 0 }) => {
+const BlueCard = ({ title, description, rotate = 25, delay = 0 }) => {
   const cardRef = useRef(null)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const BlueCard = ({ title, description, delay = 0 }) => {
       {
         opacity: 1,
         scale: 1,
-        rotation: -8,
+        rotation: rotate,
         y: 0,
         duration: 2,
         delay: delay,

@@ -67,7 +67,6 @@
   overflow: hidden;
 }
 
-
 .home-chapter-1-in {
   display: flex;
   justify-content: start;
@@ -729,18 +728,94 @@ form#news-update label {
   max-width: 68ch;
 }
 /* Referral Page */
-.contact-component-wrap {
-  display: flex;
-}
+/* Contact Form Main  */
 .contact-form-main {
   position: relative;
 }
-.contact-form-top {
+.contact-component-wrap {
+  display: flex;
+}
+
+.contact-component-wrap .contact-form-top {
   height: 100%;
   margin-top: auto;
+  gap: 80px;
 }
 .bottom-email-block {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+.contact-component-wrap .bottom-email-block p,
+.contact-component-wrap .bottom-email-block a,
+.contact-component-wrap .book-slot p {
+  font-size: 9.6px;
+  line-height: 119%;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  font-weight: 500;
+  text-decoration: none;
+}
+.book-slot p {
+  margin-bottom: 10px;
+}
+.bottom-email-block a {
+  transition: 0.4s ease all;
+}
+.bottom-email-block a:hover {
+  color: var(--pink);
+}
+.contact-section.main-component .pink-card.blue {
+  position: absolute;
+  right: 50px;
+  top: 60px;
+}
+.contact-section.main-component .heading-block {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.contact-section.main-component .eyebrow-head {
+  margin-bottom: 10px;
+}
+.contact-section.main-component {
+  padding-top: 160px;
+}
+.contact-section.main-component .contact-form-main {
+  max-width: 482px;
+  width: 100%;
+}
+.contact-section.main-component
+  .contact-form-main
+  form.contact-form
+  .input-wrap {
+  margin-top: 20px;
+  gap: 8px;
+}
+.contact-section.main-component .contact-form-main .contact-form {
+  margin-top: 50px;
+}
+.contact-section.main-component .contact-form-main {
+  padding: 50px 50px;
+}
+/* Contact Form Main  */
+/* Learn Therapy */
+
+.book-call-cta{
+margin-top: 50px;
+display: flex;
+justify-content: center;
+}
+.learn-therapy-in{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.learn-therapy .heading{
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 50px;
+}
+/* Learn Therapy */

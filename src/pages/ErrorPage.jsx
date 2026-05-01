@@ -3,6 +3,7 @@ import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
+import { slideInBottom } from '../animations';
 
 const data = {
   heading: "Requested Page not found",
@@ -16,7 +17,7 @@ const ErrorPage = () => {
       <HeaderSecondary transparent />
       <main className="error-page-main">
         <div className="error-page">
-          <div className="error-img">
+          <div className="error-img" ref={slideInBottom}>
             <img src="icons/error.svg" alt="404 Error" className="icon" />
           </div>
           <div className="error-content">

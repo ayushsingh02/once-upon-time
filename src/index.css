@@ -51,6 +51,7 @@
   --inter: "Inter Tight", sans-serif;
   --times: "Times New Roman";
   --cambon: "Cambon";
+  --instrument: "Instrument Sans", sans-serif;
   --body-color: #f7f0e8;
   --text-brown: #3e2c25;
   --head-black: #1a1a1a;
@@ -188,6 +189,9 @@ p.eyebrow-head {
 }
 .top-spacing{
   padding-top: 200px;
+}
+.top-spacing-all{
+  padding-top: 120.83px;
 }
 /* Lenis */
 html.lenis {
@@ -367,6 +371,9 @@ width: 40px;
   .top-spacing{
     padding-top: 150px;
   }
+  .top-spacing-all{
+    padding-top: 79.39px;
+  }
 }
 @media screen and (max-width: 991px) {
   .container{
@@ -392,6 +399,9 @@ width: 40px;
 @media screen and (max-width: 767px) {
   .top-spacing{
     padding-top: 100px;
+  }
+  .top-spacing-all{
+    padding-top: 70.41px;
   }
   p,li, a {
     font-size: 14px;
