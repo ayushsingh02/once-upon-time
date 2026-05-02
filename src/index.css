@@ -109,7 +109,7 @@ p {
   letter-spacing: -0.17%;
   color: var(--text-brown);
 }
-img{
+img {
   display: flex;
 }
 p span.big-pink {
@@ -157,11 +157,11 @@ p.eyebrow-head {
   border-color: var(--pink);
   color: var(--pink);
 }
-.primary-btn.pink{
+.primary-btn.pink {
   background-color: var(--pink);
   border: 1px solid var(--pink);
 }
-.primary-btn.pink:hover{
+.primary-btn.pink:hover {
   background: none;
   border-color: var(--head-black);
   color: var(--head-black);
@@ -178,20 +178,39 @@ p.eyebrow-head {
 .spacer-mid {
   height: 140px;
 }
-.img{
+.spacer-sm{
+  height: 120px;
+}
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.icon{
+.icon {
   width: 100%;
   height: auto;
 }
-.top-spacing{
+.top-spacing {
   padding-top: 200px;
 }
-.top-spacing-all{
+.top-spacing-all {
   padding-top: 120.83px;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.heading p:not(.eyebrow-head) {
+  font-family: var(--inter);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 138%;
+  font-size: 16px;
+  color: #3B2922;
+  max-width: 54ch;
+
 }
 /* Lenis */
 html.lenis {
@@ -207,7 +226,7 @@ html.lenis {
 }
 
 /* --- Lenis---  */
-.contact-form{
+.contact-form {
   margin-top: 30px;
 }
 form.contact-form label,
@@ -268,7 +287,7 @@ form.contact-form select#selectCountry {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding-right: 14px; 
+  padding-right: 14px;
 }
 form.contact-form input[type="tel"] {
   background: none;
@@ -278,7 +297,7 @@ form.contact-form input[type="tel"] {
   outline: none;
   padding-left: 10px;
   font-size: 10.8px;
-  color:#3e2c25;
+  color: #3e2c25;
 }
 form.contact-form input[type="submit"] {
   text-transform: uppercase;
@@ -298,11 +317,11 @@ form.contact-form input[type="submit"] {
   justify-content: center;
   text-align: center;
   margin-top: 36px;
-  transition: .4s ease all;
+  transition: 0.4s ease all;
   width: 100%;
 }
-form.contact-form input[type="submit"]:hover{
-    background: var(--skyblue);
+form.contact-form input[type="submit"]:hover {
+  background: var(--skyblue);
 }
 form.contact-form .contact-number-wrap {
   display: flex;
@@ -310,13 +329,12 @@ form.contact-form .contact-number-wrap {
   border: 0.9px solid #3e2c25;
   padding: 5px 8px;
 }
-.contact-form-2col{
+.contact-form-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-
 }
-.bx-wrapper{
+.bx-wrapper {
   max-width: 100% !important;
   margin-bottom: 0px !important;
   padding: 0px !important;
@@ -324,14 +342,14 @@ form.contact-form .contact-number-wrap {
   box-shadow: none !important;
   background: none !important;
 }
-.bx-viewport{
+.bx-viewport {
   height: auto !important;
 }
-.owl-dots{
+.owl-dots {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 20px !important
+  margin-top: 20px !important;
 }
 .owl-dot span {
   width: 8px !important;
@@ -353,57 +371,61 @@ form.contact-form .contact-number-wrap {
 
 .owl-custom-prev,
 .owl-custom-next {
-border: none;
-box-shadow: none;
-outline: none;
-height: 40px;
-width: 40px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  height: 40px;
+  width: 40px;
 }
-.owl-custom-nav{
+.owl-custom-nav {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 @media screen and (max-width: 1200px) {
-  .container{
+  .container {
     padding: 0px 40px;
   }
-  .top-spacing{
+  .top-spacing {
     padding-top: 150px;
   }
-  .top-spacing-all{
+  .top-spacing-all {
     padding-top: 79.39px;
   }
 }
 @media screen and (max-width: 991px) {
-  .container{
+  .container {
     padding: 0px 30px;
   }
-  .primary-btn{
+  .primary-btn {
     padding: 10px 15px;
     font-size: 10px;
   }
-  p,li, a {
+  p,
+  li,
+  a {
     font-size: 16px;
   }
-  .top-spacing{
+  .top-spacing {
     padding-top: 120px;
   }
-  p.eyebrow-head{
+  p.eyebrow-head {
     font-size: 16px;
   }
-  p span.big-pink{
+  p span.big-pink {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 767px) {
-  .top-spacing{
+  .top-spacing {
     padding-top: 100px;
   }
-  .top-spacing-all{
+  .top-spacing-all {
     padding-top: 70.41px;
   }
-  p,li, a {
+  p,
+  li,
+  a {
     font-size: 14px;
   }
 
@@ -416,18 +438,21 @@ width: 40px;
   .spacer {
     height: 90px;
   }
-  .container{
+  .spacer-sm{
+    height: 80px;
+  }
+  .container {
     padding: 0px 20px;
   }
   .spacer-mid {
     height: 90px;
   }
-  p.eyebrow-head{
+  p.eyebrow-head {
     font-size: 14px;
   }
   .owl-custom-prev,
-.owl-custom-next {
-height: 35px;
-width: 35px;
-}
+  .owl-custom-next {
+    height: 35px;
+    width: 35px;
+  }
 }

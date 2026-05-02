@@ -802,20 +802,76 @@ form#news-update label {
 /* Contact Form Main  */
 /* Learn Therapy */
 
-.book-call-cta{
-margin-top: 50px;
-display: flex;
-justify-content: center;
+.book-call-cta {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
-.learn-therapy-in{
+.learn-therapy-in {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-.learn-therapy .heading{
-display: flex;
-flex-direction: column;
-gap: 10px;
-margin-bottom: 50px;
+.learn-therapy .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
 }
 /* Learn Therapy */
+/* Work with Me */
+.work-with-me-in .work-with-me-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.work-with-me-in .wwm-card {
+  padding: 35px 30px 28px 30px;
+  background-color: #fff;
+}
+.wwm-card .wwm-img {
+  width: 367px;
+  height: 352px;
+}
+.wwm-card .top p {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #2c1d17;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.wwm-card .bottom h3{
+  font-size: 32px;
+  color: #3E2C25;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+}
+.wwm-card .bottom p{
+  font-family: var(--inter);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #2C1D17;
+  font-weight: 400;
+}
+.wwm-card .bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 15px;
+}
+.wwm-card .primary-btn{
+  padding: 10px 28px;
+}
+/* Work with Me */
+
+/* Therapy Banner */
+.therapy-banner{
+background-color: #37251D;
+}
+.therapy-banner{
+  display: flex;
+}
+/* Therapy Banner */

@@ -34,7 +34,7 @@ const InstaSection = () => {
         loop: true,
         margin: 16,
         autoplay:true,
-        autoplayTimeout: 1500,
+        autoplayTimeout: 2000,
         nav: false,
         dots: true,
         mouseDrag: true,

@@ -2,7 +2,7 @@ import React from "react";
 import TherapyCard from "../snippets/TherapyCard";
 
 const data = {
-  eyehead: "Chapter III",
+  eyehead: "Chapter II",
   heading: "Learn Therapy the Right Way",
   ctaText: "Book a Call",
   ctaURL: "/book-call",

@@ -324,7 +324,7 @@
   background-color: var(--skyblue);
 }
 .bottom-line.brown {
-  background-color: #BA9587;
+  background-color: #ba9587;
 }
 .theraphy-card-outer:nth-child(even) .theraphy-card {
   flex-direction: row-reverse;
@@ -337,6 +337,35 @@
   margin-left: auto;
 }
 /* Therapy Card */
+.sticky-scroll-tab .scroll-tab-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.scroll-tab-wrap .ss-tabs {
+  border: 1px solid #3e2c25;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: var(--inter);
+  text-transform: uppercase;
+  padding: 1px 8px;
+}
+.scroll-tab-wrap .ss-tabs.active{
+  background-color: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+}
+.sticky-scroll-tab {
+  position: sticky;
+  /* top: 0; */
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #F7F0E8;
+  padding: 20px 0px;
+}
 
 @media screen and (max-width: 1200px) {
   .insta-frame {
@@ -383,10 +412,10 @@
   .bottom-line {
     width: calc(100% - 420px);
   }
-  .theraphy-card p.eyebrow-head{
+  .theraphy-card p.eyebrow-head {
     font-size: 16px;
   }
-  .theraphy-card-outer:nth-child(even) .theraphy-card .left{
+  .theraphy-card-outer:nth-child(even) .theraphy-card .left {
     padding-left: 42px;
   }
 }
@@ -406,13 +435,13 @@
   .theraphy-card {
     padding: 30px 30px 0px 30px;
   }
-  .theraphy-card p{
+  .theraphy-card p {
     font-size: 14px;
   }
-  .theraphy-card p.eyebrow-head{
+  .theraphy-card p.eyebrow-head {
     font-size: 14px;
   }
-  .theraphy-card-outer:nth-child(even) .theraphy-card{
+  .theraphy-card-outer:nth-child(even) .theraphy-card {
     padding-left: 30px;
   }
 }
@@ -446,34 +475,34 @@
   .referral-card .top p {
     font-size: 14px;
   }
-  .theraphy-card{
+  .theraphy-card {
     flex-direction: column;
   }
-  .theraphy-card> div{
+  .theraphy-card > div {
     width: 100% !important;
   }
-  .theraphy-card .right{
+  .theraphy-card .right {
     max-width: 100%;
   }
-  .theraphy-card .right .therapy-card-img{
+  .theraphy-card .right .therapy-card-img {
     width: 100%;
     margin-bottom: 0px;
     height: 300px;
   }
-  .bottom-line{
+  .bottom-line {
     width: 100%;
   }
-  .theraphy-card{
+  .theraphy-card {
     padding: 0px;
   }
-  .theraphy-card .left{
+  .theraphy-card .left {
     padding: 30px;
   }
-  .theraphy-card-outer:nth-child(even) .theraphy-card{
+  .theraphy-card-outer:nth-child(even) .theraphy-card {
     flex-direction: column;
     padding: 0px;
   }
-  .theraphy-card-outer:nth-child(even) .theraphy-card .left{
+  .theraphy-card-outer:nth-child(even) .theraphy-card .left {
     padding: 30px;
   }
 }
