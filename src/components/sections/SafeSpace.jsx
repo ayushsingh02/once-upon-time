@@ -129,31 +129,37 @@ const SafeSpace = () => {
 
   return (
     <div className="safe-space" ref={sectionRef}>
-
       {/* DESKTOP */}
       <div className="safe-space-track" ref={trackRef}>
-
         {/* CARD 1 */}
         <div className="safe-space-panel card-1">
           <div className="card-1-inner">
-            <div className="card-1-top">
-              <div className="card-1-heading">
-                <p className="eyebrow-head">{data.eyebrowHead}</p>
-                <h2>{data.heading}</h2>
-              </div>
-              <div className="card-1-right-img">
-                <img src={data.cards[0].rightImage} alt={data.cards[0].title} className="img" />
-              </div>
+            <div className="card-1-heading">
+              <p className="eyebrow-head">{data.eyebrowHead}</p>
+              <h2>{data.heading}</h2>
             </div>
-            <div className="card-1-bottom">
-              <div className="card-1-bottom-left">
+            <div className="card-1-below">
+              <div className="left">
+                <div>
+                  <h3>{data.cards[0].title}</h3>
+                  <p>{data.cards[0].desc}</p>
+                </div>
                 <div className="card-1-small-img">
-                  <img src={data.cards[0].leftBottomImage} alt={data.cards[0].title} className="img" />
+                  <img
+                    src={data.cards[0].leftBottomImage}
+                    alt={data.cards[0].title}
+                    className="img"
+                  />
                 </div>
               </div>
-              <div className="card-1-bottom-text">
-                <h3>{data.cards[0].title}</h3>
-                <p>{data.cards[0].desc}</p>
+              <div className="right">
+                <div className="card-1-right-img">
+                  <img
+                    src={data.cards[0].rightImage}
+                    alt={data.cards[0].title}
+                    className="img"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -162,15 +168,30 @@ const SafeSpace = () => {
         {/* CARD 2 */}
         <div className="safe-space-panel card-2">
           <div className="card-2-inner">
-            <div className="card-2-left">
-              <img src={data.cards[1].rightImage} alt={data.cards[1].title} className="img" />
-            </div>
-            <div className="card-2-right">
-              <h3>{data.cards[1].title}</h3>
-              <div className="card-2-small-img">
-                <img src={data.cards[1].leftBottomImage} alt={data.cards[1].title} className="img" />
+            <div className="card-1-below">
+              <div className="right">
+                <div className="card-1-right-img">
+                  <img
+                    src={data.cards[1].rightImage}
+                    alt={data.cards[1].title}
+                    className="img"
+                  />
+                </div>
+                
               </div>
-              <p>{data.cards[1].desc}</p>
+              <div className="left">
+                  <div>
+                    <h3>{data.cards[1].title}</h3>
+                    <div className="card-1-small-img">
+                      <img
+                        src={data.cards[1].leftBottomImage}
+                        alt={data.cards[1].title}
+                        className="img"
+                      />
+                    </div>
+                    <p>{data.cards[1].desc}</p>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -178,19 +199,32 @@ const SafeSpace = () => {
         {/* CARD 3 */}
         <div className="safe-space-panel card-3">
           <div className="card-3-inner">
-            <div className="card-3-left">
-              <h3>{data.cards[2].title}</h3>
-              <p>{data.cards[2].desc}</p>
-              <div className="card-3-small-img">
-                <img src={data.cards[2].leftBottomImage} alt={data.cards[2].title} className="img" />
+            <div className="card-1-below">
+              <div className="left">
+                <div>
+                  <h3>{data.cards[2].title}</h3>
+                  <p>{data.cards[2].desc}</p>
+                </div>
+                <div className="card-1-small-img">
+                  <img
+                    src={data.cards[2].leftBottomImage}
+                    alt={data.cards[2].title}
+                    className="img"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="card-3-right">
-              <img src={data.cards[2].rightImage} alt={data.cards[2].title} className="img" />
+              <div className="right">
+                <div className="card-1-right-img">
+                  <img
+                    src={data.cards[2].rightImage}
+                    alt={data.cards[2].title}
+                    className="img"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
 
       {/* MOBILE */}
@@ -203,17 +237,28 @@ const SafeSpace = () => {
 
           <div className="safe-space-slider owl-carousel" ref={sliderRef}>
             {data.cards.map((card) => (
-              <div className={`safe-space-slide ${card.className}`} key={card.id}>
+              <div
+                className={`safe-space-slide ${card.className}`}
+                key={card.id}
+              >
                 <div className="safe-space-slide-inner">
                   <div className="slide-right-img">
-                    <img src={card.rightImage} alt={card.title} className="img" />
+                    <img
+                      src={card.rightImage}
+                      alt={card.title}
+                      className="img"
+                    />
                   </div>
                   <div className="slide-text">
                     <h3>{card.title}</h3>
                     <p>{card.desc}</p>
                   </div>
                   <div className="slide-small-img">
-                    <img src={card.leftBottomImage} alt={card.title} className="img" />
+                    <img
+                      src={card.leftBottomImage}
+                      alt={card.title}
+                      className="img"
+                    />
                   </div>
                 </div>
               </div>
@@ -223,15 +268,40 @@ const SafeSpace = () => {
           <div className="custom-nav">
             <div className="owl-custom-nav">
               <button className="owl-custom-prev" onClick={handlePrev}>
-                <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="39.3616" height="39.3633" transform="matrix(-1 0 0 1 39.3616 0)" fill="#3E2C25" />
-                  <path d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z" fill="#F7F0E8" />
+                <svg
+                  className="icon"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="39.3616"
+                    height="39.3633"
+                    transform="matrix(-1 0 0 1 39.3616 0)"
+                    fill="#3E2C25"
+                  />
+                  <path
+                    d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z"
+                    fill="#F7F0E8"
+                  />
                 </svg>
               </button>
               <button className="owl-custom-next" onClick={handleNext}>
-                <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="icon"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <rect width="39.3616" height="39.3633" fill="#3E2C25" />
-                  <path d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z" fill="#F7F0E8" />
+                  <path
+                    d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z"
+                    fill="#F7F0E8"
+                  />
                 </svg>
               </button>
             </div>

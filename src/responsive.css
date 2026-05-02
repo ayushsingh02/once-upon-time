@@ -335,6 +335,68 @@
   .hear-from-card .bottom-head p{
     font-size: 14px;
   }
+  .safe-space-track {
+    display: none;
+  }
+
+  .safe-space-mobile {
+    display: block;
+  }
+
+  .ss-mobile-top {
+    margin-bottom: 32px;
+  }
+
+  .ss-mobile-top .eyebrow-head {
+    margin-bottom: 8px;
+  }
+
+  .safe-space-slide-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .safe-space-slide-inner .slide-right-img .img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .safe-space-slide-inner .slide-text h3 {
+    margin-bottom: 8px;
+font-size: 32px;
+  }
+
+  .safe-space-slide-inner .slide-text p {
+font-family: var(--inter);
+font-weight: 400;
+letter-spacing: 0.03em;
+font-size: 14px;
+line-height: 130%;
+  }
+
+  .safe-space-slide-inner .slide-small-img {
+    width: 100px;
+    height: 100px;
+    display: none;
+  }
+
+  .safe-space-slide-inner .slide-small-img .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .custom-nav {
+    margin-top: 24px;
+  }
+
+  .owl-custom-nav {
+    display: flex;
+    gap: 8px;
+  }
+  
 }
 
 @media screen and (max-width: 767px) {
@@ -548,6 +610,7 @@
     height: unset;
     min-height: unset;
     padding-top: 120px;
+    padding-bottom: 30px;
   }
   .about-banner-text h1 {
     bottom: -30px;
@@ -632,6 +695,9 @@
   .hear-from-card{
     gap: 30px;
     padding: 28px 24px ;
+  }
+  .safe-space-mobile .container{
+   padding-right: 0px;
   }
   
 }

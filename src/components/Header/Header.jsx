@@ -137,7 +137,7 @@ const Header = () => {
               </div>
             </nav>
             <div className="header-menu-logo">
-              <img src="images/header-menu-logo.svg" alt="Logo" className="icon" />
+              <img src="icons/header-light-logo.svg" alt="Logo" className="icon" />
             </div>
           </div>
         </div>
