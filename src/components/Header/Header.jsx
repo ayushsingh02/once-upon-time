@@ -7,10 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
   { label: "Therapy", href: "therapy" },
-  { label: "Collaborate", href: "#!" },
+  { label: "Collaborate", href: "collaborate" },
   { label: "About", href: "about" },
-  { label: "Stories", href: "#!" },
-  { label: "Book A Call", href: "#!" },
+  { label: "Stories", href: "stories" },
+  { label: "Book A Call", href: "book-call" },
 ];
 
 const Header = () => {

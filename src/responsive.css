@@ -98,10 +98,10 @@
   .about-banner-image {
     margin-bottom: 40px;
   }
-  .mystory-in .right{
+  .mystory-in .right {
     padding-left: 40px;
   }
-  .mystory-in .right p{
+  .mystory-in .right p {
     font-size: 22px;
   }
 }
@@ -297,21 +297,30 @@
     justify-self: center;
     width: 50%;
   }
-  .about-banner{
+  .about-banner {
     padding-top: 79.36px;
   }
-  .about-banner-image{
+  .about-banner-image {
     margin-bottom: 30px;
   }
-  .about-banner-text p{
+  .about-banner-text p {
     padding-left: 30px;
   }
-  .mystory-in{
+  .mystory-in {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .mystory-in .right{
+  .mystory-in .right {
     padding-left: 0px;
+  }
+  .stories-banner {
+    border: none;
+  }
+  .stories-banner-in {
+    height: 700px;
+  }
+  .stories-banner-img {
+    height: 380px;
   }
 }
 
@@ -527,42 +536,72 @@
     min-height: unset;
     padding-top: 120px;
   }
-  .about-banner-text h1{
+  .about-banner-text h1 {
     bottom: -30px;
   }
-  .about-banner-text p{
+  .about-banner-text p {
     padding-left: 20px;
   }
-  .about-banner{
+  .about-banner {
     border: none;
   }
-  .about-banner-text .pink-card{
+  .about-banner-text .pink-card {
     display: none;
   }
-  .about-banner-text h1{
+  .about-banner-text h1 {
     /* color: var(--text-brown); */
     font-size: 82px;
     bottom: -15px;
   }
-  .about-banner-text p{
+  .about-banner-text p {
     top: 50%;
     padding-left: 10px;
     font-size: 14px;
   }
-  .about-banner-text p span{
+  .about-banner-text p span {
     font-size: 26px;
   }
-  .about-banner-image{
+  .about-banner-image {
     margin-bottom: 0px;
   }
-  .about-banner-image{
+  .about-banner-image {
     height: 480px;
   }
-  .mystory-in .right p{
+  .mystory-in .right p {
     font-size: 16px;
   }
-  .mystory-in .right p span.big-pink{
+  .mystory-in .right p span.big-pink {
     padding-right: 2px;
+  }
+  .rules-for-submission-in {
+    flex-direction: column-reverse;
+  }
+  .rules-for-submission-in > * {
+    width: 100% !important;
+  }
+  .rules-for-submission-in .card-text-wrap {
+    position: relative;
+    padding: 40px 30px;
+    gap: 20px;
+    bottom: 0px;
+  }
+  .rules-for-submission-in .right {
+    height: 320px;
+  }
+  .rules-for-submission-in .card-text-wrap h3 {
+    font-size: 22px;
+  }
+  .rules-for-submission-in .card-text-wrap p {
+    font-size: 14px;
+  }
+  .rules-for-submission .heading {
+    margin-bottom: 30px;
+  }
+  .rules-for-submission .heading p {
+    font-size: 14px;
+  }
+  .rules-for-submission {
+    margin-bottom: 0px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -575,7 +614,7 @@
   }
   .about-banner-text h1 {
     font-size: 66px;
-    }
+  }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .home-banner-in .left h1 {
@@ -599,5 +638,4 @@
   .home-chapter-2 p.eyebrow-head {
     font-size: 18px;
   }
- 
 }

@@ -7,6 +7,7 @@ import Legal from "./pages/Legal";
 import Referrals from "./pages/Referrals";
 import BookCall from "./pages/BookCall";
 import Therapy from "./pages/Therapy";
+import Stories from "./pages/Stories";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/referrals" element={<Referrals />} />
         <Route path="/book-call" element={<BookCall />} />
         <Route path="/therapy" element={<Therapy />} />
+        <Route path="/stories" element={<Stories />} />
       </Routes>
     </>
   );
