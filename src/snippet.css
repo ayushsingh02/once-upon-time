@@ -18,6 +18,9 @@
 .pink-card.blue {
   background-color: var(--skyblue);
 }
+.light-blue.light-blue{
+  background-color: #BFCAD4;
+}
 .pink-card h3 {
   font-family: var(--playwrite);
   font-weight: 200;

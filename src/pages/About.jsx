@@ -11,6 +11,7 @@ import HomeChapter2 from "../components/sections/HomeChapter2";
 import AboutBanner from "../components/sections/AboutBanner";
 import MyStory from "../components/sections/MyStory";
 import AboutMeChapter2 from "../components/sections/AboutMeChapter2";
+// import LetterFromMe from "../components/sections/LetterFromMe";
 
 const data = {
   image: {
@@ -46,6 +47,8 @@ const About = () => {
           <AboutMeChapter2></AboutMeChapter2>
           <div className="spacer"></div>
           <HomeChapter2 />
+          <div className="spacer"></div>
+          {/* <LetterFromMe></LetterFromMe> */}
           <div className="spacer"></div>
           <ExploreWays />
           <div className="spacer"></div>

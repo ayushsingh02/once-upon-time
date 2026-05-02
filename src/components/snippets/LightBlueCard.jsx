@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const PinkCard = ({ title, description, delay = 0, linkText, linkURL }) => {
+const LightBlueCard = ({ title, description, delay = 0, linkText, linkURL }) => {
   const cardRef = useRef(null)
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const PinkCard = ({ title, description, delay = 0, linkText, linkURL }) => {
   )
 }
 
-export default PinkCard
+export default LightBlueCard

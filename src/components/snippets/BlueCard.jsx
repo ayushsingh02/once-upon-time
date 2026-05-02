@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const BlueCard = ({ title, description, rotate = 25, delay = 0 }) => {
+const BlueCard = ({ title, description, rotate = 25, delay = 0,linkText, linkURL }) => {
   const cardRef = useRef(null)
 
   useEffect(() => {
@@ -37,6 +37,7 @@ const BlueCard = ({ title, description, rotate = 25, delay = 0 }) => {
     <div className='pink-card blue' ref={cardRef}>
       {title && <h3>{title}</h3>}
       {description && <p>{description}</p>}
+      {linkText && <a href={linkURL}>{linkText}</a>}
     </div>
   )
 }
