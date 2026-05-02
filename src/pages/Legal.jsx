@@ -1,10 +1,13 @@
-import React from "react";
+import {useEffect} from "react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 
 const Legal = () => {
+  useEffect(() => {
+    document.title = "Legal | Once Upon A Time";
+  }, []);
   return (
     <>
       <ReactLenis root>

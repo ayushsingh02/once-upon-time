@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
@@ -12,6 +12,9 @@ const data = {
   ctaURL: "/",
 };
 const ErrorPage = () => {
+  useEffect(() => {
+    document.title = "Error 404";
+  }, []);
   return (
     <ReactLenis root>
       <HeaderSecondary transparent />

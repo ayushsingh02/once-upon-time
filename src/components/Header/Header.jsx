@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { label: "Therapy", href: "therapy" },
   { label: "Collaborate", href: "#!" },
-  { label: "About", href: "#!" },
+  { label: "About", href: "about" },
   { label: "Stories", href: "#!" },
   { label: "Book A Call", href: "#!" },
 ];

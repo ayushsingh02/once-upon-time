@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
@@ -58,6 +58,9 @@ const instaData = {
   ],
 };
 const Therapy = () => {
+  useEffect(() => {
+    document.title = "Therapy";
+  }, []);
   return (
     <>
       <ReactLenis root>

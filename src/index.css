@@ -212,6 +212,9 @@ p.eyebrow-head {
   max-width: 54ch;
 
 }
+.my-story .heading{
+  margin-bottom: 20px;
+}
 /* Lenis */
 html.lenis {
   height: auto;
@@ -382,6 +385,7 @@ form.contact-form .contact-number-wrap {
   justify-content: center;
   margin-top: 40px;
 }
+
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0px 40px;

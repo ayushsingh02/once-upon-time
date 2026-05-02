@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
@@ -122,6 +122,9 @@ const referrals = [
 ];
 
 const Referrals = () => {
+  useEffect(() => {
+      document.title = "Referrals";
+    }, []);
   return (
     <ReactLenis root>
       <HeaderSecondary transparent />

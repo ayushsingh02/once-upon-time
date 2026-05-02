@@ -8,7 +8,7 @@ export const slideInLeft = (element, delay = 0) => {
     { opacity: 0, x: -80 },
     {
       opacity: 1, x: 0,
-      duration: 1.2,
+      duration: 1.6,
       delay,
       ease: "power3.out",
       scrollTrigger: {

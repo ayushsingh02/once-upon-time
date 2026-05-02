@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
@@ -12,6 +12,9 @@ const data = {
   };
 
 const ThankyouPage = () => {
+  useEffect(() => {
+    document.title = "Thank You";
+  }, []);
   return (
     <ReactLenis root>
     <HeaderSecondary transparent />

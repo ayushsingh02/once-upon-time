@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import Header from "../components/Header/Header";
@@ -15,6 +15,9 @@ import PreFooterForm from "../components/sections/PreFooterForm";
 
 
 const Homepage = () => {
+  useEffect(() => {
+    document.title = "Homepage | Once Upon A Time";
+  }, []);
   return (
     <ReactLenis root>
       <Header />

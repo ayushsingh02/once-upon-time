@@ -1,6 +1,6 @@
 import React from 'react'
 import PinkCard from '../snippets/PinkCard'
-import { animateText, slideInBottom, slideInTop } from '../../animations';
+import { animateText, slideInBottom } from '../../animations';
 
 const data = {
   heading: "A Space to Come Together",

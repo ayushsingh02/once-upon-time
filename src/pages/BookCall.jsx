@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
@@ -23,6 +23,9 @@ const data = {
 };
 
 const BookCall = () => {
+    useEffect(() => {
+      document.title = "Book a Call";
+    }, []);
   return (
     <ReactLenis root>
       <HeaderSecondary />

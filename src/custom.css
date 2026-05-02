@@ -802,7 +802,7 @@ form#news-update label {
 }
 /* Contact Form Main  */
 /* Learn Therapy */
-.learn-therapy{
+.learn-therapy {
   overflow: hidden;
 }
 .book-call-cta {
@@ -834,7 +834,7 @@ form#news-update label {
 }
 .wwm-card .wwm-img {
   width: 100%;
-aspect-ratio: 1/1;
+  aspect-ratio: 1/1;
 }
 .wwm-card .top p {
   font-family: var(--mono);
@@ -845,39 +845,39 @@ aspect-ratio: 1/1;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
-.wwm-card .bottom h3{
+.wwm-card .bottom h3 {
   font-size: 32px;
-  color: #3E2C25;
+  color: #3e2c25;
   line-height: 120%;
   letter-spacing: -0.01em;
   text-transform: capitalize;
 }
-.wwm-card .bottom p{
+.wwm-card .bottom p {
   font-family: var(--inter);
   font-size: 16px;
   letter-spacing: 0.02em;
-  color: #2C1D17;
+  color: #2c1d17;
   font-weight: 400;
 }
-.wwm-card .bottom{
+.wwm-card .bottom {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-top: 15px;
 }
-.wwm-card .primary-btn{
+.wwm-card .primary-btn {
   padding: 10px 28px;
 }
 /* Work with Me */
 
 /* Therapy Banner */
-.therapy-banner{
-background-color: #37251D;
-position: relative;
-height: 100vh;
-min-height: 800px;
+.therapy-banner {
+  background-color: #37251d;
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
 }
-.therapy-banner::before{
+.therapy-banner::before {
   content: "";
   background-image: url("../images/therapy-banner-bg.png");
   position: absolute;
@@ -888,25 +888,25 @@ min-height: 800px;
   background-repeat: no-repeat;
   mix-blend-mode: color-burn;
 }
-.therapy-banner{
+.therapy-banner {
   display: flex;
   overflow: hidden;
 }
-.therapy-banner > *{
+.therapy-banner > * {
   position: relative;
   z-index: 2;
 }
-.therapy-banner-in{
+.therapy-banner-in {
   display: flex;
   flex-direction: column;
   justify-content: end;
   height: 100%;
 }
-.therapy-banner-in .bottom{
-display: flex;
-margin-top: 30px;
+.therapy-banner-in .bottom {
+  display: flex;
+  margin-top: 30px;
 }
-.therapy-banner-in .left{
+.therapy-banner-in .left {
   position: relative;
   width: 35%;
   display: flex;
@@ -914,34 +914,290 @@ margin-top: 30px;
   gap: 20px;
   padding-right: 20px;
 }
-.therapy-banner-in .right{
+.therapy-banner-in .right {
   width: 65%;
 }
-.therapy-banner-in .left .pink-card{
-position: absolute;
-right: -70px;
-bottom: 100px;
+.therapy-banner-in .left .pink-card {
+  position: absolute;
+  right: -70px;
+  bottom: 100px;
 }
-.therapy-banner-in h1{
-color: #fff;
-font-size: clamp(32px, 4vw, 66px);
-line-height: 100%;
-text-transform: capitalize;
-letter-spacing: -0.02em;
+.therapy-banner-in h1 {
+  color: #fff;
+  font-size: clamp(32px, 4vw, 66px);
+  line-height: 100%;
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
 }
-.therapy-banner-in p{
+.therapy-banner-in p {
   color: #fff;
 }
-.therapy-banner-img{
+.therapy-banner-img {
   height: 540px;
 }
-.therapy-banner .big-pink{
+.therapy-banner .big-pink {
   font-size: 32px;
 }
-.therapy-banner p{
+.therapy-banner p {
   line-height: 110%;
   letter-spacing: -0.02em;
   max-width: 46ch;
 }
 
 /* Therapy Banner */
+/* About Banner  */
+.about-banner {
+  position: relative;
+  padding-top: 120.83px;
+  border: 10px solid var(--text-brown);
+}
+.about-banner::before {
+  content: "";
+  background-image: url("../images/therapy-banner-bg.png");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about-banner > * {
+  position: relative;
+  z-index: 2;
+}
+.about-banner-image {
+  max-height: 646px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+.about-banner-text {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+.about-banner-text h1 {
+  font-size: clamp(98px, 20vw, 300px);
+  font-style: italic;
+  color: #f7f0e8;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  position: absolute;
+  bottom: -60px;
+  margin: 0 auto;
+}
+.about-banner-text p {
+  font-size: 26px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #f7f0e8;
+  max-width: 40ch;
+  padding-left: 50px;
+  position: absolute;
+  top: 40%;
+}
+.about-banner-text p .big-pink {
+  color: #f7f0e8;
+}
+.about-banner-text .pink-card {
+  position: absolute;
+  right: 60px;
+  top: 35%;
+}
+/* About Banner  */
+/* My Story  */
+.mystory-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.mystory-in .right {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+}
+.mystory-in .right p {
+  font-size: 28px;
+}
+/* My Story  */
+
+/* About Me Chapeter 2 */
+.amc2-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.amc2-bg-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  will-change: transform;
+}
+.amc2-bg-slide {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  flex-shrink: 0;
+}
+.amc2-bg-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter:  brightness(0.7);
+}
+
+.amc2-chapter-num {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  font-family: var(--mono);
+  transform: translateX(-50%);
+  z-index: 20;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 117%;
+  color: #F7F0E8;
+  text-transform: uppercase;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.amc2-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: #F7F0E8;
+  width: min(1100px, 88vw);
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+  gap: 32px;
+  padding: 80px 44px;
+  backdrop-filter: blur(2px);
+}
+
+.amc2-left-col {
+  position: relative;
+}
+.amc2-left-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.amc2-left-item:first-child {
+  position: relative;
+}
+
+.amc2-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  color: #3E2C25;
+  font-weight: 500;
+  line-height: 117%;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+.amc2-body {
+  display: block;
+  font-family: var(--inter);
+  font-size: 14px;
+  line-height: 130%;
+  color: #35231B;
+  font-weight: 400;
+  opacity: 0;
+  padding-bottom: 50px;
+}
+
+.amc2-img-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+}
+.amc2-img-strip {
+  width: 100%;
+  will-change: transform;
+}
+.amc2-img-slide {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: block;
+}
+.amc2-img-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* right col */
+.amc2-right-col {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.amc2-right-item {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.amc2-right-item:first-child {
+  position: relative;
+}
+
+.amc2-title-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  pointer-events: none;
+  overflow: hidden;
+  line-height: 0.85;
+  opacity: 0;
+}
+.amc2-title {
+  display: block;
+  font-family: var(--times);
+  font-style: italic;
+  font-weight: 350;
+  font-size: 22.5vw;
+  color: #fff;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  transform: translateY(0);
+  white-space: nowrap;
+padding-left: 20px;
+}
+
+
+@media (max-width: 991px) {
+  .amc2-card {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    gap: 20px;
+  }
+  .amc2-img-frame {
+    aspect-ratio: 5 / 3;
+  }
+  .amc2-img-slide {
+    aspect-ratio: 5 / 3;
+  }
+  .amc2-right-col {
+    align-items: flex-start;
+  }
+}
+

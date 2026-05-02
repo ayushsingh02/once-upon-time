@@ -60,7 +60,7 @@
   .contact-component-wrap {
     flex-direction: column;
   }
-  .contact-section.main-component{
+  .contact-section.main-component {
     padding-bottom: 20px;
   }
   .contact-section.main-component .contact-form-main {
@@ -72,19 +72,37 @@
   .contact-section.main-component .container {
     max-width: 800px;
   }
-  .therapy-banner-in .left{
+  .therapy-banner-in .left {
     width: 40%;
   }
-  .therapy-banner-in .right{
+  .therapy-banner-in .right {
     width: 60%;
   }
-  .therapy-banner-img{
+  .therapy-banner-img {
     height: 450px;
   }
-  .therapy-banner{
+  .therapy-banner {
     min-height: unset;
     height: unset;
     padding-top: 150px;
+  }
+  .about-banner-text p {
+    font-size: 20px;
+  }
+  .about-banner-text p span {
+    font-size: 42px;
+  }
+  .about-banner-text h1 {
+    bottom: -40px;
+  }
+  .about-banner-image {
+    margin-bottom: 40px;
+  }
+  .mystory-in .right{
+    padding-left: 40px;
+  }
+  .mystory-in .right p{
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -250,34 +268,50 @@
     width: 80% !important;
     margin: auto;
   }
-  .pre-footer{
+  .pre-footer {
     padding-top: 38px;
   }
-  .learn-therapy-in{
+  .learn-therapy-in {
     gap: 20px;
   }
-  .book-call-cta{
+  .book-call-cta {
     margin-top: 40px;
   }
-  .work-with-me-slider{
+  .work-with-me-slider {
     grid-template-columns: 1fr 1fr !important;
   }
-  .wwm-card .bottom{
+  .wwm-card .bottom {
     gap: 10px;
   }
-  .wwm-card .bottom h3{
+  .wwm-card .bottom h3 {
     font-size: 26px;
   }
-  .wwm-card .bottom p{
+  .wwm-card .bottom p {
     font-size: 14px;
   }
-  .work-with-me-in .wwm-card{
+  .work-with-me-in .wwm-card {
     padding: 28px 20px;
   }
-  .work-with-me-in .wwm-card:last-child{
+  .work-with-me-in .wwm-card:last-child {
     grid-column: 1 / span 2;
-    justify-self: center; 
-    width: 50%;             
+    justify-self: center;
+    width: 50%;
+  }
+  .about-banner{
+    padding-top: 79.36px;
+  }
+  .about-banner-image{
+    margin-bottom: 30px;
+  }
+  .about-banner-text p{
+    padding-left: 30px;
+  }
+  .mystory-in{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .mystory-in .right{
+    padding-left: 0px;
   }
 }
 
@@ -463,35 +497,72 @@
     width: 150px;
     height: 160px;
   }
-  .work-with-me-in .work-with-me-slider{
+  .work-with-me-in .work-with-me-slider {
     grid-template-columns: 1fr !important;
   }
-  .work-with-me-in .wwm-card:last-child{
+  .work-with-me-in .wwm-card:last-child {
     grid-column: unset;
     justify-self: unset;
     width: 100%;
   }
-  .contact-section.main-component .contact-form-main{
+  .contact-section.main-component .contact-form-main {
     padding: 30px;
     padding-top: 40px;
   }
-  .therapy-banner-in .bottom{
+  .therapy-banner-in .bottom {
     flex-direction: column;
     gap: 30px;
   }
-  .therapy-banner-in .bottom>*{
+  .therapy-banner-in .bottom > * {
     width: 100%;
   }
-  .therapy-banner-img{
+  .therapy-banner-img {
     height: 300px;
   }
-  .therapy-banner-in .left .pink-card{
-   display: none;
+  .therapy-banner-in .left .pink-card {
+    display: none;
   }
-  .therapy-banner{
-height: unset;
-min-height: unset;
-padding-top: 120px;
+  .therapy-banner {
+    height: unset;
+    min-height: unset;
+    padding-top: 120px;
+  }
+  .about-banner-text h1{
+    bottom: -30px;
+  }
+  .about-banner-text p{
+    padding-left: 20px;
+  }
+  .about-banner{
+    border: none;
+  }
+  .about-banner-text .pink-card{
+    display: none;
+  }
+  .about-banner-text h1{
+    /* color: var(--text-brown); */
+    font-size: 82px;
+    bottom: -15px;
+  }
+  .about-banner-text p{
+    top: 50%;
+    padding-left: 10px;
+    font-size: 14px;
+  }
+  .about-banner-text p span{
+    font-size: 26px;
+  }
+  .about-banner-image{
+    margin-bottom: 0px;
+  }
+  .about-banner-image{
+    height: 480px;
+  }
+  .mystory-in .right p{
+    font-size: 16px;
+  }
+  .mystory-in .right p span.big-pink{
+    padding-right: 2px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -502,6 +573,9 @@ padding-top: 120px;
     padding: 8px 10px;
     font-size: 9px;
   }
+  .about-banner-text h1 {
+    font-size: 66px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .home-banner-in .left h1 {
@@ -525,4 +599,5 @@ padding-top: 120px;
   .home-chapter-2 p.eyebrow-head {
     font-size: 18px;
   }
+ 
 }
