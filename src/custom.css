@@ -1363,7 +1363,7 @@ height: 784px;
   align-items: stretch;
   padding: 48px 60px;
   padding-bottom: 0px;
-  gap: 80px;
+  gap: 40px;
 }
 .card-1-heading{
   display: flex;
@@ -1388,7 +1388,7 @@ height: 784px;
 .card-1-below .left{
 display: flex;
 flex-direction: column;
-gap: 150px;
+gap: 50px;
 padding-top: 40px;
 }
 .card-1-below .left h3{
@@ -1421,7 +1421,7 @@ padding-top: 40px;
 .card-2 .card-1-below .left{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+padding-top: 100px;
   align-items: center;
   text-align: center;
 }
@@ -1445,7 +1445,7 @@ padding-top: 40px;
   padding-bottom: 0px;
 }
 .card-3 .card-1-below .left{
-  gap: 280px;
+  gap: 200px;
 }
 
 

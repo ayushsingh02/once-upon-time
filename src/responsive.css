@@ -104,6 +104,29 @@
   .mystory-in .right p {
     font-size: 22px;
   }
+  .card-1-inner{
+    gap: 40px;
+  }
+  .card-1-below .left{
+    gap: 100px;
+  }
+  .card-1-below .left p{
+    font-size: 14px;
+  }
+  .card-1-below .left h3{
+    font-size: 42px;
+  }
+  .card-1-small-img{
+    max-width: 150px;
+    max-height: 170px;
+  }
+  .card-2 .card-1-below .left{
+    justify-content: start;
+    padding-top: 100px;
+  }
+  .card-3 .card-1-below .left{
+    gap: 150px;
+  }
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
