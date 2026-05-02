@@ -12,6 +12,8 @@
   width: 200px;
   height: 200px;
   transform: rotate(25deg);
+  position: relative;
+  z-index: 55;
 }
 .pink-card.blue {
   background-color: var(--skyblue);
@@ -418,6 +420,7 @@
   .theraphy-card-outer:nth-child(even) .theraphy-card .left {
     padding-left: 42px;
   }
+
 }
 @media screen and (max-width: 991px) {
   .theraphy-card .right .therapy-card-img {
@@ -443,6 +446,12 @@
   }
   .theraphy-card-outer:nth-child(even) .theraphy-card {
     padding-left: 30px;
+  }
+  .sticky-scroll-tab{
+    display: none;
+  }
+  .sst-space{
+    display: none;
   }
 }
 @media screen and (max-width: 767px) {

@@ -324,6 +324,7 @@
 .pre-footer {
   background-color: var(--skyblue);
   padding: 38px 0px;
+  overflow: hidden;
 }
 
 .pre-footer-in {
@@ -801,7 +802,9 @@ form#news-update label {
 }
 /* Contact Form Main  */
 /* Learn Therapy */
-
+.learn-therapy{
+  overflow: hidden;
+}
 .book-call-cta {
   margin-top: 50px;
   display: flex;
@@ -830,8 +833,8 @@ form#news-update label {
   background-color: #fff;
 }
 .wwm-card .wwm-img {
-  width: 367px;
-  height: 352px;
+  width: 100%;
+aspect-ratio: 1/1;
 }
 .wwm-card .top p {
   font-family: var(--mono);
@@ -870,8 +873,75 @@ form#news-update label {
 /* Therapy Banner */
 .therapy-banner{
 background-color: #37251D;
+position: relative;
+height: 100vh;
+min-height: 800px;
+}
+.therapy-banner::before{
+  content: "";
+  background-image: url("../images/therapy-banner-bg.png");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: color-burn;
 }
 .therapy-banner{
   display: flex;
+  overflow: hidden;
 }
+.therapy-banner > *{
+  position: relative;
+  z-index: 2;
+}
+.therapy-banner-in{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+}
+.therapy-banner-in .bottom{
+display: flex;
+margin-top: 30px;
+}
+.therapy-banner-in .left{
+  position: relative;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 20px;
+}
+.therapy-banner-in .right{
+  width: 65%;
+}
+.therapy-banner-in .left .pink-card{
+position: absolute;
+right: -70px;
+bottom: 100px;
+}
+.therapy-banner-in h1{
+color: #fff;
+font-size: clamp(32px, 4vw, 66px);
+line-height: 100%;
+text-transform: capitalize;
+letter-spacing: -0.02em;
+}
+.therapy-banner-in p{
+  color: #fff;
+}
+.therapy-banner-img{
+  height: 540px;
+}
+.therapy-banner .big-pink{
+  font-size: 32px;
+}
+.therapy-banner p{
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  max-width: 46ch;
+}
+
 /* Therapy Banner */

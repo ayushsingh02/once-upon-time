@@ -112,6 +112,13 @@ header.header-hide {
     background-color: transparent;
     backdrop-filter: none;
   }
+  .light-header .header.desktop nav ul li a {
+    color: #F7F0E8;
+  }
+  
+  .light-header .ham-menu svg path {
+    fill: #F7F0E8;
+  }
   @media screen and (max-width: 1300px) {
     .header.desktop .header-logo{
       max-width: 440px;

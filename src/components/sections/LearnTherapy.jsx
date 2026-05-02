@@ -1,5 +1,6 @@
-import React from "react";
-import TherapyCard from "../snippets/TherapyCard";
+import React, { useRef, useEffect } from "react";
+import TherapyCard from '../snippets/TherapyCard';
+import { slideInLeft, slideInRight, animateText } from "../../animations";
 
 const data = {
   eyehead: "Chapter II",
@@ -35,17 +36,35 @@ const data = {
 };
 
 const LearnTherapy = () => {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+      const isOdd = (index + 1) % 2 !== 0;
+      if (isOdd) {
+        slideInRight(ref);
+      } else {
+        slideInLeft(ref);
+      }
+    });
+  }, []); 
+
   return (
     <section>
       <div className="learn-therapy">
         <div className="container">
-          <div className="heading">
+          <div className="heading" ref={animateText}>
             <p className="eyebrow-head">{data.eyehead}</p>
             <h2>{data.heading}</h2>
           </div>
           <div className="learn-therapy-in">
-            {data.cards.map((card) => (
-              <TherapyCard key={card.id} {...card} />
+            {data.cards.map((card, index) => (
+              <TherapyCard
+                key={card.id}
+                {...card}
+                cardRef={(el) => (cardRefs.current[index] = el)} 
+              />
             ))}
           </div>
           <div className="book-call-cta">
@@ -56,5 +75,4 @@ const LearnTherapy = () => {
     </section>
   );
 };
-
 export default LearnTherapy;

@@ -1,4 +1,5 @@
 import React from "react";
+import { animateText, slideInBottom } from "../../animations";
 
 const data = {
   eyebrow: "Chapter I",
@@ -40,13 +41,13 @@ const WorkWithMe = () => {
     <section>
       <div className="work-with-me">
         <div className="container">
-          <div className="heading">
+          <div className="heading" ref={animateText}>
             <p className="eyebrow-head">{data.eyebrow}</p>
             <h2>{data.heading}</h2>
             <p>{data.desc}</p>
           </div>
           <div className="work-with-me-in">
-            <div className="work-with-me-slider">
+            <div className="work-with-me-slider" ref={slideInBottom}>
               {data.cards.map((card) => (
                 <div className="wwm-card" key={card.id}>
                   <div className="top">

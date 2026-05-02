@@ -1,10 +1,9 @@
 import React from "react";
 
-
-const TherapyCard = ({ eyebrow, title, desc, image, lineColor }) => {
+const TherapyCard = ({ eyebrow, title, desc, image, lineColor, cardRef }) => {
   return (
     <>
-      <div className="theraphy-card-outer">
+      <div className="theraphy-card-outer" ref={cardRef}>
       <div className="theraphy-card">
         <div className="left">
           {eyebrow && <p className="eyebrow-head">{eyebrow}</p>}

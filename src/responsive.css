@@ -72,6 +72,20 @@
   .contact-section.main-component .container {
     max-width: 800px;
   }
+  .therapy-banner-in .left{
+    width: 40%;
+  }
+  .therapy-banner-in .right{
+    width: 60%;
+  }
+  .therapy-banner-img{
+    height: 450px;
+  }
+  .therapy-banner{
+    min-height: unset;
+    height: unset;
+    padding-top: 150px;
+  }
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -244,6 +258,26 @@
   }
   .book-call-cta{
     margin-top: 40px;
+  }
+  .work-with-me-slider{
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .wwm-card .bottom{
+    gap: 10px;
+  }
+  .wwm-card .bottom h3{
+    font-size: 26px;
+  }
+  .wwm-card .bottom p{
+    font-size: 14px;
+  }
+  .work-with-me-in .wwm-card{
+    padding: 28px 20px;
+  }
+  .work-with-me-in .wwm-card:last-child{
+    grid-column: 1 / span 2;
+    justify-self: center; 
+    width: 50%;             
   }
 }
 
@@ -428,6 +462,36 @@
     top: 40px;
     width: 150px;
     height: 160px;
+  }
+  .work-with-me-in .work-with-me-slider{
+    grid-template-columns: 1fr !important;
+  }
+  .work-with-me-in .wwm-card:last-child{
+    grid-column: unset;
+    justify-self: unset;
+    width: 100%;
+  }
+  .contact-section.main-component .contact-form-main{
+    padding: 30px;
+    padding-top: 40px;
+  }
+  .therapy-banner-in .bottom{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .therapy-banner-in .bottom>*{
+    width: 100%;
+  }
+  .therapy-banner-img{
+    height: 300px;
+  }
+  .therapy-banner-in .left .pink-card{
+   display: none;
+  }
+  .therapy-banner{
+height: unset;
+min-height: unset;
+padding-top: 120px;
   }
 }
 @media screen and (max-width: 400px) {

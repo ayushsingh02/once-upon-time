@@ -9,10 +9,27 @@ const navItems = [
   { label: "Book A Call", href: "#!" },
 ];
 
-const HeaderSecondary = ({ transparent = false }) => {
+const HeaderSecondary = ({ transparent = false, light = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(transparent);
+  const [isLight, setIsLight] = useState(light);
   const headerRef = useRef(null);
+  const isMenuOpenRef = useRef(false);
+  const prevScrollRef = useRef(0);
+
+  const logo = isLight ? "icons/header-light-logo.svg" : "icons/header-dark-logo.svg";
+  const mobLogo = isLight ? "icons/header-light-logo.svg" : "icons/header-dark-logo.svg";
+
+  const openMenu = () => {
+    isMenuOpenRef.current = true;
+    setIsMenuOpen(true);
+    headerRef.current.classList.remove("header-hide");
+  };
+
+  const closeMenu = () => {
+    isMenuOpenRef.current = false;
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     const header = headerRef.current;
@@ -27,17 +44,21 @@ const HeaderSecondary = ({ transparent = false }) => {
       header.style.transform = "";
     }, 1300);
 
-    let prevScroll = 0;
-
     const handleScroll = () => {
+      if (isMenuOpenRef.current) return;
+
       const currentScroll = window.scrollY;
 
       if (transparent) {
         setIsTransparent(currentScroll < 10);
       }
 
+      if (light) {
+        setIsLight(currentScroll < 10);
+      }
+
       if (currentScroll > 80) {
-        if (currentScroll > prevScroll) {
+        if (currentScroll > prevScrollRef.current) {
           header.classList.add("header-hide");
         } else {
           header.classList.remove("header-hide");
@@ -46,22 +67,25 @@ const HeaderSecondary = ({ transparent = false }) => {
         header.classList.remove("header-hide");
       }
 
-      prevScroll = currentScroll;
+      prevScrollRef.current = currentScroll;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [transparent]);
+  }, [transparent, light]);
 
   return (
     <>
-     <header ref={headerRef} className={`secondary-header${isTransparent ? " transparent-header" : ""}`}>
+      <header
+        ref={headerRef}
+        className={`secondary-header${isLight ? " light-header" : ""}${isTransparent ? " transparent-header" : ""}`}
+      >
         <div className="header desktop">
           <div className="container">
             <div className="header-in">
               <div className="left">
                 <div className="header-logo">
-                  <img src="images/header-logo.svg" alt="Logo" className="icon" />
+                  <img src={logo} alt="Logo" className="icon" />
                 </div>
               </div>
               <div className="right">
@@ -83,13 +107,13 @@ const HeaderSecondary = ({ transparent = false }) => {
           <div className="container">
             <div className="header-in">
               <div className="header-top">
-                <div className="ham-menu" onClick={() => setIsMenuOpen(true)}>
+                <div className="ham-menu" onClick={openMenu}>
                   <svg className="icon" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
                 </div>
                 <div className="header-mob-logo">
-                  <img src="images/header-logo.svg" alt="Logo" className="icon" />
+                  <img src={mobLogo} alt="Logo" className="icon" />
                 </div>
                 <div className="bac-cta">
                   <a href="#!" className="primary-btn">Book A Call</a>
@@ -107,14 +131,14 @@ const HeaderSecondary = ({ transparent = false }) => {
                   </li>
                 ))}
               </ul>
-              <div className="close-cta" onClick={() => setIsMenuOpen(false)}>
+              <div className="close-cta" onClick={closeMenu}>
                 <svg className="icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524" stroke="#F7F0E8" strokeWidth="1.91008" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </nav>
             <div className="header-menu-logo">
-              <img src="images/header-menu-logo.svg" alt="Logo" className="icon" />
+              <img src="icons/header-light-logo.svg" alt="Logo" className="icon" />
             </div>
           </div>
         </div>

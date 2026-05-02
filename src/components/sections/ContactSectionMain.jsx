@@ -1,6 +1,7 @@
 import React from "react";
 import BlueCard from "../snippets/BlueCard";
 import countryCodesList from "country-codes-list";
+import { slideInLeft, slideInBottom } from "../../animations";
 
 const allCountries = countryCodesList.customList(
   "countryCallingCode",
@@ -25,7 +26,7 @@ const ContactSectionMain = ({
       </div>
       <div className="container">
         <div className="contact-component-wrap">
-          <div className="contact-form-top">
+          <div className="contact-form-top" ref={slideInLeft}>
             <div>
               <p className="eyebrow-head">{eyebrowText}</p>
               <div className="heading-block">
@@ -44,7 +45,7 @@ const ContactSectionMain = ({
               <a href={`mailto:${emailid}`}>{emailid}</a>
             </div>
           </div>
-          <div className="contact-form-main">
+          <div className="contact-form-main" ref={slideInBottom}>
             <h3>Fill The Form</h3>
             <form action="" className="contact-form">
               <div className="">

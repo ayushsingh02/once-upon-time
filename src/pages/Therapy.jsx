@@ -61,10 +61,10 @@ const Therapy = () => {
   return (
     <>
       <ReactLenis root>
-      <HeaderSecondary transparent />
+      <HeaderSecondary transparent light />
         <main>
           <TherapyBanner></TherapyBanner>
-          <div className="spacer-sm"></div>
+          <div className="spacer-sm sst-space"></div>
           <StickyScrollTab tabs={tabs} />
           <div className="spacer-sm"></div>
           <div id="work-with-me">
