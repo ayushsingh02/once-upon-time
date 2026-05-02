@@ -322,6 +322,19 @@
   .stories-banner-img {
     height: 380px;
   }
+  .quote-symbol{
+    width: 50px;
+    height: auto;
+  }
+  .hear-from-card h3{
+    font-size: 32px;
+  }
+  .hear-from-card .content p{
+    font-size: 16px;
+  }
+  .hear-from-card .bottom-head p{
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -603,6 +616,24 @@
   .rules-for-submission {
     margin-bottom: 0px;
   }
+  .quote-symbol{
+    width: 40px;
+    height: auto;
+  }
+  .hear-from-card h3{
+    font-size: 26px;
+  }
+  .hear-from-card .content p{
+    font-size: 14px;
+  }
+  .hear-from-card .bottom-head p{
+    font-size: 12px;
+  }
+  .hear-from-card{
+    gap: 30px;
+    padding: 28px 24px ;
+  }
+  
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

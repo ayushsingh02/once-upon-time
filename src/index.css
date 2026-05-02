@@ -172,6 +172,9 @@ p.eyebrow-head {
   max-width: 1600px;
   margin: 0 auto;
 }
+.container-left{
+  padding-left: 60px;
+}
 .spacer {
   height: 150px;
 }
@@ -386,10 +389,22 @@ form.contact-form .contact-number-wrap {
   justify-content: center;
   margin-top: 40px;
 }
-
+.owl-stage{
+  display: flex;
+  align-items: stretch;
+}
+.custom-nav.desktop{
+  display: block;
+}
+.custom-nav.mobile{
+  display: none;
+}
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0px 40px;
+  }
+  .container-left{
+    padding-left: 40px;
   }
   .top-spacing {
     padding-top: 150px;
@@ -401,6 +416,9 @@ form.contact-form .contact-number-wrap {
 @media screen and (max-width: 991px) {
   .container {
     padding: 0px 30px;
+  }
+  .container-left{
+    padding-left: 30px;
   }
   .primary-btn {
     padding: 10px 15px;
@@ -419,6 +437,12 @@ form.contact-form .contact-number-wrap {
   }
   p span.big-pink {
     font-size: 32px;
+  }
+  .custom-nav.desktop{
+    display: none;
+  }
+  .custom-nav.mobile{
+    display: block;
   }
 }
 @media screen and (max-width: 767px) {
@@ -449,6 +473,9 @@ form.contact-form .contact-number-wrap {
   .container {
     padding: 0px 20px;
   }
+  .container-left{
+    padding-left: 20px;
+  }
   .spacer-mid {
     height: 90px;
   }
@@ -459,5 +486,8 @@ form.contact-form .contact-number-wrap {
   .owl-custom-next {
     height: 35px;
     width: 35px;
+  }
+  .heading{
+    margin-bottom: 30px;
   }
 }
