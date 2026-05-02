@@ -9,6 +9,7 @@ import InstaSection from "../components/sections/InstaSection";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import RulesForSubmission from "../components/sections/RulesForSubmission";
 import HearFrom from "../components/sections/HearFrom";
+import SafeSpace from "../components/sections/SafeSpace";
 const data = {
   image: {
     src: "images/chapter-1-home.png",
@@ -56,6 +57,8 @@ const Stories = () => {
         <HeaderSecondary transparent/>
         <main>
         <StoriesBanner></StoriesBanner>
+        <div className="spacer"></div>
+        <SafeSpace></SafeSpace>
         <div className="spacer"></div>
         <HearFrom></HearFrom>
         <div className="spacer"></div>

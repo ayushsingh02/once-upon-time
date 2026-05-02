@@ -83,7 +83,7 @@ const HomeChapter1 = () => {
             <div className="fold-1">
               <p className="eyebrow-head">{data.eyeHead}</p>
               <div className="brand-logo">
-                <img src="images/header-logo.svg" alt="Brand Logo" className="icon" />
+                <img src="icons/header-dark-logo.svg" alt="Brand Logo" className="icon" />
               </div>
               <h3>{data.title}</h3>
               <div className="scroll-down">

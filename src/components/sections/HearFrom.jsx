@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { animateText } from "../../animations";
 
 const data = {
   eyeHead: "CHAPTER II",
@@ -53,13 +54,13 @@ const QuoteIcon = () => (
 );
 
 const HearFrom = () => {
-  const sliderRef = useRef(null); // 1. added ref
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     const $ = window.$;
     if (!$) return;
 
-    const $slider = window.$(sliderRef.current); // 2. use ref instead of class selector
+    const $slider = window.$(sliderRef.current); 
 
     if ($slider.hasClass("owl-loaded")) {
       $slider.trigger("destroy.owl.carousel");
@@ -100,7 +101,7 @@ const HearFrom = () => {
     <div className="hear-from">
       <div className="container">
         <div className="top">
-          <div className="heading">
+          <div className="heading" ref={animateText}>
             <p className="eyebrow-head">{data.eyeHead}</p>
             <h2>{data.headTitle}</h2>
           </div>

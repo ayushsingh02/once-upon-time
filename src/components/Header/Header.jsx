@@ -82,7 +82,7 @@ const Header = () => {
               <div className="left">
                 <div className="header-logo" ref={logoRef}>
                   <img
-                    src="images/header-dark-logo"
+                    src="icons/header-dark-logo.svg"
                     alt="Logo"
                     className="icon"
                   />
@@ -112,7 +112,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="header-mob-logo">
-                  <img src="images/header-dark-logo" alt="Logo" className="icon" />
+                  <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
                 </div>
                 <div className="bac-cta">
                   <a href="#!" className="primary-btn">Book A Call</a>
