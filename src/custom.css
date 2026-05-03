@@ -2099,26 +2099,10 @@ margin-bottom: 40px;
 .letter-from-me.for-about .top-head p{
   color: #F7F0E7;
 }
-/* @media (max-width: 991px) {
-  .home-chapter-1 {
-    height: auto;
-    min-height: 100svh;
-  }
+:root {
+  --vh: 1vh;
+}
 
-  .inner-card {
-    height: auto !important;
-    width: 100% !important;
-  }
-
-  .inner-card-scroll {
-    transform: none !important;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .fold-1,
-  .fold-2 {
-    height: auto;
-    padding: 40px 0;
-  }
-} */
+.home-chapter-1 {
+  height: calc(var(--vh, 1vh) * 100);
+}
