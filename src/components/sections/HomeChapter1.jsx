@@ -34,7 +34,13 @@ const HomeChapter1 = () => {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 992px)", () => {
+    mm.add({
+      isDesktop: "(min-width: 992px)",
+      isMobile: "(max-width: 991px)",
+    }, (context) => {
+      let { isDesktop } = context.conditions;
+    
+      if (!isDesktop) return;
       const section = sectionRef.current;
       const card = cardRef.current;
       const cardInner = cardInnerRef.current;
