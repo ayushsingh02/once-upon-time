@@ -7,4 +7,8 @@ export default defineConfig({
   build: {
     cssMinify: false,
   },
+  server: {
+    port: 3000,
+  },
+  
 })
