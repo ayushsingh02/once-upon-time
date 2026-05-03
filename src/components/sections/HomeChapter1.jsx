@@ -56,12 +56,12 @@ const HomeChapter1 = () => {
         ease: "none",
         duration: 0.3,
       })
-      .to(card, {
-        height: "calc(100vh - 130px)",
-        width: "538px",
-        ease: "power2.inOut",
-        duration: 0.5,
-      });
+      // .to(card, {
+      //   height: "calc(100vh - 130px)",
+      //   width: "538px",
+      //   ease: "power2.inOut",
+      //   duration: 0.5,
+      // });
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());

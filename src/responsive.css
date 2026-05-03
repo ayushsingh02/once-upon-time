@@ -505,6 +505,12 @@
 .letter-page .author{
   margin-top: 100px;
 }
+.footer-copyright p a{
+  font-size: 12px;
+}
+.footer .copyright p span {
+width: 12px;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -865,7 +871,12 @@
   .letter-page .author{
     margin-top: 50px;
   }
-  
+  .footer-copyright p a{
+    font-size: 10px;
+  }
+  .footer .copyright p span {
+    width: 10px;
+    }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

@@ -84,9 +84,10 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
           <div className="container">
             <div className="header-in">
               <div className="left">
+                <a href="/">
                 <div className="header-logo">
                   <img src={logo} alt="Logo" className="icon" />
-                </div>
+                </div></a>
               </div>
               <div className="right">
                 <nav>
@@ -112,9 +113,10 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
                 </div>
+                <a href="/">
                 <div className="header-mob-logo">
                   <img src={mobLogo} alt="Logo" className="icon" />
-                </div>
+                </div></a>
                 <div className="bac-cta">
                   <a href="#!" className="primary-btn">Book A Call</a>
                 </div>
