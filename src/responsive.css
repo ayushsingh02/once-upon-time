@@ -13,6 +13,12 @@
   .chapter3-meet-in .right .big-pink {
     font-size: 36px;
   }
+  .letter-page .author{
+    margin-top: 20px;
+  }
+  .letter-page{
+    padding: 30px 24px;
+  }
 }
 @media screen and (max-width: 1200px) {
   .pre-footer-in .top {
@@ -43,6 +49,20 @@
   }
   .chapter3-meet {
     padding-bottom: 100px;
+  }
+
+  .letter-page {
+    transform: unset;
+  }
+  .letter-from-me .polo-img {
+    transform: unset;
+  }
+  .letter-from-me .polo-img{
+    height: 100%;
+    aspect-ratio: unset;
+  }
+  .letter-form-me-in{
+    padding: 0px;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -127,9 +147,10 @@
   .card-3 .card-1-below .left {
     gap: 150px;
   }
-  .pricing .container{
+  .pricing .container {
     padding-right: 0px;
   }
+ 
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -462,6 +483,28 @@
     width: 20px;
     height: 20px;
   }
+  .poloroid-img {
+    width: 180px;
+    height: 200px;
+    padding: 10px 10px 25px 10px;
+  }
+  .letter-form-me-in {
+    grid-template-columns: 1fr;
+    padding: 0px;
+  }
+  .letter-form-me-in .right {
+    order: -1;
+  }
+
+  .lfm-card .pink-card {
+  top: unset;
+  left: unset;
+  bottom: 50px;
+  right: 50px;
+}
+.letter-page .author{
+  margin-top: 100px;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -785,6 +828,44 @@
   .accordion-title span {
     top: 0;
   }
+  .og-therapy .image-block {
+    height: 400px;
+  }
+  .og-therapy-in .content-block {
+    position: relative;
+    top: 0px;
+    margin-bottom: 50px;
+  }
+  .og-therapy .og-therapy-in {
+    flex-direction: column;
+  }
+  .og-therapy .pink-card.sm {
+    display: none;
+  }
+  .og-therapy {
+    height: 800px;
+  }
+  .lfm-card .pink-card {
+    width: 162px;
+    height: 160px;
+    bottom: 29px;
+        right: 50px;
+        display: none;
+  }
+  .letter-page{
+    padding: 30px 20px !important; 
+  }
+  .letter-from-me .polo-img{
+    padding: 15px;
+    padding-bottom: 25px;
+  }
+  .letter-page .auther-name{
+    font-size: 32px;
+  }
+  .letter-page .author{
+    margin-top: 50px;
+  }
+  
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
@@ -796,6 +877,12 @@
   }
   .about-banner-text h1 {
     font-size: 66px;
+  }
+}
+@media (min-width: 1100px) {
+  .who-is-card.brown {
+    padding-left: 38px;
+    padding-right: 38px;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {

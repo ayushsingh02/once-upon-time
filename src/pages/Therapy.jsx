@@ -12,6 +12,9 @@ import ReferralBrowse from "../components/sections/ReferralBrowse";
 import FaqsAccord from "../components/sections/FaqsAccord";
 import Pricing from "../components/sections/Pricing";
 import YourQuestions from "../components/sections/YourQuestions";
+import WhoIsIt from "../components/sections/WhoIsIt";
+import TherapyOgBanner from "../components/sections/TherapyOgBanner";
+import LetterFromMe from "../components/sections/LetterFromMe";
 
 const tabs = [
   { label: "Work With Me", target: "#work-with-me" },
@@ -67,6 +70,11 @@ const Therapy = () => {
       <ReactLenis root>
         <HeaderSecondary transparent light />
         <main>
+        <TherapyOgBanner></TherapyOgBanner>
+        <div className="spacer"></div>
+        <LetterFromMe></LetterFromMe>
+          <div className="spacer"></div>
+        <WhoIsIt></WhoIsIt>
           <div className="spacer"></div>
           <Ethics></Ethics>
           <div className="spacer"></div>

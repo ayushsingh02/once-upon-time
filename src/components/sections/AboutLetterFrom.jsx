@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { animateText, slideInLeft, slideInRight } from "../../animations";
 import PinkCard from "../snippets/PinkCard";
 import BlueCard from "../snippets/BlueCard";
 import LightBlueCard from "../snippets/LightBlueCard";
+import { animateText, slideInRight, slideInLeft } from "../../animations";
 
 const data = {
   eyeHead: "CHAPTER I",
@@ -49,7 +49,7 @@ const data = {
 
 const cardComponents = [PinkCard, BlueCard, LightBlueCard];
 
-const LetterFromMe = () => {
+const AboutLetterFrom = () => {
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);
   const cursorRef = useRef(null);
@@ -127,7 +127,7 @@ const LetterFromMe = () => {
   }, []);
 
   return (
-    <div className="letter-from-me" ref={sectionRef}>
+    <div className="letter-from-me for-about" ref={sectionRef}>
       <div className="lfm-cursor" ref={cursorRef}>
         <span className="lfm-cursor-prev">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -153,7 +153,7 @@ const LetterFromMe = () => {
               <div className="lfm-card" key={slide.id}>
                 <div className="letter-form-me-in">
                   <div className="left">
-                    <div className="letter-page" ref={slideInLeft}>
+                    <div className="letter-page" ref={slideInRight}>
                       {slide.letterParagraphs.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
@@ -164,7 +164,7 @@ const LetterFromMe = () => {
                     </div>
                   </div>
                   <div className="right">
-                    <div className="polo-img" ref={slideInRight}>
+                    <div className="polo-img" ref={slideInLeft}>
                       <img src={slide.image} alt={slide.authorName} className="img" />
                     </div>
                   </div>
@@ -204,4 +204,4 @@ const LetterFromMe = () => {
   );
 };
 
-export default LetterFromMe;
+export default AboutLetterFrom;
