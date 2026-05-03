@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 const navItems = [
-  { label: "Therapy", href: "therapy" },
-  { label: "Collaborate", href: "collaborate" },
-  { label: "About", href: "about" },
-  { label: "Stories", href: "stories" },
-  { label: "Book A Call", href: "book-call" },
+  { label: "Therapy", href: "/therapy" },
+  { label: "Collaborate", href: "/collaborate" },
+  { label: "About", href: "/about" },
+  { label: "Stories", href: "/stories" },
+  { label: "Book A Call", href: "/book-call" },
 ];
 
 const HeaderSecondary = ({ transparent = false, light = false }) => {
@@ -80,21 +81,23 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
         ref={headerRef}
         className={`secondary-header${isLight ? " light-header" : ""}${isTransparent ? " transparent-header" : ""}`}
       >
+        {/* ── DESKTOP ── */}
         <div className="header desktop">
           <div className="container">
             <div className="header-in">
               <div className="left">
-                <a href="/">
-                <div className="header-logo">
-                  <img src={logo} alt="Logo" className="icon" />
-                </div></a>
+                <Link to="/">
+                  <div className="header-logo">
+                    <img src={logo} alt="Logo" className="icon" />
+                  </div>
+                </Link>
               </div>
               <div className="right">
                 <nav>
                   <ul>
                     {navItems.map((item) => (
                       <li key={item.label}>
-                        <a href={item.href}>{item.label}</a>
+                        <Link to={item.href}>{item.label}</Link>
                       </li>
                     ))}
                   </ul>
@@ -104,6 +107,7 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
           </div>
         </div>
 
+        {/* ── MOBILE ── */}
         <div className="header mobile">
           <div className="container">
             <div className="header-in">
@@ -113,12 +117,13 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
                 </div>
-                <a href="/">
-                <div className="header-mob-logo">
-                  <img src={mobLogo} alt="Logo" className="icon" />
-                </div></a>
+                <Link to="/">
+                  <div className="header-mob-logo">
+                    <img src={mobLogo} alt="Logo" className="icon" />
+                  </div>
+                </Link>
                 <div className="bac-cta">
-                  <a href="#!" className="primary-btn">Book A Call</a>
+                  <Link to="/book-call" className="primary-btn">Book A Call</Link>
                 </div>
               </div>
             </div>
@@ -129,7 +134,7 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href}>{item.label}</a>
+                    <Link to={item.href} onClick={closeMenu}>{item.label}</Link>
                   </li>
                 ))}
               </ul>

@@ -18,6 +18,18 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const logoRef = useRef(null);
+  const isMenuOpenRef = useRef(false); 
+
+  const openMenu = () => {
+    isMenuOpenRef.current = true;
+    setIsMenuOpen(true);
+    headerRef.current.classList.remove("header-hide"); 
+  };
+
+  const closeMenu = () => {
+    isMenuOpenRef.current = false;
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     const header = headerRef.current;
@@ -54,6 +66,8 @@ const Header = () => {
     let prevScroll = 0;
 
     const handleScroll = () => {
+      if (isMenuOpenRef.current) return; 
+
       const currentScroll = window.scrollY;
       if (currentScroll > shrinkEnd) {
         if (currentScroll > prevScroll) {
@@ -109,7 +123,7 @@ const Header = () => {
           <div className="container">
             <div className="header-in">
               <div className="header-top">
-                <div className="ham-menu" onClick={() => setIsMenuOpen(true)}>
+                <div className="ham-menu" onClick={openMenu}>
                   <svg className="icon" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
@@ -131,13 +145,13 @@ const Header = () => {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.href} onClick={() => setIsMenuOpen(false)}>
+                    <Link to={item.href} onClick={closeMenu}>
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <div className="close-cta" onClick={() => setIsMenuOpen(false)}>
+              <div className="close-cta" onClick={closeMenu}>
                 <svg className="icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524" stroke="#F7F0E8" strokeWidth="1.91008" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
