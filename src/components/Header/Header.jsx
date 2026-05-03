@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +22,7 @@ const Header = () => {
   useEffect(() => {
     const header = headerRef.current;
     const logo = logoRef.current;
-  
+
     header.style.transform = "translateY(-100%)";
     setTimeout(() => {
       header.style.transition = "transform 1s cubic-bezier(0.22, 1, 0.36, 1)";
@@ -31,13 +32,13 @@ const Header = () => {
       header.style.transition = "transform 0.4s ease";
       header.style.transform = "";
     }, 1300);
-  
+
     const shrinkEnd =
       window.innerWidth < 768 ? 120 :
       window.innerWidth < 1100 ? 150 :
       window.innerWidth < 1300 ? 180 :
       300;
-  
+
     const logoTween = gsap.to(logo, {
       width: "360px",
       ease: "none",
@@ -46,15 +47,15 @@ const Header = () => {
         start: "top top",
         end: `+=${shrinkEnd}`,
         scrub: 1,
-        invalidateOnRefresh: true,  
+        invalidateOnRefresh: true,
       },
     });
-  
+
     let prevScroll = 0;
-  
+
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      if (currentScroll > shrinkEnd) {   
+      if (currentScroll > shrinkEnd) {
         if (currentScroll > prevScroll) {
           header.classList.add("header-hide");
         } else {
@@ -65,36 +66,35 @@ const Header = () => {
       }
       prevScroll = currentScroll;
     };
-  
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      logoTween.scrollTrigger?.kill();  
+      logoTween.scrollTrigger?.kill();
     };
   }, []);
+
   return (
     <>
       <header ref={headerRef}>
+        {/* ── DESKTOP ── */}
         <div className="header desktop">
           <div className="container">
             <div className="header-in">
               <div className="left">
-                <a href="/">
-                <div className="header-logo" ref={logoRef}>
-                  <img
-                    src="icons/header-dark-logo.svg"
-                    alt="Logo"
-                    className="icon"
-                  />
-                </div></a>
+                <Link to="/">
+                  <div className="header-logo" ref={logoRef}>
+                    <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
+                  </div>
+                </Link>
               </div>
               <div className="right">
                 <nav>
                   <ul>
                     {navItems.map((item) => (
                       <li key={item.label}>
-                        <a href={item.href}>{item.label}</a>
+                        <Link to={item.href}>{item.label}</Link>
                       </li>
                     ))}
                   </ul>
@@ -103,6 +103,8 @@ const Header = () => {
             </div>
           </div>
         </div>
+
+        {/* ── MOBILE ── */}
         <div className="header mobile">
           <div className="container">
             <div className="header-in">
@@ -112,11 +114,13 @@ const Header = () => {
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
                 </div>
-              <a href="/">  <div className="header-mob-logo">
-                <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
-                </div></a>
+                <Link to="/">
+                  <div className="header-mob-logo">
+                    <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
+                  </div>
+                </Link>
                 <div className="bac-cta">
-                  <a href="#!" className="primary-btn">Book A Call</a>
+                  <Link to="/book-call" className="primary-btn">Book A Call</Link>
                 </div>
               </div>
             </div>
@@ -127,7 +131,9 @@ const Header = () => {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href}>{item.label}</a>
+                    <Link to={item.href} onClick={() => setIsMenuOpen(false)}>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
