@@ -2067,6 +2067,7 @@ margin-bottom: 40px;
 @media (max-width: 1200px) {
   .lfm-nav {
     display: block;
+    padding-bottom: 20px;
   }
   .lfm-cursor{
     display: none;

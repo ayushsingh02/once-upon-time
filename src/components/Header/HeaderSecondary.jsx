@@ -18,8 +18,9 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
   const isMenuOpenRef = useRef(false);
   const prevScrollRef = useRef(0);
 
-  const logo = isLight ? "icons/header-light-logo.svg" : "icons/header-dark-logo.svg";
-  const mobLogo = isLight ? "icons/header-light-logo.svg" : "icons/header-dark-logo.svg";
+  const logo = isLight
+    ? "icons/header-light-logo.svg"
+    : "icons/header-dark-logo.svg";
 
   const openMenu = () => {
     isMenuOpenRef.current = true;
@@ -45,18 +46,17 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
       header.style.transform = "";
     }, 1300);
 
+    // ✅ Fix 2: capture prop values at effect time to avoid stale closures
+    const isTransparentProp = transparent;
+    const isLightProp = light;
+
     const handleScroll = () => {
       if (isMenuOpenRef.current) return;
 
       const currentScroll = window.scrollY;
 
-      if (transparent) {
-        setIsTransparent(currentScroll < 10);
-      }
-
-      if (light) {
-        setIsLight(currentScroll < 10);
-      }
+      if (isTransparentProp) setIsTransparent(currentScroll < 10);
+      if (isLightProp) setIsLight(currentScroll < 10);
 
       if (currentScroll > 80) {
         if (currentScroll > prevScrollRef.current) {
@@ -79,7 +79,9 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
     <>
       <header
         ref={headerRef}
-        className={`secondary-header${isLight ? " light-header" : ""}${isTransparent ? " transparent-header" : ""}`}
+        className={`secondary-header${isLight ? " light-header" : ""}${
+          isTransparent ? " transparent-header" : ""
+        }`}
       >
         {/* ── DESKTOP ── */}
         <div className="header desktop">
@@ -113,39 +115,66 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
             <div className="header-in">
               <div className="header-top">
                 <div className="ham-menu" onClick={openMenu}>
-                  <svg className="icon" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
+                  <svg
+                    className="icon"
+                    width="18"
+                    height="12"
+                    viewBox="0 0 18 12"
+                    fill="none"
+                  >
+                    <path
+                      d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z"
+                      fill="#3E2C25"
+                    />
                   </svg>
                 </div>
                 <Link to="/">
                   <div className="header-mob-logo">
-                    <img src={mobLogo} alt="Logo" className="icon" />
+                    <img src={logo} alt="Logo" className="icon" />
                   </div>
                 </Link>
                 <div className="bac-cta">
-                  <Link to="/book-call" className="primary-btn">Book A Call</Link>
+                  <Link to="/book-call" className="primary-btn">
+                    Book A Call
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className={`header-menu ${isMenuOpen ? "open-menu" : ""}`}>
+          {/* ✅ Fix 1: pointer-events blocked when menu is closed */}
+          <div
+            className={`header-menu ${isMenuOpen ? "open-menu" : ""}`}
+            style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
+          >
             <nav>
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.href} onClick={closeMenu}>{item.label}</Link>
+                    <Link to={item.href} onClick={closeMenu}>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
               <div className="close-cta" onClick={closeMenu}>
-                <svg className="icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524" stroke="#F7F0E8" strokeWidth="1.91008" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path
+                    d="M20.4524 1.35059L1.35059 20.4524M1.35059 1.35059L20.4524 20.4524"
+                    stroke="#F7F0E8"
+                    strokeWidth="1.91008"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
             </nav>
             <div className="header-menu-logo">
-              <img src="icons/header-light-logo.svg" alt="Logo" className="icon" />
+              <img
+                src="icons/header-light-logo.svg"
+                alt="Logo"
+                className="icon"
+              />
             </div>
           </div>
         </div>

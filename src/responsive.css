@@ -884,6 +884,9 @@ width: 12px;
       max-height: 140px;
       overflow: hidden;
     }
+    .letter-page >p{
+      font-size: 14px;
+    }
   }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

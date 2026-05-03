@@ -17,13 +17,17 @@ import TherapyOgBanner from "../components/sections/TherapyOgBanner";
 import LetterFromMe from "../components/sections/LetterFromMe";
 
 const tabs = [
-  { label: "Work With Me", target: "#work-with-me" },
-  { label: "Learn Therapy", target: "#learn-therapy" },
-  { label: "Workshop That", target: "#workshop-that" },
-  { label: "Invite Thought", target: "#invite-thought" },
+  { label: "a letter for you", target: "#sec-1" },
+  { label: "who is it for", target: "#sec-2" },
+  { label: "ethics", target: "#sec-3" },
+  { label: "our approach", target: "#sec-4" },
+  { label: "pricing", target: "#sec-5" },
+  { label: "faqs", target: "#sec-6" },
+  { label: "refrrals", target: "#sec-7" },
+  { label: "connect", target: "#sec-8" },
 ];
 
-<StickyScrollTab tabs={tabs} />;
+
 const data = {
   image: {
     src: "images/chapter-1-home.png",
@@ -72,20 +76,44 @@ const Therapy = () => {
         <main>
         <TherapyOgBanner></TherapyOgBanner>
         <div className="spacer"></div>
+        <StickyScrollTab tabs={tabs}/>
+        <div className="spacer"></div>
+          <div id="sec-1">
         <LetterFromMe></LetterFromMe>
+        </div>
           <div className="spacer"></div>
+          <div id="sec-2">
+
         <WhoIsIt></WhoIsIt>
+        </div>
           <div className="spacer"></div>
+          <div id="sec-3">
+
           <Ethics></Ethics>
+          </div>
           <div className="spacer"></div>
+          <div id="sec-4">
+
           <YourQuestions></YourQuestions>
+          </div>
           <div className="spacer"></div>
+          <div id="sec-5">
+
           <Pricing></Pricing>
+          </div>
           <div className="spacer"></div>
+          <div id="sec-6">
+
           <FaqsAccord></FaqsAccord>
+          </div>
           <div className="spacer"></div>
+          <div id="sec-7">
+
           <ReferralBrowse></ReferralBrowse>
+          </div>
           <div className="spacer"></div>
+          <div id="sec-8">
+
           <ContactSectionMain
             image={data.image}
             eyebrowText={data.eyebrowText}
@@ -97,6 +125,7 @@ const Therapy = () => {
             emailid={data.emailid}
             blueCard={data.blueCard}
           />
+          </div>
           <div className="spacer"></div>
           <InstaSection instaData={instaData} />
         </main>
