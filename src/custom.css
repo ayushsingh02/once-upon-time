@@ -452,6 +452,7 @@ form#news-update label {
   position: relative;
   padding-top: 90px;
   padding-bottom: 60px;
+  overflow: hidden;
 }
 .chapter3-meet::before {
   content: "";

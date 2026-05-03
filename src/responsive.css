@@ -880,7 +880,11 @@ width: 12px;
   .footer .copyright p span {
     width: 10px;
     }
-}
+    .insta-frame-in .insta-image{
+      max-height: 140px;
+      overflow: hidden;
+    }
+  }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
     max-width: 130px;
