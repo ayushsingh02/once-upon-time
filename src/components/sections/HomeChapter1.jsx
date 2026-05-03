@@ -24,88 +24,37 @@ const HomeChapter1 = () => {
   const cardRef = useRef(null);
   const cardInnerRef = useRef(null);
 
-  // useEffect(() => {
-  //   const isDesktop = window.innerWidth >= 992;
-
-  //   if (!isDesktop) {
-  //     // On mobile/tablet — clear any GSAP inline styles and do nothing
-  //     if (cardRef.current) gsap.set(cardRef.current, { clearProps: "all" });
-  //     if (cardInnerRef.current) gsap.set(cardInnerRef.current, { clearProps: "all" });
-  //     return;
-  //   }
-
-  //   // Desktop only
-  //   const section = sectionRef.current;
-  //   const card = cardRef.current;
-  //   const cardInner = cardInnerRef.current;
-
-  //   if (!section || !card || !cardInner) return;
-
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: section,
-  //       start: "top top",
-  //       end: "+=100%",
-  //       scrub: 1,
-  //       pin: true,
-  //       anticipatePin: 1,
-  //       invalidateOnRefresh: true,
-  //     },
-  //   });
-
-  //   tl.to(card, {
-  //       height: "100vh",
-  //       width: "55vw",
-  //       ease: "power2.inOut",
-  //       duration: 0.5,
-  //     })
-  //     .to(cardInner, {
-  //       y: "-50%",
-  //       ease: "none",
-  //       duration: 1.5,
-  //     })
-  //     .to(cardInner, {
-  //       y: "-50%",
-  //       ease: "none",
-  //       duration: 0.3,
-  //     });
-
-  //   return () => {
-  //     tl.kill();
-  //     ScrollTrigger.getAll().forEach((t) => t.kill());
-  //   };
-  // }, []);
   useEffect(() => {
     const isDesktop = window.innerWidth >= 992;
-  
+
     if (!isDesktop) {
       if (cardRef.current) gsap.set(cardRef.current, { clearProps: "all" });
       if (cardInnerRef.current) gsap.set(cardInnerRef.current, { clearProps: "all" });
       return;
     }
-  
+
     const section = sectionRef.current;
     const card = cardRef.current;
     const cardInner = cardInnerRef.current;
-  
+
     if (!section || !card || !cardInner) return;
-  
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top top",
         end: "+=100%",
-        scrub: true,   // ✅ boolean true instead of number — no jitter
+        scrub: true,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        fastScrollEnd: true,   // ✅ prevents Safari scroll lag
+        fastScrollEnd: true,
         preventOverlaps: true,
       },
     });
-  
+
     tl.to(card, {
-        height: window.innerHeight,  // ✅ px not vh
+        height: window.innerHeight,
         width: "55vw",
         ease: "power2.inOut",
         duration: 0.5,
@@ -115,14 +64,15 @@ const HomeChapter1 = () => {
         ease: "none",
         duration: 1.5,
       });
-  
-    ScrollTrigger.refresh();
-  
+
+    setTimeout(() => ScrollTrigger.refresh(), 300);
+
     return () => {
       tl.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
+
   return (
     <div
       className="home-chapter-1"
