@@ -3,7 +3,7 @@ import IconO from "../snippets/IconO";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger); // ✅ outside component
+gsap.registerPlugin(ScrollTrigger);
 
 const data = {
   eyeHead: "Chapter I",
@@ -25,48 +25,55 @@ const HomeChapter1 = () => {
   const cardInnerRef = useRef(null);
 
   useEffect(() => {
-    const mm = gsap.matchMedia();
+    const isDesktop = window.innerWidth >= 992;
 
-    mm.add("(min-width: 992px)", () => {
-      const section = sectionRef.current;
-      const card = cardRef.current;
-      const cardInner = cardInnerRef.current;
+    if (!isDesktop) {
+      // On mobile/tablet — clear any GSAP inline styles and do nothing
+      if (cardRef.current) gsap.set(cardRef.current, { clearProps: "all" });
+      if (cardInnerRef.current) gsap.set(cardInnerRef.current, { clearProps: "all" });
+      return;
+    }
 
-      if (!section || !card || !cardInner) return;
+    // Desktop only
+    const section = sectionRef.current;
+    const card = cardRef.current;
+    const cardInner = cardInnerRef.current;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: "+=100%",
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+    if (!section || !card || !cardInner) return;
 
-      tl.to(card, {
-          height: "100vh",
-          width: "55vw",
-          ease: "power2.inOut",
-          duration: 0.5,
-        })
-        .to(cardInner, {
-          y: "-50%",
-          ease: "none",
-          duration: 1.5,
-        })
-        .to(cardInner, {
-          y: "-50%",
-          ease: "none",
-          duration: 0.3,
-        });
-
-      return () => tl.kill();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "+=100%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
     });
 
-    return () => mm.revert();
+    tl.to(card, {
+        height: "100vh",
+        width: "55vw",
+        ease: "power2.inOut",
+        duration: 0.5,
+      })
+      .to(cardInner, {
+        y: "-50%",
+        ease: "none",
+        duration: 1.5,
+      })
+      .to(cardInner, {
+        y: "-50%",
+        ease: "none",
+        duration: 0.3,
+      });
+
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   }, []);
 
   return (

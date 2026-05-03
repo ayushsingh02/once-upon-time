@@ -53,32 +53,71 @@ const AboutLetterFrom = () => {
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);
   const cursorRef = useRef(null);
+  const topHeadRef = useRef(null);
+  const letterRefs = useRef([]);
+  const imageRefs = useRef([]);
 
+  // useEffect(() => {
+  //   if (topHeadRef.current) animateText(topHeadRef.current);
+  //   letterRefs.current.forEach((el) => { if (el) slideInRight(el); });
+  //   imageRefs.current.forEach((el) => { if (el) slideInLeft(el); });
+  // }, []);
+
+  // useEffect(() => {
+  //   const $ = window.$;
+  //   if (!$) return;
+
+  //   const $slider = $(sliderRef.current);
+
+  //   if ($slider.hasClass("owl-loaded")) {
+  //     $slider.trigger("destroy.owl.carousel");
+  //   }
+
+  //   $slider.owlCarousel({
+  //     loop: true,
+  //     margin: 0,
+  //     nav: false,
+  //     dots: false,
+  //     items: 1,
+  //   });
+
+  //   return () => {
+  //     if ($slider.hasClass("owl-loaded")) {
+  //       $slider.trigger("destroy.owl.carousel");
+  //     }
+  //   };
+  // }, []);
   useEffect(() => {
     const $ = window.$;
     if (!$) return;
-
+  
     const $slider = $(sliderRef.current);
-
+  
     if ($slider.hasClass("owl-loaded")) {
       $slider.trigger("destroy.owl.carousel");
     }
-
+  
     $slider.owlCarousel({
       loop: true,
       margin: 0,
       nav: false,
       dots: false,
       items: 1,
+      onInitialized: () => {
+        setTimeout(() => {
+          if (topHeadRef.current) animateText(topHeadRef.current);
+          if (letterRefs.current[0]) slideInRight(letterRefs.current[0]);
+          if (imageRefs.current[0]) slideInLeft(imageRefs.current[0]);
+        }, 100);
+      },
     });
-
+  
     return () => {
       if ($slider.hasClass("owl-loaded")) {
         $slider.trigger("destroy.owl.carousel");
       }
     };
   }, []);
-
   useEffect(() => {
     const section = sectionRef.current;
     const cursor = cursorRef.current;
@@ -142,7 +181,7 @@ const AboutLetterFrom = () => {
       </div>
 
       <div className="container">
-        <div className="top-head" ref={animateText}>
+        <div className="top-head" ref={topHeadRef}>
           <p className="eyebrow-head">{data.eyeHead}</p>
           <h2>{data.titleHead}</h2>
         </div>
@@ -153,7 +192,10 @@ const AboutLetterFrom = () => {
               <div className="lfm-card" key={slide.id}>
                 <div className="letter-form-me-in">
                   <div className="left">
-                    <div className="letter-page" ref={slideInRight}>
+                    <div
+                      className="letter-page"
+                      ref={(el) => (letterRefs.current[index] = el)}
+                    >
                       {slide.letterParagraphs.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
@@ -164,7 +206,10 @@ const AboutLetterFrom = () => {
                     </div>
                   </div>
                   <div className="right">
-                    <div className="polo-img" ref={slideInLeft}>
+                    <div
+                      className="polo-img"
+                      ref={(el) => (imageRefs.current[index] = el)}
+                    >
                       <img src={slide.image} alt={slide.authorName} className="img" />
                     </div>
                   </div>
@@ -181,7 +226,6 @@ const AboutLetterFrom = () => {
           })}
         </div>
 
-        {/* Nav buttons — visible only on max-width 1200px */}
         <div className="lfm-nav">
           <div className="owl-custom-nav">
             <div className="owl-custom-prev" onClick={() => window.$(sliderRef.current).trigger("prev.owl.carousel")}>
@@ -198,7 +242,6 @@ const AboutLetterFrom = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

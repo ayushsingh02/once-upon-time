@@ -1,4 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = {
   eyebrowHead: "Chapter I",
@@ -38,40 +42,36 @@ const SafeSpace = () => {
   const gsapCtx = useRef(null);
 
   useEffect(() => {
-    const mm = window.gsap?.matchMedia();
-    if (!mm) return;
+    const ctx = gsap.context(() => {
+      ScrollTrigger.matchMedia({
+        "(min-width: 992px)": function () {
+          const track = trackRef.current;
+          const section = sectionRef.current;
+          if (!track || !section) return;
 
-    mm.add("(min-width: 992px)", () => {
-      const { gsap, ScrollTrigger } = window;
-      gsap.registerPlugin(ScrollTrigger);
+          const totalScroll = track.scrollWidth - window.innerWidth;
 
-      const track = trackRef.current;
-      const section = sectionRef.current;
-      const totalScroll = track.scrollWidth - window.innerWidth;
-
-      gsap.to(track, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
+          gsap.to(track, {
+            x: -totalScroll,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: () => `+=${totalScroll}`,
+              scrub: 1,
+              pin: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
         },
       });
-
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
     });
 
-    gsapCtx.current = mm;
+    gsapCtx.current = ctx;
 
     return () => {
-      if (gsapCtx.current) gsapCtx.current.revert();
+      ctx.revert();
     };
   }, []);
 
@@ -129,9 +129,7 @@ const SafeSpace = () => {
 
   return (
     <div className="safe-space" ref={sectionRef}>
-      {/* DESKTOP */}
       <div className="safe-space-track" ref={trackRef}>
-        {/* CARD 1 */}
         <div className="safe-space-panel card-1">
           <div className="card-1-inner">
             <div className="card-1-heading">
@@ -145,58 +143,39 @@ const SafeSpace = () => {
                   <p>{data.cards[0].desc}</p>
                 </div>
                 <div className="card-1-small-img">
-                  <img
-                    src={data.cards[0].leftBottomImage}
-                    alt={data.cards[0].title}
-                    className="img"
-                  />
+                  <img src={data.cards[0].leftBottomImage} alt={data.cards[0].title} className="img" />
                 </div>
               </div>
               <div className="right">
                 <div className="card-1-right-img">
-                  <img
-                    src={data.cards[0].rightImage}
-                    alt={data.cards[0].title}
-                    className="img"
-                  />
+                  <img src={data.cards[0].rightImage} alt={data.cards[0].title} className="img" />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* CARD 2 */}
         <div className="safe-space-panel card-2">
           <div className="card-2-inner">
             <div className="card-1-below">
               <div className="right">
                 <div className="card-1-right-img">
-                  <img
-                    src={data.cards[1].rightImage}
-                    alt={data.cards[1].title}
-                    className="img"
-                  />
+                  <img src={data.cards[1].rightImage} alt={data.cards[1].title} className="img" />
                 </div>
-                
               </div>
               <div className="left">
-                  <div>
-                    <h3>{data.cards[1].title}</h3>
-                    <div className="card-1-small-img">
-                      <img
-                        src={data.cards[1].leftBottomImage}
-                        alt={data.cards[1].title}
-                        className="img"
-                      />
-                    </div>
-                    <p>{data.cards[1].desc}</p>
+                <div>
+                  <h3>{data.cards[1].title}</h3>
+                  <div className="card-1-small-img">
+                    <img src={data.cards[1].leftBottomImage} alt={data.cards[1].title} className="img" />
                   </div>
+                  <p>{data.cards[1].desc}</p>
                 </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* CARD 3 */}
         <div className="safe-space-panel card-3">
           <div className="card-3-inner">
             <div className="card-1-below">
@@ -206,20 +185,12 @@ const SafeSpace = () => {
                   <p>{data.cards[2].desc}</p>
                 </div>
                 <div className="card-1-small-img">
-                  <img
-                    src={data.cards[2].leftBottomImage}
-                    alt={data.cards[2].title}
-                    className="img"
-                  />
+                  <img src={data.cards[2].leftBottomImage} alt={data.cards[2].title} className="img" />
                 </div>
               </div>
               <div className="right">
                 <div className="card-1-right-img">
-                  <img
-                    src={data.cards[2].rightImage}
-                    alt={data.cards[2].title}
-                    className="img"
-                  />
+                  <img src={data.cards[2].rightImage} alt={data.cards[2].title} className="img" />
                 </div>
               </div>
             </div>
@@ -227,7 +198,6 @@ const SafeSpace = () => {
         </div>
       </div>
 
-      {/* MOBILE */}
       <div className="safe-space-mobile">
         <div className="container">
           <div className="ss-mobile-top">
@@ -237,28 +207,17 @@ const SafeSpace = () => {
 
           <div className="safe-space-slider owl-carousel" ref={sliderRef}>
             {data.cards.map((card) => (
-              <div
-                className={`safe-space-slide ${card.className}`}
-                key={card.id}
-              >
+              <div className={`safe-space-slide ${card.className}`} key={card.id}>
                 <div className="safe-space-slide-inner">
                   <div className="slide-right-img">
-                    <img
-                      src={card.rightImage}
-                      alt={card.title}
-                      className="img"
-                    />
+                    <img src={card.rightImage} alt={card.title} className="img" />
                   </div>
                   <div className="slide-text">
                     <h3>{card.title}</h3>
                     <p>{card.desc}</p>
                   </div>
                   <div className="slide-small-img">
-                    <img
-                      src={card.leftBottomImage}
-                      alt={card.title}
-                      className="img"
-                    />
+                    <img src={card.leftBottomImage} alt={card.title} className="img" />
                   </div>
                 </div>
               </div>
@@ -268,40 +227,15 @@ const SafeSpace = () => {
           <div className="custom-nav">
             <div className="owl-custom-nav">
               <button className="owl-custom-prev" onClick={handlePrev}>
-                <svg
-                  className="icon"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    width="39.3616"
-                    height="39.3633"
-                    transform="matrix(-1 0 0 1 39.3616 0)"
-                    fill="#3E2C25"
-                  />
-                  <path
-                    d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z"
-                    fill="#F7F0E8"
-                  />
+                <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="39.3616" height="39.3633" transform="matrix(-1 0 0 1 39.3616 0)" fill="#3E2C25" />
+                  <path d="M20.0092 19.6815L24.362 15.3287L23.0373 14.0039L17.3596 19.6815L23.0373 25.3592L24.362 24.0344L20.0092 19.6815Z" fill="#F7F0E8" />
                 </svg>
               </button>
               <button className="owl-custom-next" onClick={handleNext}>
-                <svg
-                  className="icon"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg className="icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="39.3616" height="39.3633" fill="#3E2C25" />
-                  <path
-                    d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z"
-                    fill="#F7F0E8"
-                  />
+                  <path d="M19.3524 19.6815L14.9995 15.3287L16.3243 14.0039L22.002 19.6815L16.3243 25.3592L14.9995 24.0344L19.3524 19.6815Z" fill="#F7F0E8" />
                 </svg>
               </button>
             </div>

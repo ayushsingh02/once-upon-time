@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import BlueCard from "../snippets/BlueCard";
 import countryCodesList from "country-codes-list";
 import { slideInBottom } from "../../animations";
@@ -7,23 +7,27 @@ const allCountries = countryCodesList.customList(
   "countryCallingCode",
   "+{countryCallingCode}",
 );
+
 const data = {
   image: {
     src: "images/chapter-1-home.png",
     alt: "Image",
   },
- 
   eyebrowText: "Chapter VII",
   title: "Send Your Questions My Way!",
-  desc: "Share a quick note about therapy, workshops, or training. We’ll get back to you within 72 hours.",
+  desc: "Share a quick note about therapy, workshops, or training. We'll get back to you within 72 hours.",
   pinkCard: {
     title: "Expect a reply within 72 hours. Thank you for your patience.",
   },
 };
 
-
 const ContactSection = () => {
-  
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (formRef.current) slideInBottom(formRef.current);
+  }, []);
+
   return (
     <div className="contact-section">
       <div className="contact-bg-img">
@@ -32,13 +36,11 @@ const ContactSection = () => {
       <div className="container">
         <div className="contact-section-in">
           <div className="left">
-            <div className="contact-form-outer" ref={slideInBottom} >
+            <div className="contact-form-outer" ref={formRef}>
               <div className="contact-form-top">
                 <p className="eyebrow-head">{data.eyebrowText}</p>
                 <h2>{data.title}</h2>
-                <p>
-                  {data.desc}
-                </p>
+                <p>{data.desc}</p>
               </div>
               <div className="contact-form-main">
                 <h3>Fill The Form</h3>
@@ -46,21 +48,11 @@ const ContactSection = () => {
                   <div className="contact-form-2col">
                     <div className="input-wrap">
                       <label htmlFor="fullName">Full Name*</label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        placeholder="Full Name"
-                        required
-                      />
+                      <input type="text" id="fullName" placeholder="Full Name" required />
                     </div>
                     <div className="input-wrap">
                       <label htmlFor="email">Email*</label>
-                      <input
-                        type="text"
-                        id="email"
-                        placeholder="Email Id"
-                        required
-                      />
+                      <input type="text" id="email" placeholder="Email Id" required />
                     </div>
                   </div>
                   <div className="input-wrap">
@@ -83,9 +75,7 @@ const ContactSection = () => {
                         title="Please enter a valid 10-digit phone number"
                         required
                         onKeyPress={(e) => {
-                          if (!/[0-9]/.test(e.key)) {
-                            e.preventDefault();
-                          }
+                          if (!/[0-9]/.test(e.key)) e.preventDefault();
                         }}
                       />
                     </div>
@@ -110,7 +100,7 @@ const ContactSection = () => {
             <BlueCard
               title={data.pinkCard?.title}
               description={data.pinkCard?.description}
-            ></BlueCard>
+            />
           </div>
         </div>
       </div>

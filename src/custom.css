@@ -2099,7 +2099,7 @@ margin-bottom: 40px;
 .letter-from-me.for-about .top-head p{
   color: #F7F0E7;
 }
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .home-chapter-1 {
     height: auto;
     min-height: 100svh;
@@ -2121,4 +2121,4 @@ margin-bottom: 40px;
     height: auto;
     padding: 40px 0;
   }
-}
+} */

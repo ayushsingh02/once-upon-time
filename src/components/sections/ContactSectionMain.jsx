@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import BlueCard from "../snippets/BlueCard";
 import countryCodesList from "country-codes-list";
 import { slideInLeft, slideInBottom } from "../../animations";
@@ -19,6 +19,14 @@ const ContactSectionMain = ({
   emailid,
   capText,
 }) => {
+  const leftRef = useRef(null);
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    if (leftRef.current) slideInLeft(leftRef.current);
+    if (bottomRef.current) slideInBottom(bottomRef.current);
+  }, []);
+
   return (
     <div className="contact-section main-component">
       <div className="contact-bg-img">
@@ -26,7 +34,7 @@ const ContactSectionMain = ({
       </div>
       <div className="container">
         <div className="contact-component-wrap">
-          <div className="contact-form-top" ref={slideInLeft}>
+          <div className="contact-form-top" ref={leftRef}>
             <div>
               <p className="eyebrow-head">{eyebrowText}</p>
               <div className="heading-block">
@@ -45,27 +53,17 @@ const ContactSectionMain = ({
               <a href={`mailto:${emailid}`}>{emailid}</a>
             </div>
           </div>
-          <div className="contact-form-main" ref={slideInBottom}>
+          <div className="contact-form-main" ref={bottomRef}>
             <h3>Fill The Form</h3>
             <form action="" className="contact-form">
               <div className="">
                 <div className="input-wrap">
                   <label htmlFor="fullName">Full Name*</label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    placeholder="Full Name"
-                    required
-                  />
+                  <input type="text" id="fullName" placeholder="Full Name" required />
                 </div>
                 <div className="input-wrap">
                   <label htmlFor="email">Email*</label>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="Email Id"
-                    required
-                  />
+                  <input type="text" id="email" placeholder="Email Id" required />
                 </div>
               </div>
               <div className="input-wrap">

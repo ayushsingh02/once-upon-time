@@ -6,9 +6,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     cssMinify: false,
-  },
-  server: {
-    port: 3000,
-  },
+  }
   
 })
