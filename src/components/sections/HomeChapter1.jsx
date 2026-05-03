@@ -1,5 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import IconO from "../snippets/IconO";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger); // ✅ outside component
 
 const data = {
   eyeHead: "Chapter I",
@@ -19,28 +23,11 @@ const HomeChapter1 = () => {
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
   const cardInnerRef = useRef(null);
-  const gsapCtx = useRef(null);
 
   useEffect(() => {
-    const gsap = window.gsap;
-    const ScrollTrigger = window.ScrollTrigger;
-
-    if (!gsap || !ScrollTrigger) {
-      console.error("GSAP or ScrollTrigger not found on window");
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
     const mm = gsap.matchMedia();
 
-    mm.add({
-      isDesktop: "(min-width: 992px)",
-      isMobile: "(max-width: 991px)",
-    }, (context) => {
-      let { isDesktop } = context.conditions;
-    
-      if (!isDesktop) return;
+    mm.add("(min-width: 992px)", () => {
       const section = sectionRef.current;
       const card = cardRef.current;
       const cardInner = cardInnerRef.current;
@@ -76,16 +63,10 @@ const HomeChapter1 = () => {
           duration: 0.3,
         });
 
-      return () => {
-        tl.kill();
-      };
+      return () => tl.kill();
     });
 
-    gsapCtx.current = mm;
-
-    return () => {
-      if (gsapCtx.current) gsapCtx.current.revert();
-    };
+    return () => mm.revert();
   }, []);
 
   return (
