@@ -104,28 +104,31 @@
   .mystory-in .right p {
     font-size: 22px;
   }
-  .card-1-inner{
+  .card-1-inner {
     gap: 40px;
   }
-  .card-1-below .left{
+  .card-1-below .left {
     gap: 100px;
   }
-  .card-1-below .left p{
+  .card-1-below .left p {
     font-size: 14px;
   }
-  .card-1-below .left h3{
+  .card-1-below .left h3 {
     font-size: 42px;
   }
-  .card-1-small-img{
+  .card-1-small-img {
     max-width: 150px;
     max-height: 170px;
   }
-  .card-2 .card-1-below .left{
+  .card-2 .card-1-below .left {
     justify-content: start;
     padding-top: 100px;
   }
-  .card-3 .card-1-below .left{
+  .card-3 .card-1-below .left {
     gap: 150px;
+  }
+  .pricing .container{
+    padding-right: 0px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -345,17 +348,17 @@
   .stories-banner-img {
     height: 380px;
   }
-  .quote-symbol{
+  .quote-symbol {
     width: 50px;
     height: auto;
   }
-  .hear-from-card h3{
+  .hear-from-card h3 {
     font-size: 32px;
   }
-  .hear-from-card .content p{
+  .hear-from-card .content p {
     font-size: 16px;
   }
-  .hear-from-card .bottom-head p{
+  .hear-from-card .bottom-head p {
     font-size: 14px;
   }
   .safe-space-track {
@@ -388,15 +391,15 @@
 
   .safe-space-slide-inner .slide-text h3 {
     margin-bottom: 8px;
-font-size: 32px;
+    font-size: 32px;
   }
 
   .safe-space-slide-inner .slide-text p {
-font-family: var(--inter);
-font-weight: 400;
-letter-spacing: 0.03em;
-font-size: 14px;
-line-height: 130%;
+    font-family: var(--inter);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    line-height: 130%;
   }
 
   .safe-space-slide-inner .slide-small-img {
@@ -419,7 +422,46 @@ line-height: 130%;
     display: flex;
     gap: 8px;
   }
-  
+  .ethics-card-wrap {
+    margin-top: -230px;
+  }
+  .ethic {
+    padding-top: 80px;
+  }
+  .referral-browse-in {
+    grid-template-columns: 1fr 1fr;
+  }
+  .referral-browse-in .referral-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .faq-in {
+    grid-template-columns: 1fr;
+  }
+  .faq-in .right {
+    display: none;
+  }
+  .faq-in .left {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .faq-in .left {
+    gap: 50px;
+  }
+  .accordion-title {
+    font-size: 26px;
+  }
+  .faq-in p {
+    font-size: 14px;
+  }
+  .faq-in p.eyebrow-head {
+    font-size: 14px;
+  }
+  .accordion-title span {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -702,27 +744,47 @@ line-height: 130%;
   .rules-for-submission {
     margin-bottom: 0px;
   }
-  .quote-symbol{
+  .quote-symbol {
     width: 40px;
     height: auto;
   }
-  .hear-from-card h3{
+  .hear-from-card h3 {
     font-size: 26px;
   }
-  .hear-from-card .content p{
+  .hear-from-card .content p {
     font-size: 14px;
   }
-  .hear-from-card .bottom-head p{
+  .hear-from-card .bottom-head p {
     font-size: 12px;
   }
-  .hear-from-card{
+  .hear-from-card {
     gap: 30px;
-    padding: 28px 24px ;
+    padding: 28px 24px;
   }
-  .safe-space-mobile .container{
-   padding-right: 0px;
+  .safe-space-mobile .container {
+    padding-right: 0px;
   }
-  
+  .ethic {
+    padding-top: 60px;
+  }
+  .master-bg {
+    height: 650px;
+  }
+  .referral-browse-in {
+    grid-template-columns: 1fr;
+  }
+  .referral-browse-in .referral-card:last-child {
+    grid-column: 1;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .accordion-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .accordion-title span {
+    top: 0;
+  }
 }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {

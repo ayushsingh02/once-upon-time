@@ -1,17 +1,18 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
-import LearnTherapy from "../components/sections/LearnTherapy";
-import WorkshopThat from "../components/sections/WorkshopThat";
-import InviteThought from "../components/sections/InviteThought";
 import ContactSectionMain from "../components/sections/ContactSectionMain";
 import InstaSection from "../components/sections/InstaSection";
 import PreFooterForm from "../components/sections/PreFooterForm";
-import WorkWithMe from "../components/sections/WorkWithMe";
 import StickyScrollTab from "../components/snippets/StickyScrollTab";
-import TherapyBanner from "../components/sections/TherapyBanner";
+import Ethics from "../components/sections/Ethics";
+import ReferralBrowse from "../components/sections/ReferralBrowse";
+import FaqsAccord from "../components/sections/FaqsAccord";
+import Pricing from "../components/sections/Pricing";
+import YourQuestions from "../components/sections/YourQuestions";
+
 const tabs = [
   { label: "Work With Me", target: "#work-with-me" },
   { label: "Learn Therapy", target: "#learn-therapy" },
@@ -64,28 +65,19 @@ const Therapy = () => {
   return (
     <>
       <ReactLenis root>
-      <HeaderSecondary transparent light />
+        <HeaderSecondary transparent light />
         <main>
-          <TherapyBanner></TherapyBanner>
-          <div className="spacer-sm sst-space"></div>
-          <StickyScrollTab tabs={tabs} />
-          <div className="spacer-sm"></div>
-          <div id="work-with-me">
-          <WorkWithMe ></WorkWithMe>
-          </div>
-          <div className="spacer-sm"></div>
-          <div id="learn-therapy">
-          <LearnTherapy ></LearnTherapy>
-          </div>
-          <div className="spacer-sm"></div>
-          <div id="workshop-that">
-          <WorkshopThat></WorkshopThat>
-          </div>
-          <div className="spacer-sm"></div>
-          <div id="invite-thought">
-          <InviteThought ></InviteThought>
-          </div>
-          <div className="spacer-sm"></div>
+          <div className="spacer"></div>
+          <Ethics></Ethics>
+          <div className="spacer"></div>
+          <YourQuestions></YourQuestions>
+          <div className="spacer"></div>
+          <Pricing></Pricing>
+          <div className="spacer"></div>
+          <FaqsAccord></FaqsAccord>
+          <div className="spacer"></div>
+          <ReferralBrowse></ReferralBrowse>
+          <div className="spacer"></div>
           <ContactSectionMain
             image={data.image}
             eyebrowText={data.eyebrowText}
