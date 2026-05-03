@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,12 +18,15 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const logoRef = useRef(null);
-  const isMenuOpenRef = useRef(false); 
+  const isMenuOpenRef = useRef(false);
+  const location = useLocation();
 
   const openMenu = () => {
     isMenuOpenRef.current = true;
     setIsMenuOpen(true);
-    headerRef.current.classList.remove("header-hide"); 
+    if (headerRef.current) {
+      headerRef.current.classList.remove("header-hide");
+    }
   };
 
   const closeMenu = () => {
@@ -35,12 +38,21 @@ const Header = () => {
     const header = headerRef.current;
     const logo = logoRef.current;
 
+    if (!header || !logo) return;
+
+    // Kill all existing ScrollTriggers before creating new ones
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+
     header.style.transform = "translateY(-100%)";
-    setTimeout(() => {
+
+    const t1 = setTimeout(() => {
+      if (!headerRef.current) return;
       header.style.transition = "transform 1s cubic-bezier(0.22, 1, 0.36, 1)";
       header.style.transform = "translateY(0%)";
     }, 300);
-    setTimeout(() => {
+
+    const t2 = setTimeout(() => {
+      if (!headerRef.current) return;
       header.style.transition = "transform 0.4s ease";
       header.style.transform = "";
     }, 1300);
@@ -66,7 +78,7 @@ const Header = () => {
     let prevScroll = 0;
 
     const handleScroll = () => {
-      if (isMenuOpenRef.current) return; 
+      if (isMenuOpenRef.current) return;
 
       const currentScroll = window.scrollY;
       if (currentScroll > shrinkEnd) {
@@ -84,10 +96,14 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
       window.removeEventListener("scroll", handleScroll);
       logoTween.scrollTrigger?.kill();
+      logoTween.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [location.pathname]); // re-runs on every route change
 
   return (
     <>
@@ -140,7 +156,10 @@ const Header = () => {
             </div>
           </div>
 
-          <div className={`header-menu ${isMenuOpen ? "open-menu" : ""}`}>
+          <div
+            className={`header-menu ${isMenuOpen ? "open-menu" : ""}`}
+            style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
+          >
             <nav>
               <ul>
                 {navItems.map((item) => (

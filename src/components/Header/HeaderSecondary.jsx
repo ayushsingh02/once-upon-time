@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 
 const navItems = [
@@ -17,6 +17,7 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
   const headerRef = useRef(null);
   const isMenuOpenRef = useRef(false);
   const prevScrollRef = useRef(0);
+  const location = useLocation();
 
   const logo = isLight
     ? "icons/header-light-logo.svg"
@@ -25,7 +26,9 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
   const openMenu = () => {
     isMenuOpenRef.current = true;
     setIsMenuOpen(true);
-    headerRef.current.classList.remove("header-hide");
+    if (headerRef.current) {
+      headerRef.current.classList.remove("header-hide");
+    }
   };
 
   const closeMenu = () => {
@@ -36,17 +39,20 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
   useEffect(() => {
     const header = headerRef.current;
 
+    if (!header) return;
+
     header.style.transform = "translateY(-100%)";
-    setTimeout(() => {
+    const t1 = setTimeout(() => {
+      if (!headerRef.current) return;
       header.style.transition = "transform 1s cubic-bezier(0.22, 1, 0.36, 1)";
       header.style.transform = "translateY(0%)";
     }, 300);
-    setTimeout(() => {
+    const t2 = setTimeout(() => {
+      if (!headerRef.current) return;
       header.style.transition = "transform 0.4s ease";
       header.style.transform = "";
     }, 1300);
 
-    // ✅ Fix 2: capture prop values at effect time to avoid stale closures
     const isTransparentProp = transparent;
     const isLightProp = light;
 
@@ -72,8 +78,12 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [transparent, light]);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname, transparent, light]);
 
   return (
     <>
@@ -142,7 +152,6 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
             </div>
           </div>
 
-          {/* ✅ Fix 1: pointer-events blocked when menu is closed */}
           <div
             className={`header-menu ${isMenuOpen ? "open-menu" : ""}`}
             style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
