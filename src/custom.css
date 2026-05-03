@@ -2106,3 +2106,16 @@ margin-bottom: 40px;
 .home-chapter-1 {
   height: calc(var(--vh, 1vh) * 100);
 }
+@supports (-webkit-touch-callout: none) {
+  .home-chapter-1-in .inner-card {
+    height: auto !important;
+    width: 100% !important;
+  }
+  .inner-card-scroll {
+    transform: none !important;
+  }
+  .fold-2 {
+    display: block !important;
+    padding-top: 40px;
+  }
+}

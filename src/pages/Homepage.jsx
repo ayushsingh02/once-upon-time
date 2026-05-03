@@ -16,6 +16,10 @@ import PreFooterForm from "../components/sections/PreFooterForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const isIOS = () =>
+  /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
 const Homepage = () => {
   const lenis = useLenis();
 
@@ -24,7 +28,7 @@ const Homepage = () => {
   }, []);
 
   useEffect(() => {
-    if (!lenis) return;
+    if (!lenis || isIOS()) return;
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -45,7 +49,10 @@ const Homepage = () => {
       lerp: 0.1,
       duration: 1.2,
       smoothWheel: true,
-      prevent: (node) => node.closest(".home-chapter-1") !== null,
+      touchMultiplier: 0,
+      infinite: false,
+      gestureOrientation: "vertical",
+      smoothTouch: false,
     }}>
       <Header />
       <main className="top-spacing">
