@@ -511,6 +511,9 @@
 .footer .copyright p span {
 width: 12px;
 }
+.chapter3-meet-in{
+  padding: 0px !important;
+}
 }
 
 @media screen and (max-width: 767px) {
