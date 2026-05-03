@@ -90,25 +90,22 @@ const HomeChapter1 = () => {
   
     if (!section || !card || !cardInner) return;
   
-    // ✅ Safari fix — use window.innerHeight instead of 100vh
-    const vh = window.innerHeight;
-  
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top top",
         end: "+=100%",
-        scrub: 1,
+        scrub: true,   // ✅ boolean true instead of number — no jitter
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        // ✅ Safari fix — force ScrollTrigger to use JS scroll instead of native
-        scroller: window,
+        fastScrollEnd: true,   // ✅ prevents Safari scroll lag
+        preventOverlaps: true,
       },
     });
   
     tl.to(card, {
-        height: vh,        // ✅ px value instead of "100vh"
+        height: window.innerHeight,  // ✅ px not vh
         width: "55vw",
         ease: "power2.inOut",
         duration: 0.5,
@@ -117,15 +114,9 @@ const HomeChapter1 = () => {
         y: "-50%",
         ease: "none",
         duration: 1.5,
-      })
-      .to(cardInner, {
-        y: "-50%",
-        ease: "none",
-        duration: 0.3,
       });
   
-    // ✅ Safari fix — refresh after a delay to let Safari finish layout
-    setTimeout(() => ScrollTrigger.refresh(), 300);
+    ScrollTrigger.refresh();
   
     return () => {
       tl.kill();
