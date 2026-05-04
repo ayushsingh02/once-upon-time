@@ -1947,7 +1947,7 @@ font-size: 32px;
 }
 .letter-page::before{
   content: "";
-  background-image: url("images/letter-bg.png");
+  background-image: url("images/paper-bg.png");
   position: absolute;
   inset: 0;
   width: 100%;
