@@ -1,5 +1,8 @@
-import React from "react";
-import { slideInBottom, slideInTop } from "../../animations";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = {
   eyeHead: "Chapter III",
@@ -36,8 +39,78 @@ const data = {
 };
 
 const RulesForSubmission = () => {
+  const sectionRef = useRef(null);
+  const cardRef = useRef(null);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 992px)", () => {
+      // Entry animation: card slides up, image slides down
+      gsap.fromTo(
+        cardRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        imgRef.current,
+        { opacity: 0, y: -80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+
+      // Parallax on scroll
+      gsap.to(cardRef.current, {
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to(imgRef.current, {
+        y: 50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    });
+
+    return () => mm.revert();
+  }, []);
+
   return (
-    <div className="rules-for-submission">
+    <div className="rules-for-submission" ref={sectionRef}>
       <div className="container">
         <div className="heading">
           <p className="eyebrow-head">{data.eyeHead}</p>
@@ -46,7 +119,7 @@ const RulesForSubmission = () => {
         </div>
         <div className="rules-for-submission-in">
           <div className="left">
-            <div className="card-text-wrap" ref={slideInTop}>
+            <div className="card-text-wrap" ref={cardRef}>
               {data.cards.map((card) => (
                 <div key={card.id}>
                   <h3>{card.id}. {card.title}</h3>
@@ -55,8 +128,8 @@ const RulesForSubmission = () => {
               ))}
             </div>
           </div>
-          <div className="right" ref={slideInBottom}>
-            <img src={data.img} alt="Image" className="img" />
+          <div className="right">
+            <img src={data.img} alt="Image" className="img" ref={imgRef} />
           </div>
         </div>
       </div>
