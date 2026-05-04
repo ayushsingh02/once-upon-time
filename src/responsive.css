@@ -890,6 +890,9 @@ width: 12px;
     .amc2-body{
       margin-bottom: 0px;
     }
+    .hanging-card-img {
+    aspect-ratio: 3/2;
+    }
   }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
