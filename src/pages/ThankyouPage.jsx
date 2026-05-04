@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import { slideInBottom } from '../animations';
@@ -17,7 +16,7 @@ const ThankyouPage = () => {
     document.title = "Thank You";
   }, []);
   return (
-    <ReactLenis root>
+    <>
       <HeaderSecondary transparent />
       <main className="error-page-main">
         <div className="error-page thankyou-page">
@@ -34,7 +33,7 @@ const ThankyouPage = () => {
         </div>
       </main>
       <Footer />
-    </ReactLenis>
+    </>
   );
 };
 

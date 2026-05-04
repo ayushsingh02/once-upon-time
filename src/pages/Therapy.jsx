@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import ContactSectionMain from "../components/sections/ContactSectionMain";
@@ -70,8 +69,7 @@ const Therapy = () => {
   }, []);
   return (
     <>
-      <ReactLenis root>
-        <HeaderSecondary transparent light />
+      <HeaderSecondary transparent light />
         <main>
         <TherapyOgBanner></TherapyOgBanner>
         <div className="spacer"></div>
@@ -131,7 +129,6 @@ const Therapy = () => {
         <div className="spacer"></div>
         <PreFooterForm></PreFooterForm>
         <Footer></Footer>
-      </ReactLenis>
     </>
   );
 };

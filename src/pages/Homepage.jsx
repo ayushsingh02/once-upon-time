@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ReactLenis, { useLenis } from "lenis/react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import HomeBanner from "../components/sections/HomeBanner";
@@ -14,24 +11,12 @@ import ContactSection from "../components/sections/ContactSection";
 import InstaSection from "../components/sections/InstaSection";
 import PreFooterForm from "../components/sections/PreFooterForm";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// Keeps Lenis virtual scroll in sync with ScrollTrigger's scroll tracking.
-// Without this, ScrollTrigger never hears Lenis scroll events — critical on iOS.
-function LenisScrollTriggerSync() {
-  useLenis(() => {
-    ScrollTrigger.update();
-  });
-  return null;
-}
-
 const Homepage = () => {
   useEffect(() => {
     document.title = "Homepage | Once Upon A Time";
   }, []);
   return (
-    <ReactLenis root>
-      <LenisScrollTriggerSync />
+    <>
       <Header />
       <main className="top-spacing">
         <HomeBanner />
@@ -52,7 +37,7 @@ const Homepage = () => {
         <PreFooterForm></PreFooterForm>
       </main>
       <Footer />
-    </ReactLenis>
+    </>
   );
 };
 

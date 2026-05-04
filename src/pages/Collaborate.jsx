@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import LearnTherapy from "../components/sections/LearnTherapy";
@@ -62,7 +61,6 @@ const Collaborate = () => {
   }, []);
   return (
     <>
-      <ReactLenis root>
       <HeaderSecondary transparent light />
         <main>
           <TherapyBanner></TherapyBanner>
@@ -102,7 +100,6 @@ const Collaborate = () => {
         <div className="spacer"></div>
         <PreFooterForm></PreFooterForm>
         <Footer></Footer>
-      </ReactLenis>
     </>
   );
 };

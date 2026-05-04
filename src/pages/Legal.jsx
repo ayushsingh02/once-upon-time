@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 
@@ -9,8 +8,7 @@ const Legal = () => {
   }, []);
   return (
     <>
-      <ReactLenis root>
-        <HeaderSecondary></HeaderSecondary>
+      <HeaderSecondary></HeaderSecondary>
         <main className="top-spacing">
           <div className="legal-page">
               <h2>Refund Policy</h2>
@@ -107,7 +105,6 @@ const Legal = () => {
         </main>
         <div className="spacer"></div>
         <Footer></Footer>
-      </ReactLenis>
     </>
   );
 };

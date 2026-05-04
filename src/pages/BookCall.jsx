@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import PreFooterForm from "../components/sections/PreFooterForm";
@@ -27,7 +26,7 @@ const BookCall = () => {
       document.title = "Book a Call";
     }, []);
   return (
-    <ReactLenis root>
+    <>
       <HeaderSecondary />
       <main className="top-spacing-all">
         <ContactSectionMain
@@ -44,7 +43,7 @@ const BookCall = () => {
       </main>
       <PreFooterForm />
       <Footer />
-    </ReactLenis>
+    </>
   );
 };
 

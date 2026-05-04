@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import { slideInBottom } from '../animations';
@@ -17,7 +16,7 @@ const ErrorPage = () => {
     document.title = "Error 404";
   }, []);
   return (
-    <ReactLenis root>
+    <>
       <HeaderSecondary transparent />
       <main className="error-page-main">
         <div className="error-page">
@@ -34,7 +33,7 @@ const ErrorPage = () => {
         </div>
       </main>
       <Footer />
-    </ReactLenis>
+    </>
   );
 };
 

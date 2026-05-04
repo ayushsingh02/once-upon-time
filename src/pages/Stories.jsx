@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import ReactLenis from "lenis/react";
 import ContactSectionMain from "../components/sections/ContactSectionMain";
 import StoriesBanner from "../components/sections/StoriesBanner";
 import Footer from "../components/Footer/Footer";
@@ -52,8 +51,7 @@ const Stories = () => {
       }, []);
   return (
     <>
-      <ReactLenis root>
-        <HeaderSecondary transparent/>
+      <HeaderSecondary transparent/>
         <main>
         <StoriesBanner></StoriesBanner>
         <div className="spacer"></div>
@@ -80,7 +78,6 @@ const Stories = () => {
         <div className="spacer"></div>
         <PreFooterForm></PreFooterForm>
         <Footer></Footer>
-      </ReactLenis>
     </>
   );
 };

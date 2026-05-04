@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
 import PreFooterForm from "../components/sections/PreFooterForm";
@@ -126,7 +125,7 @@ const Referrals = () => {
       document.title = "Referrals";
     }, []);
   return (
-    <ReactLenis root>
+    <>
       <HeaderSecondary transparent />
       <main>
         <div className="referrals-page">
@@ -153,7 +152,7 @@ const Referrals = () => {
       <div className="spacer"></div>
       <PreFooterForm></PreFooterForm>
       <Footer />
-    </ReactLenis>
+    </>
   );
 };
 
