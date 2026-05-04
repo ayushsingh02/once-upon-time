@@ -40,9 +40,6 @@ const Header = () => {
 
     if (!header || !logo) return;
 
-    // Kill all existing ScrollTriggers before creating new ones
-    ScrollTrigger.getAll().forEach((t) => t.kill());
-
     header.style.transform = "translateY(-100%)";
 
     const t1 = setTimeout(() => {
@@ -101,7 +98,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       logoTween.scrollTrigger?.kill();
       logoTween.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, [location.pathname]); // re-runs on every route change
 

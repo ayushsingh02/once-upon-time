@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const faqData = [
   { title: "Question Statement 01", content: "We create a space of trust, where your experiences unfold with care, and every session becomes part of a deeper journey into yourself." },
@@ -50,7 +51,7 @@ const FaqsAccord = () => {
               Not at all. Therapy begins exactly where you are — confused,
               curious, overwhelmed, or simply unsure. There's no right way to arrive.
             </p>
-            <a href="" className="primary-btn">ask a question</a>
+            <Link to="/book-call" className="primary-btn">ask a question</Link>
           </div>
           <div className="bottom">
             <div className="faq-accordion-wrap">

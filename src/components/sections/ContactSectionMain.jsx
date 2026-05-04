@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import BlueCard from "../snippets/BlueCard";
 import countryCodesList from "country-codes-list";
 import { slideInLeft, slideInBottom } from "../../animations";
@@ -42,9 +43,9 @@ const ContactSectionMain = ({
                 <p>{desc}</p>
                 <div className="book-slot">
                   <p>{capText}</p>
-                  <a href={ctaURL} className="primary-btn">
+                  <Link to={ctaURL} className="primary-btn">
                     {ctaText}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

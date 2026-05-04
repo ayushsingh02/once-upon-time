@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PInkCardSm from "../snippets/PInkCardSm";
 import { animateText, slideInLeft } from "../../animations";
 
@@ -28,9 +29,9 @@ const TherapyOgBanner = () => {
               <span className="big-pink">{data.descBigLetter}</span>
               {data.desc}
             </p>
-            <a href={data.cta.url} className="primary-btn">
+            <Link to={data.cta.url} className="primary-btn">
               {data.cta.label}
-            </a>
+            </Link>
           </div>
           <div className="center-block">
             <PInkCardSm delay={1} title={data.pinkCard?.title} />

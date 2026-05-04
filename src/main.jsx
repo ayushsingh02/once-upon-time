@@ -6,13 +6,13 @@ import "./custom.css";
 import "./responsive.css";
 import "./custom.js";
 import App from "./App.jsx";
-// import ScrollToTop from "./ScrollToTop";
+import ScrollToTop from "./ScrollToTop";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <>
     <BrowserRouter>
-    {/* <ScrollToTop />  */}
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </>,

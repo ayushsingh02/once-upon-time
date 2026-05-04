@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ReferralCard from "../snippets/ReferralCard";
 import { animateText, slideInBottom } from "../../animations";
 const data = {
@@ -52,9 +53,9 @@ const ReferralBrowse = () => {
           ))}
         </div>
         <div className="view-more-cta">
-          <a href={data.viewMoreURL} className="primary-btn">
+          <Link to={data.viewMoreURL} className="primary-btn">
             {data.viewMoreText}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

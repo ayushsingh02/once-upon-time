@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HangingCard =  ({ hangingImage, eyehead, title, desc, ctaText, ctaURL, isHanged }) => {
   return (
@@ -10,7 +11,7 @@ const HangingCard =  ({ hangingImage, eyehead, title, desc, ctaText, ctaURL, isH
         {eyehead && <p className="eye-head">{eyehead}</p>}
         {title && <h3>{title}</h3>}
         {desc && <p>{desc}</p>}
-        {ctaText && <a className="primary-btn" href={ctaURL}>{ctaText}</a>}
+        {ctaText && <Link className="primary-btn" to={ctaURL}>{ctaText}</Link>}
       </div>
     </div>
   );

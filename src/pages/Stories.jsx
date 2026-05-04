@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import ContactSectionMain from "../components/sections/ContactSectionMain";
 import StoriesBanner from "../components/sections/StoriesBanner";

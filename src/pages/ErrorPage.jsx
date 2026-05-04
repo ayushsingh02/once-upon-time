@@ -1,5 +1,5 @@
-import {useEffect} from "react";
-import Lenis from "lenis";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import ReactLenis from "lenis/react";
 import HeaderSecondary from "../components/Header/HeaderSecondary";
 import Footer from "../components/Footer/Footer";
@@ -11,6 +11,7 @@ const data = {
   ctaText: "Go to Home",
   ctaURL: "/",
 };
+
 const ErrorPage = () => {
   useEffect(() => {
     document.title = "Error 404";
@@ -26,9 +27,9 @@ const ErrorPage = () => {
           <div className="error-content">
             <h3>{data.heading}</h3>
             <p>{data.text}</p>
-            <a href={data.ctaURL} className="primary-btn pink">
+            <Link to={data.ctaURL} className="primary-btn pink">
               {data.ctaText}
-            </a>
+            </Link>
           </div>
         </div>
       </main>

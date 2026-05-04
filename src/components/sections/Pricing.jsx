@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { animateText, slideInBottom } from "../../animations";
 
 const pricingData = [
@@ -99,7 +100,7 @@ const Pricing = () => {
                     
                     </div>
                     <div className="book-now-cta">
-                        <a href="/book-call" className="primary-btn">Book a Call</a>
+                        <Link to="/book-call" className="primary-btn">Book a Call</Link>
                       </div>
                   </div>
                 </div>

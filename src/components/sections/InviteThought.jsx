@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import TherapyCard from '../snippets/TherapyCard';
 import { slideInLeft, slideInRight, animateText } from "../../animations";
 const data = {
@@ -66,7 +67,7 @@ const InviteThought = () => {
             ))}
           </div>
           <div className="book-call-cta">
-            <a href={data.ctaURL} className="primary-btn">{data.ctaText}</a>
+            <Link to={data.ctaURL} className="primary-btn">{data.ctaText}</Link>
           </div>
         </div>
       </div>
