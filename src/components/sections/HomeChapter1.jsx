@@ -25,52 +25,45 @@ const HomeChapter1 = () => {
   const cardInnerRef = useRef(null);
 
   useEffect(() => {
-    const isDesktop = window.innerWidth >= 992;
-
-    if (!isDesktop) {
-      if (cardRef.current) gsap.set(cardRef.current, { clearProps: "all" });
-      if (cardInnerRef.current) gsap.set(cardInnerRef.current, { clearProps: "all" });
-      return;
-    }
-
     const section = sectionRef.current;
     const card = cardRef.current;
     const cardInner = cardInnerRef.current;
 
     if (!section || !card || !cardInner) return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "+=100%",
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        fastScrollEnd: true,
-        preventOverlaps: true,
-      },
-    });
+    const isMobile = window.innerWidth < 992;
 
-    tl.to(card, {
-        height: window.innerHeight,
-        width: "55vw",
-        ease: "power2.inOut",
-        duration: 0.5,
-      })
-      .to(cardInner, {
-        y: "-50%",
-        ease: "none",
-        duration: 1.5,
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          fastScrollEnd: true,
+          preventOverlaps: true,
+        },
       });
+
+      tl.to(card, {
+          height: window.innerHeight,
+          width: isMobile ? "100%" : "55vw",
+          ease: "power2.inOut",
+          duration: 0.5,
+        })
+        .to(cardInner, {
+          y: "-50%",
+          ease: "none",
+          duration: 1.5,
+        });
+    }, sectionRef);
 
     setTimeout(() => ScrollTrigger.refresh(), 300);
 
-    return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
