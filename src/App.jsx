@@ -16,10 +16,6 @@ import Therapy from "./pages/Therapy";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Lives inside <ReactLenis root> so it can access the Lenis instance.
-// On every route change: resets Lenis scroll to 0 (window.scrollTo doesn't
-// reach Lenis's internal targetScroll, so it must be done via lenis.scrollTo).
-// Also keeps ScrollTrigger in sync with Lenis on every tick.
 function LenisRouteManager() {
   const { pathname } = useLocation();
 

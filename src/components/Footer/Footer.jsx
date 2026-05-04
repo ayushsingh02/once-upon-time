@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./footer.css";
 import PinkCard from "../snippets/PinkCard";
 
@@ -59,7 +58,7 @@ function Footer() {
                         <ul>
                           {block.text.map((text, j) => (
                             <li key={j}>
-                              <Link to={block.link[j]}>{text}</Link>
+                              <a href={block.link[j]}>{text}</a>
                             </li>
                           ))}
                         </ul>
@@ -90,9 +89,9 @@ function Footer() {
                 <div className="footer-bottom-right">
                   <h3>{data.cta.heading}</h3>
                   <div className="cta-btn">
-                    <Link to={data.cta.btnLink} className="primary-btn">
+                    <a href={data.cta.btnLink} className="primary-btn">
                       {data.cta.btnText}
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

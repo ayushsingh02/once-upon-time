@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./header.css";
 
 const navItems = [
@@ -41,6 +41,9 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
 
     if (!header) return;
 
+    // Reset on every route change so stale scroll state doesn't bleed in
+    header.classList.remove("header-hide");
+    prevScrollRef.current = 0;
     header.style.transform = "translateY(-100%)";
     const t1 = setTimeout(() => {
       if (!headerRef.current) return;
@@ -98,18 +101,18 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
           <div className="container">
             <div className="header-in">
               <div className="left">
-                <Link to="/">
+                <a href="/">
                   <div className="header-logo">
                     <img src={logo} alt="Logo" className="icon" />
                   </div>
-                </Link>
+                </a>
               </div>
               <div className="right">
                 <nav>
                   <ul>
                     {navItems.map((item) => (
                       <li key={item.label}>
-                        <Link to={item.href}>{item.label}</Link>
+                        <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -138,15 +141,15 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
                     />
                   </svg>
                 </div>
-                <Link to="/">
+                <a href="/">
                   <div className="header-mob-logo">
                     <img src={logo} alt="Logo" className="icon" />
                   </div>
-                </Link>
+                </a>
                 <div className="bac-cta">
-                  <Link to="/book-call" className="primary-btn">
+                  <a href="/book-call" className="primary-btn">
                     Book A Call
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -160,9 +163,7 @@ const HeaderSecondary = ({ transparent = false, light = false }) => {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.href} onClick={closeMenu}>
-                      {item.label}
-                    </Link>
+                    <a href={item.href}>{item.label}</a>
                   </li>
                 ))}
               </ul>

@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PinkCard from "../snippets/PinkCard";
 import BlueCard from "../snippets/BlueCard";
 import LightBlueCard from "../snippets/LightBlueCard";
-import { animateText, slideInRight, slideInLeft } from "../../animations";
+import { animateText, slideInLeft } from "../../animations";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = {
   eyeHead: "CHAPTER I",
@@ -90,13 +94,28 @@ const AboutLetterFrom = () => {
   useEffect(() => {
     const $ = window.$;
     if (!$) return;
-  
+
     const $slider = $(sliderRef.current);
-  
+
     if ($slider.hasClass("owl-loaded")) {
       $slider.trigger("destroy.owl.carousel");
     }
-  
+
+    // Paper-appear animation — letter lifts up from the surface
+    const animateLetter = (el) => {
+      if (!el) return;
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 },
+        { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 1.1, ease: "power3.out" }
+      );
+    };
+
+    const getActiveLetter = () =>
+      sliderRef.current?.querySelector(".owl-item.active .letter-page");
+
+    let st;
+
     $slider.owlCarousel({
       loop: true,
       margin: 0,
@@ -105,14 +124,31 @@ const AboutLetterFrom = () => {
       items: 1,
       onInitialized: () => {
         setTimeout(() => {
+          // Set the initial visible letter to invisible so it animates in
+          const activeLetter = getActiveLetter();
+          if (activeLetter) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 });
+
           if (topHeadRef.current) animateText(topHeadRef.current);
-          if (letterRefs.current[0]) slideInRight(letterRefs.current[0]);
           if (imageRefs.current[0]) slideInLeft(imageRefs.current[0]);
+
+          // Trigger paper reveal when section scrolls into view
+          st = ScrollTrigger.create({
+            trigger: sectionRef.current,
+            start: "top 75%",
+            once: true,
+            onEnter: () => animateLetter(getActiveLetter()),
+          });
         }, 100);
       },
     });
-  
+
+    // Re-run paper reveal on every slide change (click prev/next)
+    const onTranslated = () => animateLetter(getActiveLetter());
+    $slider.on("translated.owl.carousel", onTranslated);
+
     return () => {
+      st?.kill();
+      $slider.off("translated.owl.carousel", onTranslated);
       if ($slider.hasClass("owl-loaded")) {
         $slider.trigger("destroy.owl.carousel");
       }

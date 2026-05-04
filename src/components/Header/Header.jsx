@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./header.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +40,8 @@ const Header = () => {
 
     if (!header || !logo) return;
 
+    // Ensure header is visible and not stuck hidden from previous page
+    header.classList.remove("header-hide");
     header.style.transform = "translateY(-100%)";
 
     const t1 = setTimeout(() => {
@@ -109,18 +111,18 @@ const Header = () => {
           <div className="container">
             <div className="header-in">
               <div className="left">
-                <Link to="/">
+                <a href="/">
                   <div className="header-logo" ref={logoRef}>
                     <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
                   </div>
-                </Link>
+                </a>
               </div>
               <div className="right">
                 <nav>
                   <ul>
                     {navItems.map((item) => (
                       <li key={item.label}>
-                        <Link to={item.href}>{item.label}</Link>
+                        <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -140,13 +142,13 @@ const Header = () => {
                     <path d="M0 11.1429V9.28572H18V11.1429H0ZM0 6.5V4.64286H18V6.5H0ZM0 1.85714V0H18V1.85714H0Z" fill="#3E2C25" />
                   </svg>
                 </div>
-                <Link to="/">
+                <a href="/">
                   <div className="header-mob-logo">
                     <img src="icons/header-dark-logo.svg" alt="Logo" className="icon" />
                   </div>
-                </Link>
+                </a>
                 <div className="bac-cta">
-                  <Link to="/book-call" className="primary-btn">Book A Call</Link>
+                  <a href="/book-call" className="primary-btn">Book A Call</a>
                 </div>
               </div>
             </div>
@@ -160,9 +162,7 @@ const Header = () => {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.href} onClick={closeMenu}>
-                      {item.label}
-                    </Link>
+                    <a href={item.href}>{item.label}</a>
                   </li>
                 ))}
               </ul>

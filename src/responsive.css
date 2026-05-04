@@ -887,6 +887,9 @@ width: 12px;
     .letter-page >p{
       font-size: 14px;
     }
+    .amc2-body{
+      margin-bottom: 0px;
+    }
   }
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
