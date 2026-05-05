@@ -1837,7 +1837,7 @@ form#news-update label {
 }
 .og-therapy::before {
   content: "";
-  background-image: url("../images/home-chapter-1-bg.png");
+  background-image: url("images/home-chapter-1-bg.png");
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1945,7 +1945,7 @@ font-size: 32px;
   transform: rotate(-6deg);
   padding: 62px 50px;
   padding-bottom: 80px;
-  background-image: url("../images/paper-bg.png");
+  background-image: url("/images/paper-bg.png") !important;
   background-size: cover;
   background-repeat: no-repeat;
 }
