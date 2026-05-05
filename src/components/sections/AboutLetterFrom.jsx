@@ -106,13 +106,17 @@ const AboutLetterFrom = () => {
       if (!el || window.innerWidth < 992) return;
       gsap.fromTo(
         el,
-        { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 },
-        { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 1.1, ease: "power3.out" }
+        { opacity: 0, y: 50, scale: 0.96 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: "power3.out" }
       );
     };
 
+    // Target .left wrapper — not .letter-page itself.
+    // .letter-page has CSS transform:rotate(-6deg) + background-image.
+    // Safari drops the background when GSAP overrides the transform with inline
+    // styles. Animating the parent wrapper leaves .letter-page untouched.
     const getActiveLetter = () =>
-      sliderRef.current?.querySelector(".owl-item.active .letter-page");
+      sliderRef.current?.querySelector(".owl-item.active .left");
 
     let st;
 
@@ -124,9 +128,8 @@ const AboutLetterFrom = () => {
       items: 1,
       onInitialized: () => {
         setTimeout(() => {
-          // Set the initial visible letter to invisible so it animates in
           const activeLetter = getActiveLetter();
-          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 });
+          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96 });
 
           if (topHeadRef.current) animateText(topHeadRef.current);
           if (imageRefs.current[0]) slideInLeft(imageRefs.current[0]);
