@@ -44,8 +44,6 @@ export default function AboutMeChapter2() {
   const sectionRef     = useRef(null)
   const bgStripRef     = useRef(null)
   const imgStripRef    = useRef(null)
-  const activeIndex    = useRef(0)
-
   const chapterNumRefs = useRef([])
   const labelRefs      = useRef([])
   const leftTextRefs   = useRef([])
@@ -56,44 +54,26 @@ export default function AboutMeChapter2() {
     const section = sectionRef.current
     if (!section) return
 
-    const total        = chapters.length
-    const slideH       = section.offsetHeight
-    const imgSlideH    = imgStripRef.current.children[0]?.offsetHeight || slideH
-    const bgScrollDist = (total - 1) * slideH
-    const imgScrollDist = (total - 1) * imgSlideH
+    const total       = chapters.length
+    const slideH      = section.offsetHeight
+    const imgSlideH   = imgStripRef.current.children[0]?.offsetHeight || slideH
 
-    const showTextSlide = (idx) => {
-      chapters.forEach((_, i) => {
-        const on = i === idx
-        gsap.set(chapterNumRefs.current[i], { opacity: on ? 1 : 0 })
-        gsap.set(labelRefs.current[i],      { opacity: on ? 1 : 0 })
-        gsap.set(leftTextRefs.current[i],   { opacity: on ? 1 : 0 })
-        gsap.set(rightTextRefs.current[i],  { opacity: on ? 1 : 0 })
-        gsap.set(titleRefs.current[i],      { opacity: on ? 1 : 0, y: on ? 0 : 40 })
-      })
-    }
+    // 1.5× slide height per chapter gives comfortable reading time before transition
+    const perChapter    = slideH * 1.5
+    const bgScrollDist  = (total - 1) * perChapter       // total scroll travel
+    const bgMoveAmount  = (total - 1) * slideH            // bg strip travel
+    const imgMoveAmount = (total - 1) * imgSlideH         // img strip travel
+    const dur           = total - 1                        // timeline duration units
 
-    const crossfadeText = (prev, next) => {
-      gsap.timeline()
-        .to(
-          [chapterNumRefs.current[prev], labelRefs.current[prev], leftTextRefs.current[prev], rightTextRefs.current[prev]],
-          { opacity: 0, duration: 0.25 }
-        )
-        .to(titleRefs.current[prev], { opacity: 0, y: -30, duration: 0.3 }, '<')
-        .fromTo(
-          titleRefs.current[next],
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
-          '-=0.15'
-        )
-        .to(
-          [chapterNumRefs.current[next], labelRefs.current[next], leftTextRefs.current[next], rightTextRefs.current[next]],
-          { opacity: 1, duration: 0.35 },
-          '-=0.35'
-        )
-    }
-
-    showTextSlide(0)
+    // Initial visibility
+    chapters.forEach((_, i) => {
+      const on = i === 0
+      gsap.set(
+        [chapterNumRefs.current[i], labelRefs.current[i], leftTextRefs.current[i], rightTextRefs.current[i]],
+        { opacity: on ? 1 : 0 }
+      )
+      gsap.set(titleRefs.current[i], { opacity: on ? 1 : 0, y: on ? 0 : 30 })
+    })
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -105,22 +85,36 @@ export default function AboutMeChapter2() {
           pin     : true,
           snap    : {
             snapTo  : 1 / (total - 1),
-            duration: { min: 0.3, max: 0.6 },
-            delay   : 0.05,
+            duration: { min: 0.5, max: 0.9 },
+            delay   : 0.15,
             ease    : 'power2.inOut',
-          },
-          onUpdate(self) {
-            const idx = Math.min(Math.round(self.progress * (total - 1)), total - 1)
-            if (idx !== activeIndex.current) {
-              crossfadeText(activeIndex.current, idx)
-              activeIndex.current = idx
-            }
           },
         },
       })
 
-      tl.to(bgStripRef.current,  { y: -bgScrollDist,  ease: 'none' }, 0)
-        .to(imgStripRef.current, { y: -imgScrollDist, ease: 'none' }, 0)
+      // Strips scroll upward at their own speed
+      tl.to(bgStripRef.current,  { y: -bgMoveAmount,  ease: 'none', duration: dur }, 0)
+      tl.to(imgStripRef.current, { y: -imgMoveAmount, ease: 'none', duration: dur }, 0)
+
+      // Text crossfades are part of the scrub timeline — no independent timelines,
+      // no onUpdate. Each chapter's text fades out in the last 35% of its scroll
+      // window and the next chapter's text fades in from 75%.
+      for (let i = 0; i < total - 1; i++) {
+        const body = (idx) => [
+          chapterNumRefs.current[idx],
+          labelRefs.current[idx],
+          leftTextRefs.current[idx],
+          rightTextRefs.current[idx],
+        ]
+
+        // Out: chapter i fades at 65%
+        tl.fromTo(body(i),              { opacity: 1 }, { opacity: 0, duration: 0.2, ease: 'none'        }, i + 0.65)
+        tl.fromTo(titleRefs.current[i], { opacity: 1, y: 0 }, { opacity: 0, y: -25, duration: 0.2, ease: 'power1.in' }, i + 0.65)
+
+        // In: chapter i+1 fades from 75%, fully visible by snap point
+        tl.fromTo(titleRefs.current[i + 1], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' }, i + 0.75)
+        tl.fromTo(body(i + 1),              { opacity: 0 },         { opacity: 1, duration: 0.2,  ease: 'none'             }, i + 0.78)
+      }
     }, section)
 
     return () => ctx.revert()

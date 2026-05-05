@@ -891,7 +891,7 @@ width: 12px;
       margin-bottom: 0px;
     }
     .hanging-card-img {
-    aspect-ratio: 3/2;
+    aspect-ratio: 1/1;
     }
   }
 @media screen and (max-width: 400px) {
