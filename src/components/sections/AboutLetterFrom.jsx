@@ -103,7 +103,7 @@ const AboutLetterFrom = () => {
 
     // Paper-appear animation — letter lifts up from the surface
     const animateLetter = (el) => {
-      if (!el) return;
+      if (!el || window.innerWidth < 992) return;
       gsap.fromTo(
         el,
         { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 },
@@ -126,7 +126,7 @@ const AboutLetterFrom = () => {
         setTimeout(() => {
           // Set the initial visible letter to invisible so it animates in
           const activeLetter = getActiveLetter();
-          if (activeLetter) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 });
+          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 });
 
           if (topHeadRef.current) animateText(topHeadRef.current);
           if (imageRefs.current[0]) slideInLeft(imageRefs.current[0]);

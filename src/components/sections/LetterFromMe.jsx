@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { animateText, slideInLeft, slideInRight } from "../../animations";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PinkCard from "../snippets/PinkCard";
 import BlueCard from "../snippets/BlueCard";
 import LightBlueCard from "../snippets/LightBlueCard";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = {
   eyeHead: "CHAPTER I",
@@ -64,15 +67,47 @@ const LetterFromMe = () => {
       $slider.trigger("destroy.owl.carousel");
     }
 
+    const animateLetter = (el) => {
+      if (!el || window.innerWidth < 992) return;
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 },
+        { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 1.1, ease: "power3.out" }
+      );
+    };
+
+    const getActiveLetter = () =>
+      sliderRef.current?.querySelector(".owl-item.active .letter-page");
+
+    let st;
+
     $slider.owlCarousel({
       loop: true,
       margin: 0,
       nav: false,
       dots: false,
       items: 1,
+      onInitialized: () => {
+        setTimeout(() => {
+          const activeLetter = getActiveLetter();
+          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96, rotation: -0.8 });
+
+          st = ScrollTrigger.create({
+            trigger: sectionRef.current,
+            start: "top 75%",
+            once: true,
+            onEnter: () => animateLetter(getActiveLetter()),
+          });
+        }, 100);
+      },
     });
 
+    const onTranslated = () => animateLetter(getActiveLetter());
+    $slider.on("translated.owl.carousel", onTranslated);
+
     return () => {
+      st?.kill();
+      $slider.off("translated.owl.carousel", onTranslated);
       if ($slider.hasClass("owl-loaded")) {
         $slider.trigger("destroy.owl.carousel");
       }
@@ -142,7 +177,7 @@ const LetterFromMe = () => {
       </div>
 
       <div className="container">
-        <div className="top-head" ref={animateText}>
+        <div className="top-head">
           <p className="eyebrow-head">{data.eyeHead}</p>
           <h2>{data.titleHead}</h2>
         </div>
@@ -153,7 +188,7 @@ const LetterFromMe = () => {
               <div className="lfm-card" key={slide.id}>
                 <div className="letter-form-me-in">
                   <div className="left">
-                    <div className="letter-page" ref={slideInLeft}>
+                    <div className="letter-page">
                       {slide.letterParagraphs.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
@@ -164,7 +199,7 @@ const LetterFromMe = () => {
                     </div>
                   </div>
                   <div className="right">
-                    <div className="polo-img" ref={slideInRight}>
+                    <div className="polo-img">
                       <img src={slide.image} alt={slide.authorName} className="img" />
                     </div>
                   </div>
