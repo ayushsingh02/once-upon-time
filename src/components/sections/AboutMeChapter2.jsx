@@ -1,4 +1,8 @@
 import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const chapters = [
   {
@@ -49,64 +53,16 @@ export default function AboutMeChapter2() {
   const titleRefs      = useRef([])
 
   useEffect(() => {
-    let gsap, ScrollTrigger, ctx
+    const section = sectionRef.current
+    if (!section) return
 
-    const init = async () => {
-      const { gsap: g }           = await import('https://esm.sh/gsap@3.12.5')
-      const { ScrollTrigger: ST } = await import('https://esm.sh/gsap@3.12.5/ScrollTrigger')
-      gsap          = g
-      ScrollTrigger = ST
-      gsap.registerPlugin(ScrollTrigger)
+    const total        = chapters.length
+    const slideH       = section.offsetHeight
+    const imgSlideH    = imgStripRef.current.children[0]?.offsetHeight || slideH
+    const bgScrollDist = (total - 1) * slideH
+    const imgScrollDist = (total - 1) * imgSlideH
 
-      const total      = chapters.length
-      const slideH     = sectionRef.current.offsetHeight  // 100vh in px
-
-      // The card image slot height (aspect-ratio 3/4 of its column width)
-      // We measure it after render
-      const imgSlideH  = imgStripRef.current.children[0]?.offsetHeight || slideH
-
-      const bgScrollDist  = (total - 1) * slideH
-      const imgScrollDist = (total - 1) * imgSlideH
-
-      // Show first chapter text
-      showTextSlide(0, gsap)
-
-      ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger      : sectionRef.current,
-            start        : 'top top',
-            end          : `+=${bgScrollDist}`,
-            scrub        : 1,
-            pin          : true,
-            anticipatePin: 1,
-            snap         : {
-              snapTo  : 1 / (total - 1),
-              duration: { min: 0.3, max: 0.6 },
-              delay   : 0.05,
-              ease    : 'power2.inOut',
-            },
-            onUpdate(self) {
-              const idx = Math.min(
-                Math.round(self.progress * (total - 1)),
-                total - 1
-              )
-              if (idx !== activeIndex.current) {
-                crossfadeText(activeIndex.current, idx, gsap)
-                activeIndex.current = idx
-              }
-            },
-          },
-        })
-
-        // Both strips scroll upward — bg uses full-vh steps, img uses its own slot height steps
-        tl.to(bgStripRef.current,  { y: -bgScrollDist,  ease: 'none' }, 0)
-          .to(imgStripRef.current, { y: -imgScrollDist, ease: 'none' }, 0)
-
-      }, sectionRef)
-    }
-
-    const showTextSlide = (idx, gsap) => {
+    const showTextSlide = (idx) => {
       chapters.forEach((_, i) => {
         const on = i === idx
         gsap.set(chapterNumRefs.current[i], { opacity: on ? 1 : 0 })
@@ -117,13 +73,13 @@ export default function AboutMeChapter2() {
       })
     }
 
-    const crossfadeText = (prev, next, gsap) => {
-      const tl = gsap.timeline()
-      tl.to(
-        [chapterNumRefs.current[prev], labelRefs.current[prev], leftTextRefs.current[prev], rightTextRefs.current[prev]],
-        { opacity: 0, duration: 0.25 }
-      )
-        .to(titleRefs.current[prev],  { opacity: 0, y: -30, duration: 0.3 }, '<')
+    const crossfadeText = (prev, next) => {
+      gsap.timeline()
+        .to(
+          [chapterNumRefs.current[prev], labelRefs.current[prev], leftTextRefs.current[prev], rightTextRefs.current[prev]],
+          { opacity: 0, duration: 0.25 }
+        )
+        .to(titleRefs.current[prev], { opacity: 0, y: -30, duration: 0.3 }, '<')
         .fromTo(
           titleRefs.current[next],
           { opacity: 0, y: 50 },
@@ -137,8 +93,37 @@ export default function AboutMeChapter2() {
         )
     }
 
-    init()
-    return () => { ctx?.revert() }
+    showTextSlide(0)
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger : section,
+          start   : 'top top',
+          end     : `+=${bgScrollDist}`,
+          scrub   : 1.5,
+          pin     : true,
+          snap    : {
+            snapTo  : 1 / (total - 1),
+            duration: { min: 0.3, max: 0.6 },
+            delay   : 0.05,
+            ease    : 'power2.inOut',
+          },
+          onUpdate(self) {
+            const idx = Math.min(Math.round(self.progress * (total - 1)), total - 1)
+            if (idx !== activeIndex.current) {
+              crossfadeText(activeIndex.current, idx)
+              activeIndex.current = idx
+            }
+          },
+        },
+      })
+
+      tl.to(bgStripRef.current,  { y: -bgScrollDist,  ease: 'none' }, 0)
+        .to(imgStripRef.current, { y: -imgScrollDist, ease: 'none' }, 0)
+    }, section)
+
+    return () => ctx.revert()
   }, [])
 
   return (
