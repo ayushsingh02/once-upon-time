@@ -1945,7 +1945,7 @@ font-size: 32px;
   transform: rotate(-6deg);
   padding: 62px 50px;
   padding-bottom: 80px;
-  background-image: url("images/paper-bg.png");
+  background-image: url("../images/paper-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
