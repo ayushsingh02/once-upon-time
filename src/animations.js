@@ -293,20 +293,24 @@ export const refreshScrollTrigger = () => {
   setTimeout(() => ScrollTrigger.refresh(), 500);
 };
 
-const getScrollConfig = (element, start = "top 90%") => ({
+const getScrollConfig = (element, start = "top 88%") => ({
   trigger: element,
   start,
   once: true,
 });
 
+// ─── SLIDE ANIMATIONS ────────────────────────────────────────────────────────
+// Primarily translational — subtle blur lifts the motion off the page.
+// expo.out gives a quick burst then a long, luxurious tail.
+
 export const slideInLeft = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, x: -80 },
+    { opacity: 0, x: -60, filter: "blur(5px)" },
     {
-      opacity: 1, x: 0,
-      duration: 1.6,
+      opacity: 1, x: 0, filter: "blur(0px)",
+      duration: 1.8,
       delay,
-      ease: "power3.out",
+      ease: "expo.out",
       scrollTrigger: getScrollConfig(element),
     }
   );
@@ -314,12 +318,12 @@ export const slideInLeft = (element, delay = 0) => {
 
 export const slideInRight = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, x: 80 },
+    { opacity: 0, x: 60, filter: "blur(5px)" },
     {
-      opacity: 1, x: 0,
-      duration: 1.2,
+      opacity: 1, x: 0, filter: "blur(0px)",
+      duration: 1.8,
       delay,
-      ease: "power3.out",
+      ease: "expo.out",
       scrollTrigger: getScrollConfig(element),
     }
   );
@@ -327,12 +331,12 @@ export const slideInRight = (element, delay = 0) => {
 
 export const slideInTop = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, y: -80 },
+    { opacity: 0, y: -50, filter: "blur(5px)" },
     {
-      opacity: 1, y: 0,
-      duration: 1.2,
+      opacity: 1, y: 0, filter: "blur(0px)",
+      duration: 1.6,
       delay,
-      ease: "power3.out",
+      ease: "expo.out",
       scrollTrigger: getScrollConfig(element),
     }
   );
@@ -340,50 +344,65 @@ export const slideInTop = (element, delay = 0) => {
 
 export const slideInBottom = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, y: 80 },
+    { opacity: 0, y: 50, filter: "blur(5px)" },
     {
-      opacity: 1, y: 0,
-      duration: 1.2,
+      opacity: 1, y: 0, filter: "blur(0px)",
+      duration: 1.6,
       delay,
-      ease: "power3.out",
+      ease: "expo.out",
       scrollTrigger: getScrollConfig(element),
     }
   );
 };
 
+// ─── TEXT ANIMATION ───────────────────────────────────────────────────────────
+// Blur-dissolve reveal — each element type gets a distinct treatment so the
+// hierarchy reads clearly: eyebrow → heading → body → button.
+
 export const animateText = (container, delay = 0) => {
-  const eyebrow = container.querySelector(".eyebrow-head");
+  const eyebrow  = container.querySelector(".eyebrow-head");
   const headings = container.querySelectorAll("h1, h2, h3, h4, h5");
-  const body = container.querySelectorAll("p:not(.eyebrow-head), li");
-  const buttons = container.querySelectorAll(".primary-btn");
+  const body     = container.querySelectorAll("p:not(.eyebrow-head), li");
+  const buttons  = container.querySelectorAll(".primary-btn");
 
   const scrollConfig = getScrollConfig(container);
 
+  // Eyebrow — drifts up while letter-spacing tightens and blur clears
   if (eyebrow) {
     gsap.fromTo(eyebrow,
-      { opacity: 0, y: 16, letterSpacing: "0.3em" },
-      { opacity: 1, y: 0, letterSpacing: "inherit", duration: 0.8, delay, ease: "power3.out", scrollTrigger: scrollConfig }
+      { opacity: 0, y: 12, letterSpacing: "0.45em", filter: "blur(6px)" },
+      { opacity: 1, y: 0,  letterSpacing: "inherit", filter: "blur(0px)",
+        duration: 1.1, delay, ease: "power3.out", scrollTrigger: scrollConfig }
     );
   }
 
+  // Headings — heaviest blur, largest travel, staggered per element
   if (headings.length) {
     gsap.fromTo(headings,
-      { opacity: 0, y: 60, skewY: 4 },
-      { opacity: 1, y: 0, skewY: 0, duration: 1, delay: delay + 0.1, ease: "power4.out", stagger: 0.08, scrollTrigger: scrollConfig }
+      { opacity: 0, y: 55, filter: "blur(14px)" },
+      { opacity: 1, y: 0,  filter: "blur(0px)",
+        duration: 1.5, delay: delay + 0.15, ease: "power4.out",
+        stagger: 0.12, scrollTrigger: scrollConfig }
     );
   }
 
+  // Body text — softer blur, shorter travel, gentle stagger
   if (body.length) {
     gsap.fromTo(body,
-      { opacity: 0, y: 24 },
-      { opacity: 1, y: 0, duration: 0.7, delay: delay + 0.2, ease: "power3.out", stagger: 0.06, scrollTrigger: scrollConfig }
+      { opacity: 0, y: 22, filter: "blur(7px)" },
+      { opacity: 1, y: 0,  filter: "blur(0px)",
+        duration: 1.2, delay: delay + 0.35, ease: "power3.out",
+        stagger: 0.09, scrollTrigger: scrollConfig }
     );
   }
 
+  // Buttons — no blur, slight scale pop with a soft bounce
   if (buttons.length) {
     gsap.fromTo(buttons,
-      { opacity: 0, y: 20, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: delay + 0.35, ease: "back.out(1.4)", stagger: 0.1, scrollTrigger: scrollConfig }
+      { opacity: 0, y: 18, scale: 0.93 },
+      { opacity: 1, y: 0,  scale: 1,
+        duration: 1.0, delay: delay + 0.55, ease: "back.out(1.3)",
+        stagger: 0.1, scrollTrigger: scrollConfig }
     );
   }
 };
@@ -415,8 +434,8 @@ export const initGlobalAnimations = () => {
 
     if (alreadyVisible) {
       gsap.fromTo(el,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, delay, ease: "power3.out" }
+        { opacity: 0, y: 16, filter: "blur(5px)" },
+        { opacity: 1, y: 0,  filter: "blur(0px)", duration: 1.1, delay, ease: "power3.out" }
       );
       el.setAttribute("data-animate-done", "true");
       return;

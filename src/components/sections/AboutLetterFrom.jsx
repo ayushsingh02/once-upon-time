@@ -233,8 +233,7 @@ const AboutLetterFrom = () => {
                   <div className="left">
                     <div
                       className="letter-page"
-                      ref={(el) => (letterRefs.current[index] = el)}
-                    >
+                      ref={(el) => (letterRefs.current[index] = el)}>
                       {slide.letterParagraphs.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
