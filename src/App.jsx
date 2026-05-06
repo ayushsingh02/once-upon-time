@@ -33,6 +33,18 @@ function LenisRouteManager() {
 
 const App = () => {
   useEffect(() => {
+    const loader = document.getElementById("page-loader");
+    if (loader) {
+      gsap.to(loader, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        onComplete: () => loader.remove(),
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
