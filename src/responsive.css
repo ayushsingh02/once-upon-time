@@ -13,10 +13,10 @@
   .chapter3-meet-in .right .big-pink {
     font-size: 36px;
   }
-  .letter-page .author{
+  .letter-page .author {
     margin-top: 20px;
   }
-  .letter-page{
+  .letter-page {
     padding: 30px 24px;
   }
 }
@@ -57,11 +57,11 @@
   .letter-from-me .polo-img {
     transform: unset;
   }
-  .letter-from-me .polo-img{
+  .letter-from-me .polo-img {
     height: 100%;
     aspect-ratio: unset;
   }
-  .letter-form-me-in{
+  .letter-form-me-in {
     padding: 0px;
   }
 }
@@ -150,7 +150,6 @@
   .pricing .container {
     padding-right: 0px;
   }
- 
 }
 @media screen and (max-width: 991px) {
   .header.desktop {
@@ -497,23 +496,29 @@
   }
 
   .lfm-card .pink-card {
-  top: unset;
-  left: unset;
-  bottom: 50px;
-  right: 50px;
-}
-.letter-page .author{
-  margin-top: 100px;
-}
-.footer-copyright p a{
-  font-size: 12px;
-}
-.footer .copyright p span {
-width: 12px;
-}
-.chapter3-meet-in{
-  padding: 0px !important;
-}
+    top: unset;
+    left: unset;
+    bottom: 50px;
+    right: 50px;
+  }
+  .letter-page .author {
+    margin-top: 100px;
+  }
+  .footer-copyright p a {
+    font-size: 12px;
+  }
+  .footer .copyright p span {
+    width: 12px;
+  }
+  .chapter3-meet-in {
+    padding: 0px !important;
+  }
+  .amc2-chapter-num {
+    display: none;
+  }
+  .spacer-sm.ssb{
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -858,42 +863,48 @@ width: 12px;
     width: 162px;
     height: 160px;
     bottom: 29px;
-        right: 50px;
-        display: none;
+    right: 50px;
+    display: none;
   }
-  .letter-page{
-    padding: 30px 20px !important; 
+  .letter-page {
+    padding: 30px 20px !important;
   }
-  .letter-from-me .polo-img{
+  .letter-from-me .polo-img {
     padding: 15px;
     padding-bottom: 25px;
   }
-  .letter-page .auther-name{
+  .letter-page .auther-name {
     font-size: 32px;
   }
-  .letter-page .author{
+  .letter-page .author {
     margin-top: 50px;
   }
-  .footer-copyright p a{
+  .footer-copyright p a {
     font-size: 10px;
   }
   .footer .copyright p span {
     width: 10px;
-    }
-    .insta-frame-in .insta-image{
-      max-height: 140px;
-      overflow: hidden;
-    }
-    .letter-page >p{
-      font-size: 14px;
-    }
-    .amc2-body{
-      margin-bottom: 0px;
-    }
-    .hanging-card-img {
-    aspect-ratio: 1/1;
-    }
   }
+  .insta-frame-in .insta-image {
+    max-height: 140px;
+    overflow: hidden;
+  }
+  .letter-page > p {
+    font-size: 14px;
+  }
+  .amc2-body {
+    margin-bottom: 0px;
+  }
+  .hanging-card-img {
+    aspect-ratio: 1/1;
+  }
+  .og-therapy-in .content-block h1{
+    text-shadow: none;
+  }
+  .og-therapy-in .content-block p{
+    text-shadow: none;
+  }
+}
 @media screen and (max-width: 400px) {
   .header.mobile .header-mob-logo {
     max-width: 130px;
@@ -905,7 +916,7 @@ width: 12px;
   .about-banner-text h1 {
     font-size: 66px;
   }
-  .amc2-chapter-num{
+  .amc2-chapter-num {
     display: none;
   }
 }

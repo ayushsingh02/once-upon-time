@@ -94,7 +94,7 @@
   min-height: unset;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 50px;
   padding-bottom: 60px;
 }
 .fold-2 {
@@ -876,8 +876,8 @@ form#news-update label {
 .therapy-banner {
   background-color: #37251d;
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  /* height: 100vh; */
+  min-height: 730px;
 }
 .therapy-banner::before {
   content: "";
@@ -935,7 +935,8 @@ form#news-update label {
   color: #fff;
 }
 .therapy-banner-img {
-  height: 540px;
+  /* height: 540px; */
+  height: 460px;
 }
 .therapy-banner .big-pink {
   font-size: 32px;
@@ -968,7 +969,8 @@ form#news-update label {
   z-index: 2;
 }
 .about-banner-image {
-  max-height: 646px;
+  /* max-height: 646px; */
+  max-height: 600px;
   overflow: hidden;
   margin-bottom: 60px;
 }
@@ -1056,7 +1058,8 @@ form#news-update label {
 
 .amc2-chapter-num {
   position: absolute;
-  top: 60px;
+  /* top: 60px; */
+  top: 130px;
   left: 50%;
   font-family: var(--mono);
   transform: translateX(-50%);
@@ -1164,11 +1167,11 @@ form#news-update label {
 .amc2-title-layer {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 15;
   pointer-events: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   line-height: 0.85;
   opacity: 0;
 }
@@ -1177,7 +1180,8 @@ form#news-update label {
   font-family: var(--times);
   font-style: italic;
   font-weight: 350;
-  font-size: 22.5vw;
+  /* font-size: 22.5vw; */
+  font-size: clamp(98px, 20vw, 300px);
   color: #fff;
   line-height: 100%;
   letter-spacing: -0.03em;
@@ -1902,10 +1906,16 @@ margin-top: 20px;
   line-height: 100%;
   letter-spacing:-0.02em;
   text-transform: capitalize;
+  text-shadow:
+  0 1px 2px rgba(0, 0, 0, 0.9),
+  0 4px 20px rgba(0, 0, 0, 0.9);
 }
 .og-therapy-in .content-block p{
   color: #F7F0E8;
   max-width: 48ch;
+  text-shadow:
+  0 1px 2px rgba(0, 0, 0, 0.9),
+  0 4px 20px rgba(0, 0, 0, 0.9);
 }
 .og-therapy-in .content-block .big-pink{
 font-size: 32px;
@@ -2094,3 +2104,6 @@ margin-bottom: 40px;
   color: #F7F0E7;
 }
 
+.spacer-sm.ssb{
+  display: none;
+}

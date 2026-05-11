@@ -48,14 +48,14 @@ const ExploreWays = () => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             setHangedCards((prev) => [...prev, 2]);
-          }, 300);
+          }, 400);
           setTimeout(() => {
             setHangedCards((prev) => [...prev, 3]);
-          }, 300);
+          }, 400);
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.4 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);

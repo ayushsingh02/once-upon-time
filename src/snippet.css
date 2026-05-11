@@ -41,11 +41,11 @@
 /* Pink Card End  */
 /* We Work Card  */
 .way-work-card {
-  aspect-ratio: 4.2/6;
+  aspect-ratio: 4/5;
   width: 100%;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .way-work-card .way-work-card-img {
   position: absolute;
@@ -356,8 +356,10 @@
   font-family: var(--inter);
   text-transform: uppercase;
   padding: 1px 8px;
+  cursor: pointer;
+  transition: .4s ease all;
 }
-.scroll-tab-wrap .ss-tabs.active{
+.scroll-tab-wrap .ss-tabs.active, .scroll-tab-wrap .ss-tabs:hover{
   background-color: var(--pink);
   color: #fff;
   border-color: var(--pink);
@@ -370,6 +372,7 @@
   z-index: 99;
   background-color: #F7F0E8;
   padding: 20px 0px;
+  padding-bottom: 80px;
 }
 
 @media screen and (max-width: 1200px) {

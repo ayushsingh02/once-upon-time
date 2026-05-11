@@ -293,7 +293,7 @@ export const refreshScrollTrigger = () => {
   setTimeout(() => ScrollTrigger.refresh(), 500);
 };
 
-const getScrollConfig = (element, start = "top 88%") => ({
+const getScrollConfig = (element, start = "top 80%") => ({
   trigger: element,
   start,
   once: true,
@@ -305,7 +305,7 @@ const getScrollConfig = (element, start = "top 88%") => ({
 
 export const slideInLeft = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, x: -60, filter: "blur(5px)" },
+    { opacity: 0, x: -120, filter: "blur(8px)" },
     {
       opacity: 1, x: 0, filter: "blur(0px)",
       duration: 1.8,
@@ -318,7 +318,7 @@ export const slideInLeft = (element, delay = 0) => {
 
 export const slideInRight = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, x: 60, filter: "blur(5px)" },
+    { opacity: 0, x: 120, filter: "blur(8px)" },
     {
       opacity: 1, x: 0, filter: "blur(0px)",
       duration: 1.8,
@@ -331,7 +331,7 @@ export const slideInRight = (element, delay = 0) => {
 
 export const slideInTop = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, y: -50, filter: "blur(5px)" },
+    { opacity: 0, y: -100, filter: "blur(8px)" },
     {
       opacity: 1, y: 0, filter: "blur(0px)",
       duration: 1.6,
@@ -344,7 +344,7 @@ export const slideInTop = (element, delay = 0) => {
 
 export const slideInBottom = (element, delay = 0) => {
   gsap.fromTo(element,
-    { opacity: 0, y: 50, filter: "blur(5px)" },
+    { opacity: 0, y: 100, filter: "blur(8px)" },
     {
       opacity: 1, y: 0, filter: "blur(0px)",
       duration: 1.6,
