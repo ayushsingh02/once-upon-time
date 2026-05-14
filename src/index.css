@@ -449,6 +449,9 @@ form.contact-form .contact-number-wrap {
   .custom-nav.mobile {
     display: block;
   }
+  .spacer100 {
+    display: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .top-spacing {
@@ -497,8 +500,5 @@ form.contact-form .contact-number-wrap {
   }
   .heading p:not(.eyebrow-head) {
     font-size: 14px;
-  }
-  .spacer100 {
-    display: none;
   }
 }
