@@ -970,7 +970,7 @@ form#news-update label {
 }
 .about-banner-image {
   /* max-height: 646px; */
-  max-height: 600px;
+  max-height: 550px;
   overflow: hidden;
   margin-bottom: 60px;
 }
@@ -1939,7 +1939,7 @@ font-size: 32px;
 .letter-form-me-in{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 32px;
+  padding: 36px;
 }
 
 .pink-card a{

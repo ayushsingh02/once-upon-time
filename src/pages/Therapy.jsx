@@ -74,7 +74,6 @@ const Therapy = () => {
         <TherapyOgBanner></TherapyOgBanner>
         <div className="spacer"></div>
         <StickyScrollTab tabs={tabs}/>
-        <div className="spacer"></div>
           <div id="sec-1">
         <LetterFromMe></LetterFromMe>
         </div>
