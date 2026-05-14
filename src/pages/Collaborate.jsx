@@ -66,6 +66,7 @@ const Collaborate = () => {
           <TherapyBanner></TherapyBanner>
           <div className="spacer-sm sst-space"></div>
           <StickyScrollTab tabs={tabs} />
+          <div className="spacer100"></div>
           <div className="spacer-sm ssb"></div>
           <div id="work-with-me">
           <WorkWithMe ></WorkWithMe>

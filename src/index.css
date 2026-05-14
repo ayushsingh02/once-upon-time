@@ -402,6 +402,9 @@ form.contact-form .contact-number-wrap {
 .custom-nav.mobile{
   display: none;
 }
+.spacer100{
+  height: 100px;
+}
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0px 40px;
@@ -495,5 +498,8 @@ form.contact-form .contact-number-wrap {
   }
   .heading p:not(.eyebrow-head){
     font-size: 14px;
+  }
+  .spacer100{
+    height: 50px;
   }
 }
