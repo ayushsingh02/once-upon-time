@@ -1059,7 +1059,7 @@ form#news-update label {
 .amc2-chapter-num {
   position: absolute;
   /* top: 60px; */
-  top: 130px;
+  top: 110px;
   left: 50%;
   font-family: var(--mono);
   transform: translateX(-50%);
