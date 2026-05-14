@@ -19,8 +19,10 @@ const StickyScrollTab = ({ tabs }) => {
 
       if (currentScroll > prevScroll && currentScroll > 100) {
         sticky.style.top = "0px";
+        sticky.style.paddingBottom = "20px";
       } else {
         sticky.style.top = `${headerHeight}px`;
+        sticky.style.paddingBottom = "0px";
       }
 
       prevScroll = currentScroll;
@@ -52,7 +54,7 @@ const StickyScrollTab = ({ tabs }) => {
   };
 
   return (
-    <div className="sticky-scroll-tab" ref={stickyRef} style={{ transition: "top 0.4s ease" }}>
+    <div className="sticky-scroll-tab" ref={stickyRef} style={{ transition: "top 0.4s ease, padding-bottom 0.3s ease" }}>
       <div className="container">
         <div className="scroll-tab-wrap">
           {tabs.map((tab, index) => (
