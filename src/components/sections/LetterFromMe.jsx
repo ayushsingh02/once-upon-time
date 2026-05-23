@@ -71,17 +71,26 @@ const LetterFromMe = () => {
       if (!el || window.innerWidth < 992) return;
       gsap.fromTo(
         el,
-        { opacity: 0, y: 50, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: "power3.out" }
+        { clipPath: "inset(-8% -8% 108% -8%)", opacity: 0, y: 24 },
+        { clipPath: "inset(-8% -8% -8% -8%)",  opacity: 1, y: 0,
+          duration: 1.0, ease: "power3.out" }
       );
     };
 
-    // Target .left wrapper — not .letter-page itself.
-    // .letter-page has CSS transform:rotate(-6deg) + background-image.
-    // Safari drops the background when GSAP overrides the transform with inline
-    // styles. Animating the parent wrapper leaves .letter-page untouched.
     const getActiveLetter = () =>
       sliderRef.current?.querySelector(".owl-item.active .left");
+
+    const getActivePolo = () =>
+      sliderRef.current?.querySelector(".owl-item.active .polo-img");
+
+    const animatePolo = (el) => {
+      if (!el || window.innerWidth < 992) return;
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 80, filter: "blur(8px)" },
+        { opacity: 1, x: 0, filter: "blur(0px)", duration: 1.2, ease: "expo.out" }
+      );
+    };
 
     let st;
 
@@ -94,19 +103,25 @@ const LetterFromMe = () => {
       onInitialized: () => {
         setTimeout(() => {
           const activeLetter = getActiveLetter();
-          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { opacity: 0, y: 50, scale: 0.96 });
+          if (activeLetter && window.innerWidth >= 992) gsap.set(activeLetter, { clipPath: "inset(-8% -8% 108% -8%)", opacity: 0, y: 24 });
 
           st = ScrollTrigger.create({
             trigger: sectionRef.current,
             start: "top 75%",
             once: true,
-            onEnter: () => animateLetter(getActiveLetter()),
+            onEnter: () => {
+              animateLetter(getActiveLetter());
+              animatePolo(getActivePolo());
+            },
           });
         }, 100);
       },
     });
 
-    const onTranslated = () => animateLetter(getActiveLetter());
+    const onTranslated = () => {
+      animateLetter(getActiveLetter());
+      animatePolo(getActivePolo());
+    };
     $slider.on("translated.owl.carousel", onTranslated);
 
     return () => {
