@@ -55,14 +55,17 @@
     transform: unset;
   }
   .letter-from-me .polo-img {
-    transform: unset;
-  }
-  .letter-from-me .polo-img {
     height: 100%;
     aspect-ratio: unset;
+    transform: unset;
+
   }
   .letter-form-me-in {
     padding: 0px;
+  }
+  .letter-form-me-in .right{
+    width: 100%;
+    background-color: #fff;
   }
 }
 @media screen and (max-width: 1100px) {
