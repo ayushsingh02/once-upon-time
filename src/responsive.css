@@ -677,6 +677,15 @@
   }
   .home-chapter-1-in .inner-card {
     width: 100% !important;
+    padding-bottom: 0;
+  }
+  .fold-1 {
+    height: auto;
+    gap: 30px;
+    padding-bottom: 36px;
+  }
+  .fold-2 {
+    height: auto;
   }
   .chapter-quote {
     font-size: 32px;
