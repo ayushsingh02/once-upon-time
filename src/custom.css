@@ -1181,7 +1181,7 @@ form#news-update label {
   font-style: italic;
   font-weight: 350;
   /* font-size: 22.5vw; */
-  font-size: clamp(98px, 20vw, 300px);
+  font-size: clamp(75px, 20vw, 300px);
   color: #fff;
   line-height: 100%;
   letter-spacing: -0.03em;
