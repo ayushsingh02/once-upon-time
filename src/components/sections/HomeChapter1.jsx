@@ -31,64 +31,38 @@ const HomeChapter1 = () => {
 
     if (!section || !card || !cardInner) return;
 
-    const isMobile = window.innerWidth < 992;
-
     const ctx = gsap.context(() => {
-      if (isMobile) {
-        const fold1 = section.querySelector(".fold-1");
-        const fold2 = section.querySelector(".fold-2");
-        const cardStyle = window.getComputedStyle(card);
-        const paddingTop = parseFloat(cardStyle.paddingTop);
+      const fold1 = section.querySelector(".fold-1");
+      const fold2 = section.querySelector(".fold-2");
+      const cardStyle = window.getComputedStyle(card);
+      const paddingTop = parseFloat(cardStyle.paddingTop);
 
-        const fold1H = fold1.offsetHeight;
+      let fold1H = fold1.offsetHeight;
 
-        // Size fold-2 identically to fold-1 so the centered quote has equal space
+      const applyInitial = () => {
+        fold1H = fold1.offsetHeight;
         gsap.set(fold2, { height: fold1H });
-        // Card shows exactly fold-1; padding-bottom is 0 on mobile so fold-2 starts at the clip edge
         gsap.set(card, { height: fold1H + paddingTop });
+      };
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: "+=100%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            fastScrollEnd: true,
-            preventOverlaps: true,
-          },
-        });
+      applyInitial();
 
-        tl.to(cardInner, { y: -fold1H, ease: "none", duration: 2 });
-      } else {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: "+=100%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            fastScrollEnd: true,
-            preventOverlaps: true,
-          },
-        });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          fastScrollEnd: true,
+          preventOverlaps: true,
+          onRefresh: applyInitial,
+        },
+      });
 
-        tl.to(card, {
-            height: window.innerHeight,
-            width: "55vw",
-            ease: "power2.inOut",
-            duration: 0.5,
-          })
-          .to(cardInner, {
-            y: "-50%",
-            ease: "none",
-            duration: 1.5,
-          });
-      }
+      tl.to(cardInner, { y: () => -fold1H, ease: "none", duration: 1 });
     }, sectionRef);
 
     setTimeout(() => ScrollTrigger.refresh(), 300);

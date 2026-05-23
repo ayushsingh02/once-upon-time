@@ -1,5 +1,8 @@
 import React from 'react'
 import { createRoot } from "react-dom/client";
+
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 import "./index.css";
 import "./snippet.css";
 import "./custom.css";
