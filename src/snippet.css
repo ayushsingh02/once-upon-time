@@ -216,14 +216,16 @@
 .hanging-card-img {
   aspect-ratio: 4.2/ 5.6;
 }
-.hanging-card {
-  transition: 1s ease all;
-}
-.hanging-card:nth-child(2).hanged {
-  padding-top: 30px;
-}
-.hanging-card:nth-child(3).hanged {
-  padding-top: 80px;
+@media (min-width: 992px) {
+  .hanging-card {
+    transition: 1s ease all;
+  }
+  .hanging-card:nth-child(2).hanged {
+    padding-top: 30px;
+  }
+  .hanging-card:nth-child(3).hanged {
+    padding-top: 80px;
+  }
 }
 /* Hanging Card */
 
